@@ -8,6 +8,9 @@ MyCampaignsContainer
     - CampaignIndexContainer
       - CampaignIndexItem
 
+
+Ken: Would a user ever want to look at executions of different media types on the same index? if so, consider using search params rather than the restful routes you're describing here. i.e. CampaignDetail will have an ExecutionsIndexContainer that takes params such as media_type: 1, or created_after: 1/1/1959
+
 CampaignDetailContainer
   - CampaignDetail
     - MediaTypesIndexContainer
