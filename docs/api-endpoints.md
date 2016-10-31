@@ -17,6 +17,9 @@ Session
 
 Campaigns
   - GET /api/campaigns
+
+  Ken: Does every note belong to a campaign? If so, this should be a nested resource, i.e. POST /api/campaigns/:campaign_id/notes
+
   - POST /api/notes
   - POST /api/notes
   - GET /api/notes/:id
@@ -32,6 +35,8 @@ Approvalships
   - GET /api/campaign/:campaignId/approvalships
   - POST /api/campaign/:campaignId/approvalships
   - DELETE /api/campaign/:campaignId/approvalships/:approverId
+
+# Are media types distinct to each campaign? If not, consider just making them an attribute of executions and giving campaigns a has_many :accepted_media_types association 
 
 Media Types
   - GET /api/campaign/:campaignId/mediatypes
