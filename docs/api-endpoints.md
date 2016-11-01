@@ -17,11 +17,10 @@ Session
 
 Campaigns
   - GET /api/campaigns
-  - POST /api/notes
-  - POST /api/notes
-  - GET /api/notes/:id
-  - PATCH /api/notes/:id
-  - DELETE /api/notes/:id
+  - POST /api/campaign
+  - GET /api/campaign/:id
+  - PATCH /api/campaign/:id
+  - DELETE /api/campaign/:id
 
 Memberships
   - GET /api/campaign/:campaignId/memberships
