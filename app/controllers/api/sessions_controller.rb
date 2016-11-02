@@ -9,7 +9,7 @@ class Api::SessionsController < ApplicationController
       login(@user)
       render "api/users/show"
     else
-      render json: ["username not recognized"], status: 422
+      render json: ["Username not recognized"], status: 422
     end
   end
 

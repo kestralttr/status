@@ -39,6 +39,9 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
+    if (this.props.errors.length === 0) {
+      return(<br></br>)
+    }
     return(
       <ul>
           {this.props.errors.map((error,i) => (
@@ -83,7 +86,7 @@ class SessionForm extends React.Component {
           {this.renderErrors()}
           <div>
             <br/>
-            <p className='auth-form-input-title'>Username:</p>
+            <p className='auth-form-input-title'>USERNAME:</p>
             <label>
               <input className="auth-form-input"
                 type="text"
@@ -91,7 +94,7 @@ class SessionForm extends React.Component {
                 onChange={this.update("username")}/>
             </label>
             <br/>
-            <p className='auth-form-input-title'>Password:</p>
+            <p className='auth-form-input-title'>PASSWORD:</p>
             <label>
               <input className="auth-form-input"
                 type="password"
