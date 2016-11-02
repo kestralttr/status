@@ -1,5 +1,5 @@
 import React from 'react';
-import GreetingsContainer from './greeting/greeting_container';
+import NavBarContainer from './nav_bar/nav_bar_container';
 import {withRouter} from 'react-router';
 import SessionFormContainer from './session/session_form_container';
 
@@ -7,7 +7,7 @@ import SessionFormContainer from './session/session_form_container';
 const App = ({children}) => (
   <div className='app'>
     <h1>Status</h1>
-    <GreetingsContainer />
+    <NavBarContainer />
     {children}
   </div>
 );

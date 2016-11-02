@@ -17,7 +17,7 @@ const sessionLinks = () => (
   </div>
 );
 
-const Greeting = ({currentUser, logout}) => {
+const NavBar = ({currentUser, logout}) => {
   if (currentUser) {
     return personalGreeting(currentUser,logout);
   } else {
@@ -25,4 +25,4 @@ const Greeting = ({currentUser, logout}) => {
   }
 };
 
-export default Greeting;
+export default NavBar;
