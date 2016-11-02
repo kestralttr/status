@@ -1,12 +1,14 @@
 import React from 'react';
 import GreetingsContainer from './greeting/greeting_container';
+import {withRouter} from 'react-router';
+
 
 const App = ({children}) => (
-  <div>
-    <h1>Status Test</h1>
+  <div className='app'>
+    <h1>Status</h1>
     <GreetingsContainer />
     {children}
   </div>
 );
 
-export default App;
+export default withRouter(App);

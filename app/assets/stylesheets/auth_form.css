@@ -1,0 +1,52 @@
+.auth-form {
+  font-family: roboto;
+  font-size: 16px;
+  display: block;
+  /*border: 1px solid black;*/
+  margin: 0 auto;
+}
+
+.auth-form-site-name {
+  margin: 130px auto auto auto;
+  text-align: center;
+  width: 200px;
+  font-weight: 500;
+  font-size: 28px;
+}
+
+.auth-form-input-title {
+  text-align: left;
+  margin: 20px auto 0 auto;
+  width: 80%;
+  /*border: 1px solid black;*/
+  font-size: 12px;
+}
+
+.auth-form > form {
+  display: block;
+  border: 1px solid black;
+  width: 80%;
+  text-align: center;
+  margin: 20px auto auto auto;
+}
+
+.auth-form-input {
+  border: 1px solid black;
+  border-radius: 5%;
+  margin: 0 0 20px 0;
+  width: 80%;
+}
+
+.auth-form-submit-button {
+  border: 1px solid black;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 10%;
+}
+
+.auth-form-login-title {
+  font-weight: 700;
+  font-size: 38px;
+  margin: 10px 0 0 0;
+
+}

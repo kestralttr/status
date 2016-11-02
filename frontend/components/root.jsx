@@ -20,6 +20,10 @@ const Root = ({store}) => {
     }
   };
 
+// NOT WORKING
+  const _redirectToLogin = () => {
+    this.props.router.push("/login");
+  };
 
   return (<Provider store={store}>
     <Router history={hashHistory}>
