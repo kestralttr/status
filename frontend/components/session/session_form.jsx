@@ -10,6 +10,8 @@ class SessionForm extends React.Component {
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.title = this.title.bind(this);
+    this.altAuth = this.altAuth.bind(this);
   }
 
   handleSubmit(e) {
@@ -54,14 +56,30 @@ class SessionForm extends React.Component {
     });
   }
 
+  title() {
+    if (this.props.formType === 'login') {
+      return(<h1 className='auth-form-login-title'>Log In</h1>)
+    } else {
+      return(<h1 className='auth-form-login-title'>Sign Up</h1>)
+    }
+  }
+
+  altAuth() {
+    if (this.props.formType === "login") {
+      return <Link to="/signup">Don't have an account? Sign up!</Link>;
+    } else {
+      return <Link to="/login">I have an account. Log in!</Link>;
+    }
+  }
+
   render() {
     return (
       <div className='auth-form'>
-        <h1 className='auth-form-site-name'>Status</h1>
+        <img className='auth-form-background' src="http://wallpapers.ae/wp-content/uploads/2015/01/Gradient-Free-Blurry-Abstract-Background-Photos.png"/>
+        <h1 className='auth-form-site-name'>status</h1>
         <form onSubmit={this.handleSubmit}>
-          <h1 className='auth-form-login-title'>Log In</h1>
+          {this.title()}
           <br/>
-          Please {this.props.formType} or {this.navLink()}
           {this.renderErrors()}
           <div>
             <br/>
@@ -84,6 +102,7 @@ class SessionForm extends React.Component {
             <input className="auth-form-submit-button" type="submit" value="Submit" />
           </div>
         </form>
+        <div className="auth-form-alt-auth">{this.altAuth()}</div>
       </div>
     );
   }
