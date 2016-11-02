@@ -25,9 +25,8 @@ const sessionLinks = () => (
 const NavBar = ({currentUser, logout}) => {
   if (currentUser) {
     return personalGreeting(currentUser,logout);
-  } else {
-    return sessionLinks();
   }
+  return null;
 };
 
 export default NavBar;
