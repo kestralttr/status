@@ -16,14 +16,12 @@ class SessionForm extends React.Component {
   }
 
   handleSubmit(e) {
-    console.log(e);
     e.preventDefault();
     const user = this.state;
     this.props.processForm({user});
   }
 
   handleGuestLogin(e) {
-    console.log(e);
     e.preventDefault();
     const user = {username: "guest", password: "password"};
     this.props.guestLogin({user});
@@ -87,7 +85,7 @@ class SessionForm extends React.Component {
   render() {
     return (
       <div className='auth-form'>
-        <img className='auth-form-background' src="http://wallpapers.ae/wp-content/uploads/2015/01/Gradient-Free-Blurry-Abstract-Background-Photos.png"/>
+        <img className='auth-form-background' src="/assets/colorful3.png"/>
         <h1 className='auth-form-site-name'>status</h1>
         <form onSubmit={this.handleSubmit}>
           {this.title()}
@@ -111,9 +109,18 @@ class SessionForm extends React.Component {
                 onChange={this.update("password")}/>
             </label>
             <br/>
-            <button className="auth-form-guest-login-button"
-              onClick={this.handleGuestLogin}>Guest Login</button>
-            <input className="auth-form-submit-button" type="submit" value="Submit" />
+            <ul className="auth-form-button-holder">
+              <li></li>
+              <li>
+              <input className="auth-form-submit-button"
+                disabled={!this.state.username}
+                type="submit" value="Submit" />
+              </li>
+              <li><button className="auth-form-guest-login-button"
+                onClick={this.handleGuestLogin}>Guest Login</button>
+              </li>
+              <li></li>
+            </ul>
           </div>
         </form>
         <div className="auth-form-alt-auth">{this.altAuth()}</div>

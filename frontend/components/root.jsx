@@ -4,6 +4,7 @@ import {Router, Route, IndexRoute, IndexRedirect, hashHistory} from 'react-route
 import App from './app';
 import SessionFormContainer from './session/session_form_container';
 import NavBarContainer from './nav_bar/nav_bar_container';
+import SplashContainer from './splash/splash_container';
 
 const Root = ({store}) => {
 
@@ -29,6 +30,7 @@ const Root = ({store}) => {
   return (<Provider store={store}>
     <Router history={hashHistory}>
       <Route path="/" component={App}>
+        <IndexRoute component={SplashContainer}/>
         <Route path="login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
         <Route path="signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
       </Route>
