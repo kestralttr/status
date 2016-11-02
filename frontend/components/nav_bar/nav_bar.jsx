@@ -3,14 +3,19 @@ import {Link} from 'react-router';
 
 
 const personalGreeting = (currentUser,logout) => (
-  <div className="personal_greeting">
-    <h2>{currentUser.username}</h2><br></br>
-    <button onClick={logout}>Log Out</button>
+  <div className="personal-greeting">
+    <h1>Status</h1>
+    <ul>
+      <li>{currentUser.username}</li><br></br>
+      <li>
+        <button className="logout-button" onClick={logout}>Log Out</button>
+      </li>
+    </ul>
   </div>
 );
 
 const sessionLinks = () => (
-  <div className="session_links">
+  <div className="session-links">
     <Link to="/login">Log In</Link>
     &nbsp;or&nbsp;
     <Link to="/signup">Sign Up</Link>

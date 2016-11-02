@@ -5,8 +5,7 @@ import SessionFormContainer from './session/session_form_container';
 
 
 const App = ({children}) => (
-  <div className='app'>
-    <h1>Status</h1>
+  <div>
     <NavBarContainer />
     {children}
   </div>

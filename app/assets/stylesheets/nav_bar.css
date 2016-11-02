@@ -1,0 +1,34 @@
+.nav-bar {
+  font-family: roboto;
+  font-weight: 300;
+  background-color: green;
+}
+
+.personal-greeting {
+
+}
+
+.logout-button:hover {
+  cursor: pointer;
+}
+
+.personal-greeting > ul {
+  position: fixed;
+  display: flex;
+  border: 1px solid black;
+  justify-content: flex-end;
+  top: 0;
+  width: 100%;
+}
+
+.session-links {
+  font-family: roboto;
+  font-weight: 300;
+  background-color: green;
+  color: red;
+}
+
+
+.nav-bar > h1 {
+  font-weight: 500;
+}
