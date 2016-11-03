@@ -23,6 +23,10 @@ class Splash extends React.Component {
     return(
       <div>
         {this.sessionLinks()}
+        <div className="splash-main">
+          <h1>Manage Campaigns Effortlessly</h1>
+          <h2>Status will track every last detail, so you can focus on results.</h2>
+        </div>
       </div>
     );
   }
