@@ -4,6 +4,7 @@ class Api::CampaignsController < ApplicationController
   end
 
   def index
+    @campaigns = current_user.campaigns
   end
 
   def show
@@ -11,5 +12,9 @@ class Api::CampaignsController < ApplicationController
 
   def destroy
   end
-  
+
+  def campaign_params
+    params.require(:campaign).permit(:title,:manager_id,:membership_id,:approvership_id)
+  end
+
 end

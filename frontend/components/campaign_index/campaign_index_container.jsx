@@ -4,7 +4,7 @@ import {values} from 'lodash';
 
 const mapStateToProps = state => ({
   campaignIndex: values(state.campaigns),
-  loading: state.loading
+  currentUser: state.currentUser
 });
 
 export default connect(

@@ -6,6 +6,7 @@ import SessionFormContainer from './session/session_form_container';
 import NavBarContainer from './nav_bar/nav_bar_container';
 import SplashContainer from './splash/splash_container';
 import CampaignIndexContainer from './campaign_index/campaign_index_container';
+import {requestCampaigns} from '../actions/campaign_actions';
 
 const Root = ({store}) => {
 
@@ -19,8 +20,13 @@ const Root = ({store}) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
     const currentUser = store.getState().session.currentUser;
     if (currentUser) {
-      replace('/');
+      replace('/campaignindex');
     }
+  };
+
+  const _requestCampaigns = () => {
+    const currentUser = store.getState().session.currentUser;
+    return store.dispatch(requestCampaigns());
   };
 
 // NOT WORKING
@@ -34,7 +40,7 @@ const Root = ({store}) => {
         <IndexRoute component={SplashContainer}/>
         <Route path="login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
         <Route path="signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
-        <Route path="campaignindex" component={CampaignIndexContainer} />
+        <Route path="campaignindex" component={CampaignIndexContainer} onEnter={_requestCampaigns}/>
       </Route>
   </Router>
   </Provider>
