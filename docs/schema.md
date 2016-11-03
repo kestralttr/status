@@ -9,13 +9,13 @@ id                integer       not null, primary key
 title             string        not null, unique, indexed
 manager_id        integer       not null, foreign key (user), indexed
 membership_id     integer       not null, foreign key (memberships), indexed
-approvalship_id   integer       not null, foreign key (approvalships), indexed
+approvership_id   integer       not null, foreign key (approverships), indexed
 
 MEMBERSHIPS TABLE - join table
 campaign_id       integer       not null, foreign key (campaigns), indexed
 member_id         integer       not null, foreign key (users), indexed
 
-APPROVALSHIPS TABLE - join table
+APPROVERSHIPS TABLE - join table
 campaign_id       integer       not null, foreign key (campaigns), indexed
 approver_id       integer       not null, foreign key (users), indexed
 
