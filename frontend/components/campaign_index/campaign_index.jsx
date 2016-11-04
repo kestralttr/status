@@ -8,6 +8,7 @@ class CampaignIndex extends React.Component {
     super(props);
     this.state = {
     };
+    console.log("campaignIndex props:", this.props);
   }
 
   componentDidMount() {
@@ -21,6 +22,7 @@ class CampaignIndex extends React.Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <section className="campaign-index">
         <ul>

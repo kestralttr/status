@@ -13,6 +13,7 @@ class SessionForm extends React.Component {
     this.handleGuestLogin = this.handleGuestLogin.bind(this);
     this.title = this.title.bind(this);
     this.altAuth = this.altAuth.bind(this);
+    this.testModal = this.testModal.bind(this);
   }
 
   handleSubmit(e) {
@@ -74,6 +75,15 @@ class SessionForm extends React.Component {
     }
   }
 
+  testModal() {
+    if (this.state.username) {
+      return(<div>
+              <div className='test-modal'></div>
+              <div className='test'></div>
+            </div>);
+    }
+  }
+
   altAuth() {
     if (this.props.formType === "login") {
       return <Link to="/signup">Don't have an account? Sign up!</Link>;
@@ -86,6 +96,7 @@ class SessionForm extends React.Component {
     return (
       <div className='auth-form'>
         <img className='auth-form-background' src="/assets/colorful3.png"/>
+        {this.testModal()}
         <h1 className='auth-form-site-name'>status</h1>
         <form onSubmit={this.handleSubmit}>
           {this.title()}

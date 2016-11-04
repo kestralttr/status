@@ -7,6 +7,7 @@ import NavBarContainer from './nav_bar/nav_bar_container';
 import SplashContainer from './splash/splash_container';
 import CampaignIndexContainer from './campaign_index/campaign_index_container';
 import {requestCampaigns} from '../actions/campaign_actions';
+import CampaignDetailContainer from './campaign_detail/campaign_detail_container';
 
 const Root = ({store}) => {
 
@@ -40,8 +41,11 @@ const Root = ({store}) => {
         <IndexRoute component={SplashContainer}/>
         <Route path="login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
         <Route path="signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
-        <Route path="campaignindex" component={CampaignIndexContainer} onEnter={_ensureLoggedIn}/>
-      </Route>
+        <Route path="campaignindex" component={CampaignIndexContainer} onEnter={_ensureLoggedIn} />
+        <Route path="campaigns/:campaignId" component={CampaignDetailContainer} onEnter={_ensureLoggedIn}>
+
+        </Route>
+  </Route>
   </Router>
   </Provider>
   );

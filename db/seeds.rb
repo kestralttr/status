@@ -20,6 +20,8 @@ Membership.create(campaign_id: 3, member_id: 1)
 Membership.create(campaign_id: 4, member_id: 2)
 #MEMBERSHIP 5
 Membership.create(campaign_id: 5, member_id: 2)
+#MEMBERSHIP 6
+Membership.create(campaign_id: 4, member_id: 1)
 #CAMPAIGN 1
 Campaign.create(
   title: "My Awesome Campaign",

@@ -8,13 +8,14 @@ class Api::CampaignsController < ApplicationController
   end
 
   def show
+    @campaign = Campaign.find(params[:id])
   end
 
   def destroy
   end
 
   def campaign_params
-    params.require(:campaign).permit(:title,:manager_id,:membership_id,:approvership_id)
+    params.require(:campaign).permit(:title,:manager_id)
   end
 
 end
