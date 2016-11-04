@@ -11,8 +11,11 @@ const CampaignIndexReducer = (state = _defaultState, action) => {
   let newState = merge({}, state);
   switch (action.type) {
     case RECEIVE_CAMPAIGNS:
+      console.log(action.campaigns);
       newState["campaigns"] = action.campaigns;
       newState["errors"] = [];
+      console.log("newState in reducer:");
+      console.log(newState);
       return newState;
     case RECEIVE_ERRORS:
       newState["campaigns"] = null;

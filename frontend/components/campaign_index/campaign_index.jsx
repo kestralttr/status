@@ -3,6 +3,7 @@ import CampaignIndexItem from './campaign_index_item';
 
 const CampaignIndex = ({campaignIndex, currentUser, children}) => {
 
+  console.log(campaignIndex);
   return (
     <section className="campaign-index">
       <ul>

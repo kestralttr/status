@@ -3,7 +3,7 @@ import CampaignIndex from './campaign_index';
 import {values} from 'lodash';
 
 const mapStateToProps = state => ({
-  campaignIndex: values(state.campaigns),
+  campaignIndex: state.campaignIndex.campaigns,
   currentUser: state.currentUser
 });
 
