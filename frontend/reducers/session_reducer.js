@@ -13,8 +13,6 @@ const SessionReducer = (state = _defaultState,action) => {
     case RECEIVE_CURRENT_USER:
       newState["currentUser"] = action.currentUser;
       newState["errors"] = [];
-      console.log("newState after SessionReducer:");
-      console.log(newState);
       return newState;
     case LOGOUT:
       return _defaultState;

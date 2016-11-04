@@ -1,12 +1,18 @@
 import {connect} from 'react-redux';
 import CampaignIndex from './campaign_index';
 import {values} from 'lodash';
+import {requestCampaigns} from '../../actions/campaign_actions';
 
 const mapStateToProps = state => ({
   campaignIndex: state.campaignIndex.campaigns,
-  currentUser: state.currentUser
+  currentUser: state.session.currentUser
+});
+
+const mapDispatchToProps = dispatch => ({
+  requestCampaigns: () => dispatch(requestCampaigns())
 });
 
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(CampaignIndex);

@@ -40,7 +40,7 @@ const Root = ({store}) => {
         <IndexRoute component={SplashContainer}/>
         <Route path="login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
         <Route path="signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
-        <Route path="campaignindex" component={CampaignIndexContainer} onEnter={_requestCampaigns}/>
+        <Route path="campaignindex" component={CampaignIndexContainer} onEnter={_ensureLoggedIn}/>
       </Route>
   </Router>
   </Provider>

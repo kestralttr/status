@@ -16,6 +16,10 @@ Membership.create(campaign_id: 1, member_id: 1)
 Membership.create(campaign_id: 2, member_id: 1)
 #MEMBERSHIP 3
 Membership.create(campaign_id: 3, member_id: 1)
+#MEMBERSHIP 4
+Membership.create(campaign_id: 4, member_id: 2)
+#MEMBERSHIP 5
+Membership.create(campaign_id: 5, member_id: 2)
 #CAMPAIGN 1
 Campaign.create(
   title: "My Awesome Campaign",
@@ -30,4 +34,14 @@ Campaign.create(
 Campaign.create(
   title: "Holiday Hell",
   manager_id: 1
+)
+#CAMPAIGN 4
+Campaign.create(
+  title: "Yet Another Campaign",
+  manager_id: 2
+)
+#CAMPAIGN 5
+Campaign.create(
+  title: "Final Campaign",
+  manager_id: 2
 )

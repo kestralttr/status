@@ -1,6 +1,9 @@
 import React from 'react';
-import {Link} from 'react-router';
+import {Link, withRouter, Router} from 'react-router';
 
+const forceLogout = (router) => {
+  return router.replace("/");
+};
 
 const personalGreeting = (currentUser,logout) => (
   <div className="personal-greeting">
@@ -22,11 +25,12 @@ const sessionLinks = () => (
   </div>
 );
 
-const NavBar = ({currentUser, logout}) => {
+const NavBar = ({currentUser, logout, router}) => {
   if (currentUser) {
     return personalGreeting(currentUser,logout);
   }
+
   return null;
 };
 
-export default NavBar;
+export default withRouter(NavBar);
