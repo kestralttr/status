@@ -8,6 +8,7 @@ import SplashContainer from './splash/splash_container';
 import CampaignIndexContainer from './campaign_index/campaign_index_container';
 import {requestCampaigns} from '../actions/campaign_actions';
 import CampaignDetailContainer from './campaign_detail/campaign_detail_container';
+import CampaignFormContainer from './campaign_create/campaign_form_container';
 
 const Root = ({store}) => {
 
@@ -30,18 +31,15 @@ const Root = ({store}) => {
     return store.dispatch(requestCampaigns());
   };
 
-// NOT WORKING
-  const _redirectToLogin = () => {
-    this.props.router.push("/login");
-  };
-
   return (<Provider store={store}>
     <Router history={hashHistory}>
       <Route path="/" component={App}>
         <IndexRoute component={SplashContainer}/>
         <Route path="login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
         <Route path="signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
-        <Route path="campaignindex" component={CampaignIndexContainer} onEnter={_ensureLoggedIn} />
+        <Route path="campaignindex" component={CampaignIndexContainer} onEnter={_ensureLoggedIn}>
+          <Route path="/campaignform" component={CampaignFormContainer} onEnter={_ensureLoggedIn} />
+        </Route>
         <Route path="campaigns/:campaignId" component={CampaignDetailContainer} onEnter={_ensureLoggedIn}>
 
         </Route>

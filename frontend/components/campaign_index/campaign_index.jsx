@@ -8,7 +8,8 @@ class CampaignIndex extends React.Component {
     super(props);
     this.state = {
     };
-    console.log("campaignIndex props:", this.props);
+    console.log("CampaignIndex:",this.props);
+    this.generateForm = this.generateForm.bind(this);
   }
 
   componentDidMount() {
@@ -21,10 +22,15 @@ class CampaignIndex extends React.Component {
     }
   }
 
+  generateForm(e) {
+    e.preventDefault();
+    this.props.router.push("/campaignform");
+  }
+
   render() {
-    console.log(this.props);
     return (
       <section className="campaign-index">
+        <button onClick={this.generateForm}>New Campaign</button>
         <ul>
           {this.props.campaignIndex.map(campaign => (
             <CampaignIndexItem key={campaign.id} campaign={campaign} />
