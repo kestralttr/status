@@ -9,8 +9,8 @@ class CampaignForm extends React.Component {
     this.state = {
       title: "",
       manager_id: props.currentUser.id,
-      members: [props.currentUser],
-      approvers: [props.currentUser],
+      members: [props.currentUser.username],
+      approvers: [props.currentUser.username],
       newMemberValue: ""
     };
     this.modalActive = false;
@@ -77,7 +77,7 @@ class CampaignForm extends React.Component {
         <ul>
           {this.state.members.map(function(member,idx){
             return (
-              <li className="member-item" key={idx}>{member.name}</li>
+              <li className="member-item" key={idx}>{member}</li>
             );
           })}
         </ul> <br></br>
