@@ -48,7 +48,7 @@ class SessionForm extends React.Component {
 
   renderErrors() {
     if (this.props.errors.length === 0) {
-      return(<br></br>)
+      return(<br></br>);
     }
     return(
       <ul>
@@ -69,9 +69,9 @@ class SessionForm extends React.Component {
 
   title() {
     if (this.props.formType === 'login') {
-      return(<h1 className='auth-form-login-title'>Log In</h1>)
+      return(<h1 className='auth-form-login-title'>Log In</h1>);
     } else {
-      return(<h1 className='auth-form-login-title'>Sign Up</h1>)
+      return(<h1 className='auth-form-login-title'>Sign Up</h1>);
     }
   }
 

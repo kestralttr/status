@@ -1,4 +1,4 @@
-import {RECEIVE_CAMPAIGN, RECEIVE_ERRORS} from '../actions/campaign_actions';
+import {RECEIVE_CAMPAIGN, CREATE_CAMPAIGN, RECEIVE_ERRORS} from '../actions/campaign_actions';
 import {merge} from 'lodash';
 
 const _defaultState = {
