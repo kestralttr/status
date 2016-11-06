@@ -1,10 +1,104 @@
 .splash {
-  font-family: roboto;
+  font-family: lato;
+
+}
+
+.splash-initial-background {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 800px;
+  z-index: -1;
+  opacity: 0.9;
 }
 
 .splash-bar {
   display: block;
+  position: fixed;
+  top: 0;
   height: 60px;
   width: 100%;
-  background-color: purple;
+  background-color: white;
+}
+
+.splash-bar > h1 {
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  height: 30px;
+  margin-top: -15px;
+  font-size: 24px;
+}
+.splash-login-link {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  height: 20px;
+  margin-top: -15px;
+  border: 1px solid #107dcc;
+  background-color: #107dcc;
+  box-shadow: 0 0 0 #fff;
+  transition-property: background-color, border, color, box-shadow;
+  transition-duration: 0.3s;
+  color: white;
+  padding: 6px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.splash-login-link:hover {
+  background-color: #1AAFD0;
+  border-color: #1AAFD0;
+  transition-property: background-color, border-color;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+
+.splash-main-container {
+  display: block;
+  margin: 0 200px 0 200px;
+}
+
+.splash-main {
+  text-align: center;
+  margin: 150px 0 0 0;
+  /*width: 200px;*/
+  color: white;
+  min-width: 335px;
+}
+
+.splash-main > h1 {
+  font-size: 64px;
+  text-align: center;
+  min-width: 325px;
+  margin-top: 40px;
+}
+
+.splash-main > h2 {
+  font-size: 22px;
+  text-align: center;
+  margin: 20px 0 50px 0;
+  min-width: 325px;
+}
+
+.splash-signup-link {
+  border: 1px solid #107dcc;
+  background-color: #107dcc;
+  box-shadow: 0 0 0 #fff;
+  transition-property: background-color, border, color, box-shadow;
+  transition-duration: 0.3s;
+  color: white;
+  margin: 0px auto 0px auto;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.splash-signup-link:hover {
+  background-color: #1AAFD0;
+  border-color: #1AAFD0;
+  transition-property: background-color, border-color;
+  transition-duration: 0.3s;
+  cursor: pointer;
 }

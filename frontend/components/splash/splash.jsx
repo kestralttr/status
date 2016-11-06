@@ -22,11 +22,18 @@ class Splash extends React.Component {
   render() {
     return(
       <div className="splash">
-        <div className="splash-bar"></div>
-        {this.sessionLinks()}
-        <div className="splash-main">
-          <h1>Manage Campaigns Effortlessly</h1>
-          <h2>Status will track every last detail, so you can focus on results.</h2>
+        <img className='splash-initial-background' src="/assets/colorful.jpg"/>
+        <div className="splash-bar">
+          <h1>status</h1>
+          <Link className="splash-login-link" to="/login">  Log In  </Link>
+        </div>
+        <div className="splash-main-container">
+          <div className="splash-main">
+            <h1>Manage Campaigns Effortlessly</h1>
+            <h2>Status tracks every last detail, so you can focus on results.</h2>
+            <br></br>
+            <Link className="splash-signup-link" to="/signup">Get Started</Link>
+          </div>
         </div>
       </div>
     );
