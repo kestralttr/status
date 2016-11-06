@@ -21,7 +21,8 @@ class Splash extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className="splash">
+        <div className="splash-bar"></div>
         {this.sessionLinks()}
         <div className="splash-main">
           <h1>Manage Campaigns Effortlessly</h1>

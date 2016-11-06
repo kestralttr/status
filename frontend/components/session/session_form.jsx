@@ -18,8 +18,8 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const campaign = this.state;
-    this.props.processForm({campaign});
+    const user = this.state;
+    this.props.processForm({user});
   }
 
   handleGuestLogin(e) {

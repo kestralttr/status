@@ -13,7 +13,6 @@ const CampaignDetailReducer = (state = _defaultState, action) => {
     case RECEIVE_CAMPAIGN:
       newState["campaign"] = action.campaign;
       newState["errors"] = [];
-      console.log(newState);
       return newState;
     case RECEIVE_ERRORS:
       newState["campaign"] = null;

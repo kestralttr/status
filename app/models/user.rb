@@ -9,6 +9,11 @@ class User < ApplicationRecord
   foreign_key: :member_id,
   class_name: "Membership"
 
+  has_many :approverships,
+  primary_key: :id,
+  foreign_key: :approver_id,
+  class_name: "Approvership"
+
   has_many :campaigns,
   through: :memberships,
   source: :campaign

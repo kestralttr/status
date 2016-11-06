@@ -11,7 +11,8 @@ class CampaignForm extends React.Component {
       manager_id: props.currentUser.id,
       members: [props.currentUser.username],
       approvers: [props.currentUser.username],
-      newMemberValue: ""
+      newMemberValue: "",
+      modalActive: false
     };
     this.modalActive = false;
     this.newMemberValue = "";
@@ -20,6 +21,12 @@ class CampaignForm extends React.Component {
     this.handleModalOpen = this.handleModalOpen.bind(this);
     this.handleModalClose = this.handleModalClose.bind(this);
     this.addMember = this.addMember.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.campaignIndex.length < nextProps.campaignIndex.length) {
+      this.props.router.push("/campaignindex");
+    }
   }
 
   handleSubmit(e) {
@@ -62,6 +69,20 @@ class CampaignForm extends React.Component {
     });
   }
 
+  handleModalOpen(e) {
+    e.preventDefault();
+    return(
+      this.setState({modalActive: true})
+    );
+  }
+
+  handleModalClose(e) {
+    e.preventDefault();
+    return(
+      this.setState({modalActive: false})
+    );
+  }
+
   modal() {
     return(
       <div>
@@ -88,19 +109,12 @@ class CampaignForm extends React.Component {
           onChange={this.update("newMemberValue")}>
         </input>
         <button className="campaign-form-add-member-button"
-          onClick={this.addMember}>Add Member</button>
+          onClick={this.addMember}>Add Member</button> <br></br>
+        <button className="campaign-form-submit-button"
+          disabled={!this.state.title}
+          onClick={this.handleSubmit}>Create!</button>
       </div>
     );
-  }
-
-  handleModalOpen(e) {
-    e.preventDefault();
-    this.modalActive = true;
-  }
-
-  handleModalClose(e) {
-    e.preventDefault();
-    this.modalActive = false;
   }
 
   render() {

@@ -6,12 +6,13 @@ const mapStateToProps = state => {
   console.log("campaign_form_index:", state);
   return({
     currentUser: state.session.currentUser,
-    errors: state.campaignDetail.errors
+    errors: state.campaignDetail.errors,
+    campaignIndex: state.campaignIndex.campaigns
   });
 };
 
 const mapDispatchToProps = dispatch => ({
-  createCampaign: (campaign) => dispatch(createCampaign)
+  createCampaign: (campaign) => dispatch(createCampaign(campaign))
 });
 
 export default connect(

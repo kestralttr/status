@@ -7,7 +7,7 @@ const forceLogout = (router) => {
 
 const personalGreeting = (currentUser,logout) => (
   <div className="personal-greeting">
-    <h1>Status</h1>
+    <Link to="/campaignindex">Status</Link>
     <ul>
       <li>{currentUser.username}</li><br></br>
       <li>

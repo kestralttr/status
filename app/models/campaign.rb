@@ -11,4 +11,13 @@ class Campaign < ApplicationRecord
     through: :memberships,
     source: :member
 
+    has_many :approverships,
+    primary_key: :id,
+    foreign_key: :campaign_id,
+    class_name: "Approvership"
+
+    has_many :approvers,
+    through: :approverships,
+    source: :approver
+
 end

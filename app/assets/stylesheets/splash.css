@@ -1,0 +1,10 @@
+.splash {
+  font-family: roboto;
+}
+
+.splash-bar {
+  display: block;
+  height: 60px;
+  width: 100%;
+  background-color: purple;
+}

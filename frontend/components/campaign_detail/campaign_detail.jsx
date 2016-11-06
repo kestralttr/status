@@ -1,5 +1,5 @@
 import React from 'react';
-import {withRouter} from 'react-router';
+import {Link, withRouter} from 'react-router';
 
 class CampaignDetail extends React.Component {
 
@@ -27,6 +27,7 @@ class CampaignDetail extends React.Component {
     return(
       <div className="campaign-detail">
         <h2>{campaign.title}</h2>
+        <Link to="/campaignindex">My Campaigns</Link>
       </div>
     );
   }
