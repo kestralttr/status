@@ -13,7 +13,8 @@ class Api::CampaignsController < ApplicationController
         Membership.create(campaign_id: @campaign_id, member_id: needed_id)
         Approvership.create(campaign_id: @campaign_id, approver_id: needed_id)
       end
-      render "api/campaigns/show"
+      @campaigns = current_user.campaigns
+      render "api/campaigns/index"
     else
       render json: @campaign.errors.full_messages, status: 422
     end

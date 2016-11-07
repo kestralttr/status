@@ -4,7 +4,7 @@ import {fetchCampaigns, fetchCampaign, createCampaign} from '../util/campaign_ap
 const CampaignMiddleware = ({getState,dispatch}) => next => action => {
   const campaignsSuccess = campaigns => dispatch(receiveCampaigns(campaigns));
   const campaignSuccess = campaign => dispatch(receiveCampaign(campaign));
-  const createCampaignSuccess = campaign => dispatch(receiveCampaign(campaign));
+  const createCampaignSuccess = campaigns => dispatch(receiveCampaigns(campaigns));
   const errorCallback = errors => dispatch(receiveErrors(errors.responseJSON));
 
   switch(action.type) {

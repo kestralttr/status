@@ -7,7 +7,7 @@ const forceLogout = (router) => {
 
 const sessionBar = (currentUser,logout) => (
   <div className="session-bar">
-    <Link className="home-link" to="/campaignindex">status</Link>
+    <Link className="home-link" to="/campaignindex">• status •</Link>
     <div className="greeting-container">
       <div className="greeting">{currentUser.username.slice(0,1).toUpperCase() + currentUser.username.slice(1)}</div>
     </div>

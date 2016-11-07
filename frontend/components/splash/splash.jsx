@@ -24,7 +24,7 @@ class Splash extends React.Component {
       <div className="splash">
         <img className='splash-initial-background' src="/assets/colorful.jpg"/>
         <div className="splash-bar">
-          <h1>status</h1>
+          <h1>• status •</h1>
           <Link className="splash-login-link" to="/login">  Log In  </Link>
         </div>
         <div className="splash-main-container">

@@ -27,6 +27,7 @@ class CampaignIndex extends React.Component {
   }
 
   render() {
+    console.log("campaignIndex props:",this.props);
     return (
       <section className="campaign-index">
         <div className="campaign-index-background"></div>

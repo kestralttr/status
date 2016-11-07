@@ -96,7 +96,7 @@ class SessionForm extends React.Component {
     return (
       <div className='auth-form'>
         <img className='auth-form-background' src="/assets/colorful3.png"/>
-        <h1 className='auth-form-site-name'>status</h1>
+        <h1 className='auth-form-site-name'>• status •</h1>
         <form onSubmit={this.handleSubmit}>
           {this.title()}
           <br/>
