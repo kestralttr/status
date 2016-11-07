@@ -1,5 +1,109 @@
 
+.campaign-index {
+  font-family: roboto;
+}
+
 .campaign-index-item > div {
   font-family: roboto;
   font-size: 20px;
+}
+
+.campaign-index-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(246,246,246,1);
+  z-index: -5;
+}
+
+.campaign-index-header {
+  position: fixed;
+  width: 100%;
+  border-bottom: 1px solid #e1e2e4;
+  text-align: center;
+  border-top: 0;
+  z-index: 3;
+  top: 30px;
+  background-color: white;
+  -webkit-box-shadow: 0px 2px 8px -2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 2px 8px -2px rgba(0,0,0,0.75);
+  box-shadow: 0px 2px 8px -2px rgba(0,0,0,0.75);
+}
+
+.campaign-index-header-title {
+  display: inline-block;
+  text-align: center;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.campaign-index-tableau-container {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  left: 10px;
+  bottom: 0;
+  z-index: 1;
+  background-color: white;
+  /*height:60px;*/
+  overflow: auto;
+  border: 1px solid #e1e2e4;
+  margin: 80px 0 0 0;
+  /*height: 100%;*/
+  -webkit-box-shadow: 0px 3px 8px -1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 3px 8px -1px rgba(0,0,0,0.75);
+  box-shadow: 0px 3px 8px -1px rgba(0,0,0,0.75);
+}
+
+.new-campaign-button {
+  padding: 5px;
+  font-weight: 500;
+  border: 1px solid #1AAFD0;
+  color: #1AAFD0;
+  border-radius: 5px;
+  margin: 10px 0 5px 20px;
+}
+
+.new-campaign-button:hover {
+  cursor: pointer;
+  border: 2px solid #1AAFD0;
+  margin: 9px 0 4px 19px;
+}
+
+.campaign-index-tableau {
+  margin: 5px 0 0 0;
+  /*border-top: 1px dotted black;
+  border-right: 1px dotted black;
+  border-left: 1px dotted black;
+  border-bottom: 1px dotted black;*/
+  padding: 5px;
+  height: 100%;
+  /*overflow: auto;*/
+}
+
+.campaign-index-item {
+  float: left;
+  height: 50px;
+  width: 300px;
+  border: 1px solid #e1e2e4;
+  border-radius: 5px;
+  margin: 5px 5px 5px 5px;
+  padding: 10px;
+  -webkit-box-shadow: 2px 2px 9px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 2px 9px 0px rgba(0,0,0,0.75);
+  box-shadow: 2px 2px 9px 0px rgba(0,0,0,0.75);
+  background-color: white;
+  transition-property: background-color, border;
+  transition-duration: 0.5s;
+}
+
+.campaign-index-item:hover {
+  background-color: #1AAFD0;
+  border: 1px solid #1AAFD0;
+  transition-property: background-color, border;
+  transition-duration: 0.5s;
+  cursor: pointer;
+
 }

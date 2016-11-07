@@ -1,20 +1,19 @@
 import React from 'react';
-import {withRouter} from 'react-router';
+import {Link,withRouter} from 'react-router';
 
 class CampaignForm extends React.Component {
 
   constructor(props) {
     super(props);
-    console.log("CampaignForm props:",this.props);
     this.state = {
       title: "",
       manager_id: props.currentUser.id,
       members: [props.currentUser.username],
       approvers: [props.currentUser.username],
       newMemberValue: "",
-      modalActive: false
+      modalClass: "active"
     };
-    this.modalActive = false;
+    this.modalClass = "hidden";
     this.newMemberValue = "";
     this.handleSubmit = this.handleSubmit.bind(this);
     this.modal = this.modal.bind(this);
@@ -25,7 +24,8 @@ class CampaignForm extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.props.campaignIndex.length < nextProps.campaignIndex.length) {
-      this.props.router.push("/campaignindex");
+      console.log(nextProps.campaignIndex);
+      this.props.router.replace("/campaignindex");
     }
   }
 
@@ -38,6 +38,7 @@ class CampaignForm extends React.Component {
       approvers: this.state.approvers
     };
     this.props.createCampaign({campaign});
+    this.props.router.push("/campaignindex");
   }
 
   renderErrors() {
@@ -72,47 +73,54 @@ class CampaignForm extends React.Component {
   handleModalOpen(e) {
     e.preventDefault();
     return(
-      this.setState({modalActive: true})
+      this.setState({modalClass: "active"})
     );
   }
 
   handleModalClose(e) {
     e.preventDefault();
     return(
-      this.setState({modalActive: false})
+      this.setState({modalClass: "hidden"})
     );
   }
 
   modal() {
     return(
       <div>
-        <button className="campaign-form-close-button"
-          onClick={this.handleModalClose}>Close</button><br></br>
-        <span>Title:</span>
-        <input className="campaign-form-input"
-          type="text"
-          value={this.state.title}
-          onChange={this.update("title")}>
-        </input> <br></br>
-        <span>Members:</span>
-        <ul>
-          {this.state.members.map(function(member,idx){
-            return (
-              <li className="member-item" key={idx}>{member}</li>
-            );
-          })}
-        </ul> <br></br>
-      <span>Add New Member:</span>
-        <input className="campaign-form-input"
-          type="text"
-          value={this.state.newMemberValue}
-          onChange={this.update("newMemberValue")}>
-        </input>
-        <button className="campaign-form-add-member-button"
-          onClick={this.addMember}>Add Member</button> <br></br>
-        <button className="campaign-form-submit-button"
-          disabled={!this.state.title}
-          onClick={this.handleSubmit}>Create!</button>
+        <div className='modal-background'></div>
+        <div className='modal'>
+          <div className="campaign-form-header">
+            <h1>New Campaign</h1>
+            <Link to="/campaignindex"
+              className="campaign-form-close-button">Close</Link>
+          </div>
+          {this.renderErrors()}
+          <span>Title:</span>
+          <input className="campaign-form-input"
+            type="text"
+            value={this.state.title}
+            onChange={this.update("title")}>
+          </input> <br></br>
+          <span>Members:</span>
+          <ul>
+            {this.state.members.map(function(member,idx){
+              return (
+                <li className="member-item" key={idx}>{member.slice(0,1).toUpperCase() + member.slice(1)}</li>
+              );
+            })}
+          </ul> <br></br>
+        <span>Add New Member:</span>
+          <input className="campaign-form-input"
+            type="text"
+            value={this.state.newMemberValue}
+            onChange={this.update("newMemberValue")}>
+          </input>
+          <button className="campaign-form-add-member-button"
+            onClick={this.addMember}>Add Member</button> <br></br>
+          <button className="campaign-form-submit-button"
+            disabled={!this.state.title}
+            onClick={this.handleSubmit}>Create!</button>
+        </div>
       </div>
     );
   }

@@ -5,15 +5,13 @@ const forceLogout = (router) => {
   return router.replace("/");
 };
 
-const personalGreeting = (currentUser,logout) => (
-  <div className="personal-greeting">
-    <Link to="/campaignindex">Status</Link>
-    <ul>
-      <li>{currentUser.username}</li><br></br>
-      <li>
-        <button className="logout-button" onClick={logout}>Log Out</button>
-      </li>
-    </ul>
+const sessionBar = (currentUser,logout) => (
+  <div className="session-bar">
+    <Link className="home-link" to="/campaignindex">status</Link>
+    <div className="greeting-container">
+      <div className="greeting">{currentUser.username.slice(0,1).toUpperCase() + currentUser.username.slice(1)}</div>
+    </div>
+    <button className="logout-button" onClick={logout}>Log Out</button>
   </div>
 );
 
@@ -27,7 +25,7 @@ const sessionLinks = () => (
 
 const NavBar = ({currentUser, logout, router}) => {
   if (currentUser) {
-    return personalGreeting(currentUser,logout);
+    return sessionBar(currentUser,logout);
   }
 
   return null;

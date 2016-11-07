@@ -29,12 +29,20 @@ class CampaignIndex extends React.Component {
   render() {
     return (
       <section className="campaign-index">
-        <button onClick={this.generateForm}>New Campaign</button>
-        <ul>
-          {this.props.campaignIndex.map(campaign => (
-            <CampaignIndexItem key={campaign.id} campaign={campaign} />
-          ))}
-        </ul>
+        <div className="campaign-index-background"></div>
+        <div className="campaign-index-header">
+          <h1 className="campaign-index-header-title">My Campaigns</h1>
+        </div>
+        <div className="campaign-index-tableau-container">
+          <button className="new-campaign-button" onClick={this.generateForm}>New Campaign</button>
+          <div className="campaign-index-tableau">
+            <ul>
+              {this.props.campaignIndex.map(campaign => (
+                <CampaignIndexItem key={campaign.id} campaign={campaign} />
+              ))}
+            </ul>
+          </div>
+        </div>
         {this.props.children}
       </section>
     );
