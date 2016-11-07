@@ -19,19 +19,14 @@ APPROVERSHIPS TABLE - join table
 campaign_id       integer       not null, foreign key (campaigns), indexed
 approver_id       integer       not null, foreign key (users), indexed
 
-MEDIA TYPES TABLE
-id                integer       not null, primary key
-title             string        not null
-campaign_id       integer       not null, foreign key (campaigns), indexed
-creator_id        integer       not null, foreign key (users), indexed
-
 EXECUTIONS TABLE
 id                integer       not null, primary key
 title             string        not null
 format            string        
 info              text          
-media_type_id     integer       not null, foreign key (media_types), indexed
+media_type        string        not null
 creator_id        integer       not null, foreign key (users), indexed
+campaign_id       integer       not null, foreign key (users), indexed
 approved          boolean
 
 POSTINGS TABLE
