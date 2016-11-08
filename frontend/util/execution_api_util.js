@@ -4,7 +4,7 @@ export const fetchExecutions = (campaignId,mediaType,success,error) => {
   $.ajax({
     type: "GET",
     url: "api/executions",
-    data: {execution: {campaignId: campaignId, mediaType: mediaType}},
+    data: {execution: {campaign_id: campaignId, media_type: mediaType}},
     success: success,
     error: error
   });

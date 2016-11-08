@@ -9,8 +9,8 @@ class CampaignDetail extends React.Component {
     this.state = {
       activeMediaType: "TV"
     };
-    console.log(this.props);
     this.renderCampaignDetails = this.renderCampaignDetails.bind(this);
+    this.generateForm = this.generateForm.bind(this);
   }
 
   componentDidMount() {
@@ -32,6 +32,15 @@ class CampaignDetail extends React.Component {
         <h2>{campaign.title}</h2>
       </div>
     );
+  }
+
+  generateForm(e) {
+    e.preventDefault();
+    this.props.router.push("/executionform");
+  }
+
+  changeActiveMediaType(e) {
+
   }
 
   render() {

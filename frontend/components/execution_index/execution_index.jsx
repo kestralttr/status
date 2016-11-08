@@ -8,7 +8,7 @@ class ExecutionIndex extends React.Component {
     super(props);
     this.state = {
     };
-    console.log(props);
+
     this.renderExecutions = this.renderExecutions.bind(this);
   }
 

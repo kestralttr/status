@@ -5,7 +5,6 @@ class CampaignForm extends React.Component {
 
   constructor(props) {
     super(props);
-    console.log(this.props);
     this.state = {
       title: "",
       manager_id: props.currentUser.id,
