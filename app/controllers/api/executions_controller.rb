@@ -4,7 +4,7 @@ class Api::ExecutionsController < ApplicationController
     @execution = Execution.new(execution_params)
 
     if @execution.save
-      @executions = @execution.campaign.executions
+      @executions = @execution.campaign.executions.where(:media_type => "#{execution_params[:media_type]}")
       render "api/executions/index"
     else
       render json: @execution.errors.full_messages, status: 422

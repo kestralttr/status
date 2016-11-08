@@ -24,61 +24,61 @@ Membership.create(campaign_id: 5, member_id: 2)
 Membership.create(campaign_id: 4, member_id: 1)
 #CAMPAIGN 1
 Campaign.create(
-  title: "My Awesome Campaign",
+  title: "Kirby Planet Robobot",
   manager_id: 1
 )
+  #EXECUTION 1
+  Execution.create(
+    title: "Kirby Reveal :30",
+    media_type: "TV",
+    creator_id: 1,
+    campaign_id: 1
+  )
+  #EXECUTION 2
+  Execution.create(
+    title: "Kirby amiibo :15",
+    media_type: "TV",
+    creator_id: 1,
+    campaign_id: 1
+  )
 #CAMPAIGN 2
 Campaign.create(
-  title: "My Disastrous Campaign",
+  title: "Nintendo Switch",
   manager_id: 1
 )
+  #EXECUTION 3
+  Execution.create(
+    title: "Switch Reveal :60",
+    media_type: "TV",
+    creator_id: 1,
+    campaign_id: 2
+  )
 #CAMPAIGN 3
 Campaign.create(
-  title: "Holiday Hell",
+  title: "Mario and Sonic Wii U",
   manager_id: 1
 )
+  #EXECUTION 4
+  Execution.create(
+    title: "Welcome to Rio :30",
+    media_type: "TV",
+    creator_id: 1,
+    campaign_id: 3
+  )
 #CAMPAIGN 4
 Campaign.create(
-  title: "Yet Another Campaign",
+  title: "Mario and Sonic 3DS",
   manager_id: 2
 )
-#EXECUTION 1
-Execution.create(
-  title: "TEST EXECUTION",
-  media_type: "TV",
-  creator_id: 1,
-  campaign_id: 4
-)
-#EXECUTION 2
-Execution.create(
-  title: "TEST AGAIN",
-  media_type: "TV",
-  creator_id: 1,
-  campaign_id: 4
-)
-#EXECUTION 3
-Execution.create(
-  title: "i'm lower case",
-  media_type: "TV",
-  creator_id: 1,
-  campaign_id: 4
-)
-#EXECUTION 4
-Execution.create(
-  title: "hi again",
-  media_type: "TV",
-  creator_id: 1,
-  campaign_id: 4
-)
-#EXECUTION 5
-Execution.create(
-  title: "boo!",
-  media_type: "TV",
-  creator_id: 1,
-  campaign_id: 4
-)
+  #EXECUTION 5
+  Execution.create(
+    title: "Compete with Friends :30",
+    media_type: "TV",
+    creator_id: 2,
+    campaign_id: 4
+  )
 #CAMPAIGN 5
 Campaign.create(
-  title: "Final Campaign",
+  title: "Animal Crossing Happy Home Designer",
   manager_id: 2
 )
