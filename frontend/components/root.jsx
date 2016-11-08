@@ -9,6 +9,7 @@ import CampaignIndexContainer from './campaign_index/campaign_index_container';
 import {requestCampaigns} from '../actions/campaign_actions';
 import CampaignDetailContainer from './campaign_detail/campaign_detail_container';
 import CampaignFormContainer from './campaign_create/campaign_form_container';
+import {requestExecutions} from '../actions/execution_actions';
 
 const Root = ({store}) => {
 
@@ -29,6 +30,10 @@ const Root = ({store}) => {
   const _requestCampaigns = () => {
     const currentUser = store.getState().session.currentUser;
     return store.dispatch(requestCampaigns());
+  };
+
+  const _requestExecutions = () => {
+    store.dispatch(requestExecutions(4,"TV"));
   };
 
   return (<Provider store={store}>

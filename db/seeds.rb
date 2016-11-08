@@ -42,6 +42,41 @@ Campaign.create(
   title: "Yet Another Campaign",
   manager_id: 2
 )
+#EXECUTION 1
+Execution.create(
+  title: "TEST EXECUTION",
+  media_type: "TV",
+  creator_id: 1,
+  campaign_id: 4
+)
+#EXECUTION 2
+Execution.create(
+  title: "TEST AGAIN",
+  media_type: "TV",
+  creator_id: 1,
+  campaign_id: 4
+)
+#EXECUTION 3
+Execution.create(
+  title: "i'm lower case",
+  media_type: "TV",
+  creator_id: 1,
+  campaign_id: 4
+)
+#EXECUTION 4
+Execution.create(
+  title: "hi again",
+  media_type: "TV",
+  creator_id: 1,
+  campaign_id: 4
+)
+#EXECUTION 5
+Execution.create(
+  title: "boo!",
+  media_type: "TV",
+  creator_id: 1,
+  campaign_id: 4
+)
 #CAMPAIGN 5
 Campaign.create(
   title: "Final Campaign",

@@ -5,7 +5,7 @@ import {createCampaign} from '../../actions/campaign_actions';
 const mapStateToProps = state => {
   return({
     currentUser: state.session.currentUser,
-    errors: state.campaignDetail.errors,
+    errors: state.campaignIndex.errors,
     campaignIndex: state.campaignIndex.campaigns
   });
 };

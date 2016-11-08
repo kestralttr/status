@@ -3,7 +3,7 @@ export const RECEIVE_EXECUTION = "RECEIVE_EXECUTION";
 export const REQUEST_EXECUTIONS = "REQUEST_EXECUTIONS";
 export const REQUEST_EXECUTION = "REQUEST_EXECUTION";
 export const CREATE_EXECUTION = "CREATE_EXECUTION";
-export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
+export const RECEIVE_EXECUTION_ERRORS = "RECEIVE_EXECUTION_ERRORS";
 
 export const receiveExecutions = (executions) => ({
   type: RECEIVE_EXECUTIONS,
@@ -21,10 +21,8 @@ export const requestExecutions = (campaignId, mediaType) => ({
   mediaType: mediaType
 });
 
-export const requestExecution = (id, campaignId, mediaType) => ({
+export const requestExecution = (id) => ({
   type: REQUEST_EXECUTION,
-  campaignId: campaignId,
-  mediaType: mediaType,
   id: id
 });
 
@@ -34,6 +32,6 @@ export const createExecution = (execution) => ({
 });
 
 export const receiveErrors = (errors) => ({
-  type: RECEIVE_ERRORS,
+  type: RECEIVE_EXECUTION_ERRORS,
   errors: errors
 });

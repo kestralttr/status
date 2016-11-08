@@ -5,6 +5,7 @@ class CampaignForm extends React.Component {
 
   constructor(props) {
     super(props);
+    console.log(this.props);
     this.state = {
       title: "",
       manager_id: props.currentUser.id,
@@ -20,13 +21,6 @@ class CampaignForm extends React.Component {
     this.handleModalOpen = this.handleModalOpen.bind(this);
     this.handleModalClose = this.handleModalClose.bind(this);
     this.addMember = this.addMember.bind(this);
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (this.props.campaignIndex.length < nextProps.campaignIndex.length) {
-      console.log(nextProps.campaignIndex);
-      this.props.router.replace("/campaignindex");
-    }
   }
 
   handleSubmit(e) {

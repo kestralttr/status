@@ -8,22 +8,30 @@ class ExecutionIndex extends React.Component {
     super(props);
     this.state = {
     };
+    console.log(props);
     this.renderExecutions = this.renderExecutions.bind(this);
   }
 
   componentDidMount() {
-    this.props.requestExecutions(this.props.campaignId,"TV");
+    if (this.props.campaignDetail) {
+      return this.props.requestExecutions(this.props.params.campaignId, this.props.activeMediaType);
+    }
+    return null;
   }
 
   componentWillReceiveProps(nextProps) {
     if (!nextProps.currentUser) {
       this.props.router.push("login");
     }
+
+    if (nextProps.campaignDetail && nextProps.executionIndex === null) {
+      return this.props.requestExecutions(this.props.params.campaignId, this.props.activeMediaType);
+    }
   }
 
   renderExecutions(executions) {
-    if (executions.length === 0) {
-      return null;
+    if (executions === null || executions === []) {
+      return;
     }
     return(
       <ul>
@@ -37,9 +45,13 @@ class ExecutionIndex extends React.Component {
   render() {
     return(
       <div>
-        {this.props.renderExecutions(this.props.executionIndex)}
+        <ul className="executions-list">
+          {this.renderExecutions(this.props.executionIndex)}
+        </ul>
       </div>
     );
   }
 
 }
+
+export default withRouter(ExecutionIndex);

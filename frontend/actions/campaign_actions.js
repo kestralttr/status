@@ -3,7 +3,7 @@ export const RECEIVE_CAMPAIGN = "RECEIVE_CAMPAIGN";
 export const REQUEST_CAMPAIGNS = "REQUEST_CAMPAIGNS";
 export const REQUEST_CAMPAIGN = "REQUEST_CAMPAIGN";
 export const CREATE_CAMPAIGN = "CREATE_CAMPAIGN";
-export const RECEIVE_ERRORS = "RECEIVE_ERRORS"
+export const RECEIVE_CAMPAIGN_ERRORS = "RECEIVE_CAMPAIGN_ERRORS"
 
 export const receiveCampaigns = (campaigns) => ({
   type: RECEIVE_CAMPAIGNS,
@@ -30,6 +30,6 @@ export const createCampaign = (campaign) => ({
 });
 
 export const receiveErrors = (errors) => ({
-  type: RECEIVE_ERRORS,
+  type: RECEIVE_CAMPAIGN_ERRORS,
   errors: errors
 })

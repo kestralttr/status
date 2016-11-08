@@ -9,6 +9,7 @@ class CampaignIndex extends React.Component {
     this.state = {
     };
     this.generateForm = this.generateForm.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   componentDidMount() {
@@ -26,13 +27,28 @@ class CampaignIndex extends React.Component {
     this.props.router.push("/campaignform");
   }
 
+  renderErrors() {
+    if (this.props.errors.length === 0) {
+      return(<br></br>);
+    }
+    return(
+      <ul>
+        {this.props.errors.map((error,i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
   render() {
-    console.log("campaignIndex props:",this.props);
     return (
       <section className="campaign-index">
         <div className="campaign-index-background"></div>
         <div className="campaign-index-header">
           <h1 className="campaign-index-header-title">My Campaigns</h1>
+          <div>{this.renderErrors}</div>
         </div>
         <div className="campaign-index-tableau-container">
           <button className="new-campaign-button" onClick={this.generateForm}>New Campaign</button>

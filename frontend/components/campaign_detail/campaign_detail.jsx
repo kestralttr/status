@@ -1,12 +1,15 @@
 import React from 'react';
 import {Link, withRouter} from 'react-router';
+import ExecutionIndexContainer from '../execution_index/execution_index_container';
 
 class CampaignDetail extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
+      activeMediaType: "TV"
     };
+    console.log(this.props);
     this.renderCampaignDetails = this.renderCampaignDetails.bind(this);
   }
 
@@ -52,18 +55,7 @@ class CampaignDetail extends React.Component {
             <h2>Executions</h2>
             <button className="new-execution-button" onClick={this.generateForm}>New Execution</button>
           </div>
-          <ul className="executions-list">
-            <li className="execution-list-item">Sample1</li>
-            <li className="execution-list-item">Sample2</li>
-            <li className="execution-list-item">Sample3</li>
-            <li className="execution-list-item">Sample4</li>
-            <li className="execution-list-item">Sample5</li>
-            <li className="execution-list-item">Sample6</li>
-            <li className="execution-list-item">Sample7</li>
-            <li className="execution-list-item">Sample8</li>
-            <li className="execution-list-item">Sample9</li>
-            <li className="execution-list-item">Sample10</li>
-          </ul>
+          <ExecutionIndexContainer campaignDetail={this.props.campaignDetail} activeMediaType={this.state.activeMediaType}/>
         </div>
         <div className="campaign-detail-postings-container">
           <div className="campaign-detail-postings-header">

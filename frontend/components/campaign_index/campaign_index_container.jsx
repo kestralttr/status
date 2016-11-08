@@ -5,7 +5,8 @@ import {requestCampaigns} from '../../actions/campaign_actions';
 
 const mapStateToProps = state => ({
   campaignIndex: state.campaignIndex.campaigns,
-  currentUser: state.session.currentUser
+  currentUser: state.session.currentUser,
+  errors: state.campaignIndex.errors
 });
 
 const mapDispatchToProps = dispatch => ({

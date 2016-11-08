@@ -7,6 +7,7 @@ const CampaignMiddleware = ({getState,dispatch}) => next => action => {
   const createCampaignSuccess = campaigns => dispatch(receiveCampaigns(campaigns));
   const errorCallback = errors => dispatch(receiveErrors(errors.responseJSON));
 
+  console.log("campaign middleware action type:", action.type);
   switch(action.type) {
     case REQUEST_CAMPAIGNS:
       fetchCampaigns(campaignsSuccess, errorCallback);

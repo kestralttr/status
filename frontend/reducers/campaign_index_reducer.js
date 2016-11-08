@@ -1,4 +1,4 @@
-import {RECEIVE_CAMPAIGNS, RECEIVE_ERRORS} from '../actions/campaign_actions';
+import {RECEIVE_CAMPAIGNS, RECEIVE_CAMPAIGN_ERRORS} from '../actions/campaign_actions';
 import {merge} from 'lodash';
 
 const _defaultState = {
@@ -14,8 +14,8 @@ const CampaignIndexReducer = (state = _defaultState, action) => {
       newState["campaigns"] = action.campaigns;
       newState["errors"] = [];
       return newState;
-    case RECEIVE_ERRORS:
-      newState["campaigns"] = null;
+    case RECEIVE_CAMPAIGN_ERRORS:
+      newState["campaigns"] = state.campaigns;
       newState["errors"] = action.errors;
       return newState;
     default:

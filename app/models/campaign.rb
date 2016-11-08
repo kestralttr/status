@@ -20,4 +20,9 @@ class Campaign < ApplicationRecord
     through: :approverships,
     source: :approver
 
+    has_many :executions,
+    primary_key: :id,
+    foreign_key: :campaign_id,
+    class_name: "Execution"
+
 end

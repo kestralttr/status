@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161105185547) do
+ActiveRecord::Schema.define(version: 20161107191312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,18 @@ ActiveRecord::Schema.define(version: 20161105185547) do
     t.integer  "manager_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "executions", force: :cascade do |t|
+    t.string   "title",       null: false
+    t.string   "media_type",  null: false
+    t.integer  "creator_id",  null: false
+    t.integer  "campaign_id", null: false
+    t.boolean  "approved"
+    t.string   "format"
+    t.text     "info"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "memberships", force: :cascade do |t|
