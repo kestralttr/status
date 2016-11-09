@@ -18,6 +18,7 @@ class Api::ExecutionsController < ApplicationController
   end
 
   def show
+    @execution = Execution.find(params[:id])
   end
 
   def destroy

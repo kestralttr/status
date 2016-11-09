@@ -7,14 +7,23 @@ class ExecutionIndex extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      activeMediaType: "TV"
     };
-
     this.renderExecutions = this.renderExecutions.bind(this);
+    this.triggerMediaType = this.triggerMediaType.bind(this);
+  }
+
+  triggerMediaType(mediaType) {
+    if (mediaType) {
+      return(this.setState({activeMediaType: mediaType}));
+    } else {
+      return(this.setState({activeMediaType: "TV"}));
+    }
   }
 
   componentDidMount() {
     if (this.props.campaignDetail) {
-      return this.props.requestExecutions(this.props.params.campaignId, this.props.activeMediaType);
+      return this.props.requestExecutions(this.props.params.campaignId, this.props.mediaType ? this.props.mediaType : "TV");
     }
     return null;
   }
@@ -23,9 +32,13 @@ class ExecutionIndex extends React.Component {
     if (!nextProps.currentUser) {
       this.props.router.push("login");
     }
+    this.triggerMediaType(nextProps.mediaType);
 
-    if (nextProps.campaignDetail && nextProps.executionIndex === null) {
-      return this.props.requestExecutions(this.props.params.campaignId, this.props.activeMediaType);
+    if (nextProps.campaignDetail && nextProps.mediaType !== this.state.activeMediaType) {
+      console.log("nextProps.mediaType:", nextProps.mediaType);
+      console.log("this.state.activeMediaType:", this.state.activeMediaType);
+      console.log("execution index request firing");
+      return this.props.requestExecutions(this.props.params.campaignId, nextProps.mediaType ? nextProps.mediaType : "TV");
     }
   }
 

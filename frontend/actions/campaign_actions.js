@@ -3,7 +3,8 @@ export const RECEIVE_CAMPAIGN = "RECEIVE_CAMPAIGN";
 export const REQUEST_CAMPAIGNS = "REQUEST_CAMPAIGNS";
 export const REQUEST_CAMPAIGN = "REQUEST_CAMPAIGN";
 export const CREATE_CAMPAIGN = "CREATE_CAMPAIGN";
-export const RECEIVE_CAMPAIGN_ERRORS = "RECEIVE_CAMPAIGN_ERRORS"
+export const RECEIVE_CAMPAIGN_ERRORS = "RECEIVE_CAMPAIGN_ERRORS";
+export const UPDATE_MEDIA_TYPE = "UPDATE_MEDIA_TYPE";
 
 export const receiveCampaigns = (campaigns) => ({
   type: RECEIVE_CAMPAIGNS,
@@ -29,7 +30,12 @@ export const createCampaign = (campaign) => ({
   campaign: campaign
 });
 
+export const updateMediaType = (mediaType) => ({
+  type: UPDATE_MEDIA_TYPE,
+  mediaType: mediaType
+});
+
 export const receiveErrors = (errors) => ({
   type: RECEIVE_CAMPAIGN_ERRORS,
   errors: errors
-})
+});

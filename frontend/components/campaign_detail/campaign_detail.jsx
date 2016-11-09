@@ -11,7 +11,8 @@ class CampaignDetail extends React.Component {
     };
     this.renderCampaignDetails = this.renderCampaignDetails.bind(this);
     this.generateForm = this.generateForm.bind(this);
-    this.changeActiveMediaType = this.changeActiveMediaType.bind(this);
+    this.changeMediaType = this.changeMediaType.bind(this);
+    this.sendMediaType = this.sendMediaType.bind(this);
   }
 
   componentDidMount() {
@@ -40,10 +41,19 @@ class CampaignDetail extends React.Component {
     this.props.router.push("/executionform");
   }
 
-  changeActiveMediaType(mediaType) {
-    return e => this.setState({
-      activeMediaType: mediaType
-    });
+  changeMediaType(mediaType) {
+    return e => {
+      this.props.updateMediaType(mediaType);
+      this.setState({activeMediaType: mediaType});
+    };
+  }
+
+  sendMediaType() {
+    if (this.props.mediaType) {
+      return(this.props.mediaType);
+    } else {
+      return("TV");
+    }
   }
 
   render() {
@@ -55,11 +65,11 @@ class CampaignDetail extends React.Component {
             {this.renderCampaignDetails(this.props.campaignDetail)}
           </h1> <br></br>
           <ul className="campaign-detail-media-types">
-            <li value="TV" onClick={this.changeActiveMediaType("TV")}>TV</li>
-            <li value="Radio" onClick={this.changeActiveMediaType("Radio")}>Radio</li>
-            <li value="Print" onClick={this.changeActiveMediaType("Print")}>Print</li>
-            <li value="Digital" onClick={this.changeActiveMediaType("Digital")}>Digital</li>
-            <li value="Other" onClick={this.changeActiveMediaType("Other")}>Other</li>
+            <li value="TV" onClick={this.changeMediaType("TV")}>TV</li>
+            <li value="Radio" onClick={this.changeMediaType("Radio")}>Radio</li>
+            <li value="Print" onClick={this.changeMediaType("Print")}>Print</li>
+            <li value="Digital" onClick={this.changeMediaType("Digital")}>Digital</li>
+            <li value="Other" onClick={this.changeMediaType("Other")}>Other</li>
           </ul>
         </div>
         <div className="campaign-detail-executions-container">
@@ -68,7 +78,7 @@ class CampaignDetail extends React.Component {
             <button className="new-execution-button" onClick={this.generateForm}>New Execution</button>
             <p>{this.state.activeMediaType}</p>
           </div>
-          <ExecutionIndexContainer campaignDetail={this.props.campaignDetail} activeMediaType={this.state.activeMediaType}/>
+          <ExecutionIndexContainer campaignDetail={this.props.campaignDetail} activeMediaType={this.sendMediaType}/>
         </div>
         <div className="campaign-detail-postings-container">
           <div className="campaign-detail-postings-header">

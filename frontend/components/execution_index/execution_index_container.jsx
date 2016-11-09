@@ -5,7 +5,8 @@ import {requestExecutions} from '../../actions/execution_actions';
 const mapStateToProps = state => {
   return({
   executionIndex: state.executionIndex.executions,
-  currentUser: state.session.currentUser
+  currentUser: state.session.currentUser,
+  mediaType: state.campaignDetail.mediaType
   });
 };
 

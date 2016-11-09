@@ -1,9 +1,10 @@
-import {RECEIVE_CAMPAIGN, CREATE_CAMPAIGN, RECEIVE_CAMPAIGN_ERRORS} from '../actions/campaign_actions';
+import {RECEIVE_CAMPAIGN, CREATE_CAMPAIGN, RECEIVE_CAMPAIGN_ERRORS, UPDATE_MEDIA_TYPE} from '../actions/campaign_actions';
 import {merge} from 'lodash';
 
 const _defaultState = {
   campaign: null,
-  errors: []
+  errors: [],
+  mediaType: null
 };
 
 const CampaignDetailReducer = (state = _defaultState, action) => {
@@ -14,6 +15,9 @@ const CampaignDetailReducer = (state = _defaultState, action) => {
       newState["campaign"] = action.campaign;
       newState["errors"] = [];
       console.log("campaignDetail newState:", newState);
+      return newState;
+    case UPDATE_MEDIA_TYPE:
+      newState["mediaType"] = action.mediaType;
       return newState;
     case RECEIVE_CAMPAIGN_ERRORS:
       newState["campaign"] = null;
