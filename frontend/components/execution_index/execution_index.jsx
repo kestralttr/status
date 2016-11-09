@@ -28,6 +28,13 @@ class ExecutionIndex extends React.Component {
     return null;
   }
 
+  componentWillUnmount() {
+    return(
+      this.props.updateMediaType(null),
+      this.setState({activeMediaType: "initial"})
+    );
+  }
+
   componentWillReceiveProps(nextProps) {
     if (!nextProps.currentUser) {
       this.props.router.push("login");
