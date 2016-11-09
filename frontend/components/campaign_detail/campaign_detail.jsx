@@ -81,7 +81,7 @@ class CampaignDetail extends React.Component {
           </div>
           <ExecutionIndexContainer activeMediaType={this.sendMediaType}/>
         </div>
-        <div className="campaign-detail-execution-detail">
+        <div className="campaign-detail-execution-detail-container">
           <ExecutionDetailContainer />
         </div>
         <div className="campaign-detail-postings-container">

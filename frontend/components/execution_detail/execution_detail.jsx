@@ -22,7 +22,7 @@ class ExecutionDetail extends React.Component {
   renderExecutionDetail() {
     if (this.props.executionDetail) {
       return(
-        <div>
+        <div className="campaign-detail-execution-detail">
           <span>{this.props.executionDetail.title}</span><br></br>
           <span>{this.props.executionDetail.format}</span><br></br>
           <span>{this.props.executionDetail.info}</span><br></br>
