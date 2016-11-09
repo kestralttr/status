@@ -1,17 +1,30 @@
 import React from 'react';
-import {withRouter} from 'react-router';
 
-const ExecutionIndexItem = ({execution, router}) => {
-  const handleClick = url => e => {
-    router.replace(url);
-  };
-  
-  return(
-    <li className="execution-list-item"
-      onClick={handleClick(``)}>
-      {execution.title}
-    </li>
-  );
-};
+
+class ExecutionIndexItem extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(executionId) {
+    return e => {
+      this.props.requestExecution(executionId);
+    };
+  }
+
+  render() {
+    return(
+      <li className="execution-list-item"
+        onClick={this.handleClick(this.props.execution.id)}>
+        {this.props.execution.title}
+      </li>
+    );
+  }
+
+}
+
 
 export default ExecutionIndexItem;

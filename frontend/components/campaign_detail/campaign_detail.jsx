@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link, withRouter} from 'react-router';
 import ExecutionIndexContainer from '../execution_index/execution_index_container';
+import ExecutionDetailContainer from '../execution_detail/execution_detail_container';
 
 class CampaignDetail extends React.Component {
 
@@ -79,6 +80,9 @@ class CampaignDetail extends React.Component {
             <p>{this.state.activeMediaType}</p>
           </div>
           <ExecutionIndexContainer activeMediaType={this.sendMediaType}/>
+        </div>
+        <div className="campaign-detail-execution-detail">
+          <ExecutionDetailContainer />
         </div>
         <div className="campaign-detail-postings-container">
           <div className="campaign-detail-postings-header">

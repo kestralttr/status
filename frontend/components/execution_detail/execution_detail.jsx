@@ -9,9 +9,38 @@ class ExecutionDetail extends React.Component {
     this.state = {
 
     };
+    this.renderExecutionDetail.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    console.log("nextProps executionDetail:", nextProps.executionDetail);
+    if (nextProps.executionDetail && nextProps.executionDetail.id !== (this.props.executionDetail ? this.props.executionDetail.id : "0")) {
+      return(this.props.requestExecution(nextProps.executionDetail.id));
+    }
+  }
 
+  renderExecutionDetail() {
+    if (this.props.executionDetail) {
+      return(
+        <div>
+          <span>{this.props.executionDetail.title}</span><br></br>
+          <span>{this.props.executionDetail.format}</span><br></br>
+          <span>{this.props.executionDetail.info}</span><br></br>
+        </div>
+      );
+    } else {
+      return null;
+    }
+
+  }
+
+  render() {
+    return(
+      <div>
+        {this.renderExecutionDetail()}
+      </div>
+    );
+  }
 
 }
 

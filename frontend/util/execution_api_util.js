@@ -13,7 +13,7 @@ export const fetchExecutions = (campaignId,mediaType,success,error) => {
 export const fetchExecution = (id,success,error) => {
   $.ajax({
     type: "GET",
-    url: `api/campaigns/${id}`,
+    url: `api/executions/${id}`,
     success: success,
     error: error
   });

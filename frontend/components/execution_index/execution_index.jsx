@@ -10,6 +10,7 @@ class ExecutionIndex extends React.Component {
       activeMediaType: "initial"
     };
     this.renderExecutions = this.renderExecutions.bind(this);
+    this.renderFirstExecutionDetail = this.renderFirstExecutionDetail.bind(this);
     this.triggerMediaType = this.triggerMediaType.bind(this);
   }
 
@@ -49,9 +50,6 @@ class ExecutionIndex extends React.Component {
     }
 
     if (nextProps.campaignDetail && nextProps.mediaType && nextProps.mediaType !== this.state.activeMediaType) {
-      console.log("nextProps.mediaType:", nextProps.mediaType);
-      console.log("this.state.activeMediaType:", this.state.activeMediaType);
-      console.log("execution index request firing");
       return this.props.requestExecutions(this.props.params.campaignId, nextProps.mediaType ? nextProps.mediaType : "TV");
     }
   }
@@ -60,12 +58,24 @@ class ExecutionIndex extends React.Component {
     if (executions === null || executions === []) {
       return;
     }
+    console.log("executionindex:",this.props.executionIndex);
     return(
       <ul>
         {executions.map(execution => (
-          <ExecutionIndexItem key={execution.id} execution={execution} />
+          <ExecutionIndexItem key={execution.id}
+            requestExecution={this.props.requestExecution}
+            execution={execution} />
         ))}
       </ul>
+    );
+  }
+
+  renderFirstExecutionDetail(executions) {
+    if (executions === null || executions === []) {
+      return;
+    }
+    return(
+      this.props.requestExecution(executions[0].id)
     );
   }
 
@@ -74,7 +84,9 @@ class ExecutionIndex extends React.Component {
       <div>
         <ul className="executions-list">
           {this.renderExecutions(this.props.executionIndex)}
+
         </ul>
+        <div>{this.renderFirstExecutionDetail(this.props.executionIndex)}</div>
       </div>
     );
   }

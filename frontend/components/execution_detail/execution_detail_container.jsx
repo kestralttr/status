@@ -10,7 +10,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  requestExecution: (id) => dispatch(requestExecution)
+  requestExecution: (id) => dispatch(requestExecution(id))
 });
 
 export default connect(
