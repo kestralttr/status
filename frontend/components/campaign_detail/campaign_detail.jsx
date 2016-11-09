@@ -78,7 +78,7 @@ class CampaignDetail extends React.Component {
             <button className="new-execution-button" onClick={this.generateForm}>New Execution</button>
             <p>{this.state.activeMediaType}</p>
           </div>
-          <ExecutionIndexContainer campaignDetail={this.props.campaignDetail} activeMediaType={this.sendMediaType}/>
+          <ExecutionIndexContainer activeMediaType={this.sendMediaType}/>
         </div>
         <div className="campaign-detail-postings-container">
           <div className="campaign-detail-postings-header">

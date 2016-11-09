@@ -6,7 +6,8 @@ const mapStateToProps = state => {
   return({
   executionIndex: state.executionIndex.executions,
   currentUser: state.session.currentUser,
-  mediaType: state.campaignDetail.mediaType
+  mediaType: state.campaignDetail.mediaType,
+  campaignDetail: state.campaignDetail.campaign
   });
 };
 

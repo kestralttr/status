@@ -7,7 +7,7 @@ class ExecutionIndex extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeMediaType: "TV"
+      activeMediaType: "initial"
     };
     this.renderExecutions = this.renderExecutions.bind(this);
     this.triggerMediaType = this.triggerMediaType.bind(this);
@@ -34,7 +34,14 @@ class ExecutionIndex extends React.Component {
     }
     this.triggerMediaType(nextProps.mediaType);
 
-    if (nextProps.campaignDetail && nextProps.mediaType !== this.state.activeMediaType) {
+    if (this.state.activeMediaType === "initial") {
+      return(
+        this.setState({activeMediaType: ""}),
+        this.props.requestExecutions(this.props.params.campaignId, "TV")
+      );
+    }
+
+    if (nextProps.campaignDetail && nextProps.mediaType && nextProps.mediaType !== this.state.activeMediaType) {
       console.log("nextProps.mediaType:", nextProps.mediaType);
       console.log("this.state.activeMediaType:", this.state.activeMediaType);
       console.log("execution index request firing");
