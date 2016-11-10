@@ -1,0 +1,11 @@
+.campaign-detail-posting-container {
+  position: fixed;
+  top: 300px;
+  left: 400px;
+  z-index: 11;
+}
+
+.postings-list {
+  position: fixed;
+  top: 200px;
+}

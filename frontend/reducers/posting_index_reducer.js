@@ -20,7 +20,7 @@ const PostingIndexReducer = (state = _defaultState, action) => {
       newState["errors"] = [];
       return newState;
     case RECEIVE_POSTING_ERRORS:
-      newState["postings"] = state.postings;
+      newState["postings"] = null;
       newState["errors"] = action.errors;
       return newState;
     default:

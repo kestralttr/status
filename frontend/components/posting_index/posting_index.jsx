@@ -33,10 +33,16 @@ class PostingIndex extends React.Component {
         this.props.requestPostings(nextProps.executionDetail.id)
       );
     }
-    if (this.props.executionDetail && nextProps.executionDetail.id !== this.props.executionDetail.id) {
+    if (this.props.executionDetail && nextProps.executionDetail && nextProps.executionDetail.id !== this.props.executionDetail.id) {
       return(
         this.setState({parentExecutionId: nextProps.executionDetail.id}),
         this.props.requestPostings(nextProps.executionDetail.id)
+      );
+    }
+    if (!nextProps.executionDetail) {
+      return(
+        this.setState({parentExecutionId: null}),
+        this.props.requestPostings(0)
       );
     }
   }
@@ -60,7 +66,6 @@ class PostingIndex extends React.Component {
     return(
       <div>
         <ul className="postings-list">
-          <li>TESTING!</li>
           {this.renderPostings(this.props.postingIndex)}
         </ul>
       </div>
