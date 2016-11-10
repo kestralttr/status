@@ -9,7 +9,7 @@ and sufficient CSS styling:
 
 - Hosting on Heroku
 - New account creation, login, and guest/demo login
-- Campaign creation with searchable user assignment & My Campaigns page
+- Campaign creation with user assignment & My Campaigns page
 - Media Types
 - Executions
 - Postings
