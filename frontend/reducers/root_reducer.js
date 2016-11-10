@@ -4,13 +4,15 @@ import CampaignIndexReducer from './campaign_index_reducer';
 import CampaignDetailReducer from './campaign_detail_reducer';
 import ExecutionIndexReducer from './execution_index_reducer';
 import ExecutionDetailReducer from './execution_detail_reducer';
+import PostingIndexReducer from './posting_index_reducer';
 
 const RootReducer = combineReducers({
   session: SessionReducer,
   campaignIndex: CampaignIndexReducer,
   campaignDetail: CampaignDetailReducer,
   executionIndex: ExecutionIndexReducer,
-  executionDetail: ExecutionDetailReducer
+  executionDetail: ExecutionDetailReducer,
+  postingIndex: PostingIndexReducer
 });
 
 export default RootReducer;

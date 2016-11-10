@@ -10,7 +10,6 @@ const ExecutionMiddleware = ({getState,dispatch}) => next => action => {
   console.log("execution middleware action type:", action.type);
   switch(action.type) {
     case REQUEST_EXECUTIONS:
-    console.log("requesting executions");
       fetchExecutions(action.campaignId, action.mediaType, executionsSuccess, errorCallback);
       return next(action);
     case REQUEST_EXECUTION:

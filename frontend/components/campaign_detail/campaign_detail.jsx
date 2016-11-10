@@ -2,6 +2,7 @@ import React from 'react';
 import {Link, withRouter} from 'react-router';
 import ExecutionIndexContainer from '../execution_index/execution_index_container';
 import ExecutionDetailContainer from '../execution_detail/execution_detail_container';
+import PostingIndexContainer from '../posting_index/posting_index_container';
 
 class CampaignDetail extends React.Component {
 
@@ -85,6 +86,7 @@ class CampaignDetail extends React.Component {
           <ExecutionDetailContainer />
         </div>
         <div className="campaign-detail-postings-container">
+          <PostingIndexContainer executionDetail={this.props.executionDetail} />
           <div className="campaign-detail-postings-header">
 
           </div>

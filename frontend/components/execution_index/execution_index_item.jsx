@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class ExecutionIndexItem extends React.Component {
 
   constructor(props) {
