@@ -10,18 +10,7 @@
 User.create(username: "guest", password: "password")
 #USER 2
 User.create(username: "alex", password: "password")
-#MEMBERSHIP 1
-Membership.create(campaign_id: 1, member_id: 1)
-#MEMBERSHIP 2
-Membership.create(campaign_id: 2, member_id: 1)
-#MEMBERSHIP 3
-Membership.create(campaign_id: 3, member_id: 1)
-#MEMBERSHIP 4
-Membership.create(campaign_id: 4, member_id: 2)
-#MEMBERSHIP 5
-Membership.create(campaign_id: 5, member_id: 2)
-#MEMBERSHIP 6
-Membership.create(campaign_id: 4, member_id: 1)
+
 #CAMPAIGN 1
 Campaign.create(
   title: "Kirby Planet Robobot",
@@ -117,3 +106,15 @@ Campaign.create(
   title: "Animal Crossing Happy Home Designer",
   manager_id: 2
 )
+#MEMBERSHIP 1
+Membership.create(campaign_id: 1, member_id: 1)
+#MEMBERSHIP 2
+Membership.create(campaign_id: 2, member_id: 1)
+#MEMBERSHIP 3
+Membership.create(campaign_id: 3, member_id: 1)
+#MEMBERSHIP 4
+Membership.create(campaign_id: 4, member_id: 2)
+#MEMBERSHIP 5
+Membership.create(campaign_id: 5, member_id: 2)
+#MEMBERSHIP 6
+Membership.create(campaign_id: 4, member_id: 1)
