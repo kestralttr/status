@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :campaigns, only: [:create, :index, :show, :destroy]
     resources :executions, only: [:create, :index, :show, :destroy]
     resources :postings, only: [:create, :index, :show, :destroy]
+    resources :feedback, only: [:create, :index, :destroy]
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy]
   end

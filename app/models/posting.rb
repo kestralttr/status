@@ -6,4 +6,9 @@ class Posting < ApplicationRecord
   foreign_key: :execution_id,
   class_name: "Execution"
 
+  has_many :feedback,
+  primary_key: :id,
+  foreign_key: :posting_id,
+  class_name: "Feedback"
+
 end
