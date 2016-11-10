@@ -6,14 +6,11 @@ class ExecutionDetail extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-
-    };
+    this.state = {};
     this.renderExecutionDetail.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log("nextProps executionDetail:", nextProps.executionDetail);
     if (nextProps.executionDetail && nextProps.executionDetail.id !== (this.props.executionDetail ? this.props.executionDetail.id : "0")) {
       return(this.props.requestExecution(nextProps.executionDetail.id));
     }

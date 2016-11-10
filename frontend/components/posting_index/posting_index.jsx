@@ -5,12 +5,12 @@ class PostingIndex extends React.Component {
 
   constructor(props) {
     super(props);
-    console.log("PI REACHED!!!");
     this.state = {
       parentExecutionId: null
     };
     this.renderPostings = this.renderPostings.bind(this);
     this.triggerParentExecution = this.triggerParentExecution.bind(this);
+    this.renderFirstPostingDetail = this.renderFirstPostingDetail.bind(this);
   }
 
   triggerParentExecution(executionDetail) {
@@ -45,6 +45,11 @@ class PostingIndex extends React.Component {
         this.props.requestPostings(0)
       );
     }
+    if (nextProps.postingIndex !== this.props.postingIndex) {
+      return(
+        this.renderFirstPostingDetail(nextProps.postingIndex)
+      );
+    }
   }
 
   renderPostings(postings) {
@@ -59,6 +64,18 @@ class PostingIndex extends React.Component {
             posting={posting} />
         ))}
       </ul>
+    );
+  }
+
+  renderFirstPostingDetail(postings) {
+    if (!Array.isArray(postings) || postings === [] || !postings[0]) {
+      return(
+        this.props.requestPosting()
+      );
+    }
+    console.log("HERE:",postings[0]);
+    return(
+      this.props.requestPosting(postings[0].id)
     );
   }
 

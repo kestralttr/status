@@ -13,7 +13,7 @@ const PostingMiddleware = ({getState,dispatch}) => next => action => {
       fetchPostings(action.executionId, postingsSuccess, errorCallback);
       return next(action);
     case REQUEST_POSTING:
-      fetchPosting(action.posting, postingSuccess, errorCallback);
+      fetchPosting(action.id, postingSuccess, errorCallback);
       return next(action);
     case CREATE_POSTING:
       createPosting(action.posting, createPostingSuccess, errorCallback);

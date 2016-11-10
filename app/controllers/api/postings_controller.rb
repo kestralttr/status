@@ -1,6 +1,14 @@
 class Api::PostingsController < ApplicationController
 
   def create
+    @posting = Posting.new(posting_params)
+
+    if @posting.save
+      @postings = @posting.execution.postings
+      render "api/postings/index"
+    else
+      render json: @posting.errors.full_messages, status: 422
+    end
   end
 
   def index
@@ -9,6 +17,7 @@ class Api::PostingsController < ApplicationController
   end
 
   def show
+    @posting = Posting.find(params[:id])
   end
 
   def destroy

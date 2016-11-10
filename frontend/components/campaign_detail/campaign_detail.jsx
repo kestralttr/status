@@ -3,6 +3,7 @@ import {Link, withRouter} from 'react-router';
 import ExecutionIndexContainer from '../execution_index/execution_index_container';
 import ExecutionDetailContainer from '../execution_detail/execution_detail_container';
 import PostingIndexContainer from '../posting_index/posting_index_container';
+import PostingDetailContainer from '../posting_detail/posting_detail_container';
 
 class CampaignDetail extends React.Component {
 
@@ -12,7 +13,8 @@ class CampaignDetail extends React.Component {
       activeMediaType: "TV"
     };
     this.renderCampaignDetails = this.renderCampaignDetails.bind(this);
-    this.generateForm = this.generateForm.bind(this);
+    this.generateExecutionForm = this.generateExecutionForm.bind(this);
+    this.generatePostingForm = this.generatePostingForm.bind(this);
     this.changeMediaType = this.changeMediaType.bind(this);
     this.sendMediaType = this.sendMediaType.bind(this);
   }
@@ -38,9 +40,14 @@ class CampaignDetail extends React.Component {
     );
   }
 
-  generateForm(e) {
+  generateExecutionForm(e) {
     e.preventDefault();
     this.props.router.push("/executionform");
+  }
+
+  generatePostingForm(e) {
+    e.preventDefault();
+    this.props.router.push("/postingform");
   }
 
   changeMediaType(mediaType) {
@@ -77,7 +84,7 @@ class CampaignDetail extends React.Component {
         <div className="campaign-detail-executions-container">
           <div className="campaign-detail-executions-header">
             <h2>Executions</h2>
-            <button className="new-execution-button" onClick={this.generateForm}>New Execution</button>
+            <button className="new-execution-button" onClick={this.generateExecutionForm}>New Execution</button>
             <p>{this.state.activeMediaType}</p>
           </div>
           <ExecutionIndexContainer activeMediaType={this.sendMediaType}/>
@@ -86,10 +93,14 @@ class CampaignDetail extends React.Component {
           <ExecutionDetailContainer />
         </div>
         <div className="campaign-detail-postings-container">
-          <PostingIndexContainer executionDetail={this.props.executionDetail} />
           <div className="campaign-detail-postings-header">
-
+            <h2>Postings</h2>
+            <button className="new-posting-button" onClick={this.generatePostingForm}>New Posting</button>
           </div>
+          <PostingIndexContainer executionDetail={this.props.executionDetail} />
+        </div>
+        <div className="campaign-detail-posting-detail-container">
+          <PostingDetailContainer />
         </div>
         {this.props.children}
       </div>

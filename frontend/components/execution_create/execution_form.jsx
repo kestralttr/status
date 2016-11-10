@@ -108,7 +108,6 @@ class ExecutionForm extends React.Component {
   render() {
     return(
       <div>
-        TESTING!
         {this.modal()}
       </div>
     );
