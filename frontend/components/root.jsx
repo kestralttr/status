@@ -12,6 +12,7 @@ import CampaignFormContainer from './campaign_create/campaign_form_container';
 import {requestExecutions} from '../actions/execution_actions';
 import ExecutionFormContainer from './execution_create/execution_form_container';
 import PostingFormContainer from './posting_create/posting_form_container';
+import FeedbackFormContainer from './feedback_create/feedback_form_container';
 
 const Root = ({store}) => {
 
@@ -50,6 +51,7 @@ const Root = ({store}) => {
         <Route path="campaigns/:campaignId" component={CampaignDetailContainer} onEnter={_ensureLoggedIn}>
           <Route path="/executionform" component={ExecutionFormContainer} onEnter={_ensureLoggedIn}/>
           <Route path="/postingform" component={PostingFormContainer} onEnter={_ensureLoggedIn} />
+          <Route path="/feedbackform" component={FeedbackFormContainer} onEnter={_ensureLoggedIn} />
         </Route>
   </Route>
   </Router>

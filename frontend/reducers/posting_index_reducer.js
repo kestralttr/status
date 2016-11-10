@@ -9,7 +9,6 @@ const _defaultState = {
 const PostingIndexReducer = (state = _defaultState, action) => {
   Object.freeze(state);
   let newState = merge({}, state);
-  console.log("PostingIndexReducer action:", action.type);
   switch (action.type) {
     case RECEIVE_POSTINGS:
       if(action.postings === []) {

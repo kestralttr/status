@@ -4,6 +4,7 @@ import ExecutionIndexContainer from '../execution_index/execution_index_containe
 import ExecutionDetailContainer from '../execution_detail/execution_detail_container';
 import PostingIndexContainer from '../posting_index/posting_index_container';
 import PostingDetailContainer from '../posting_detail/posting_detail_container';
+import FeedbackIndexContainer from '../feedback_index/feedback_index_container';
 
 class CampaignDetail extends React.Component {
 
@@ -15,6 +16,7 @@ class CampaignDetail extends React.Component {
     this.renderCampaignDetails = this.renderCampaignDetails.bind(this);
     this.generateExecutionForm = this.generateExecutionForm.bind(this);
     this.generatePostingForm = this.generatePostingForm.bind(this);
+    this.generateFeedbackForm = this.generateFeedbackForm.bind(this);
     this.changeMediaType = this.changeMediaType.bind(this);
     this.sendMediaType = this.sendMediaType.bind(this);
   }
@@ -48,6 +50,11 @@ class CampaignDetail extends React.Component {
   generatePostingForm(e) {
     e.preventDefault();
     this.props.router.push("/postingform");
+  }
+
+  generateFeedbackForm(e) {
+    e.preventDefault();
+    this.props.router.push("/feedbackform");
   }
 
   changeMediaType(mediaType) {
@@ -102,6 +109,15 @@ class CampaignDetail extends React.Component {
         <div className="campaign-detail-posting-detail-container">
           <PostingDetailContainer />
         </div>
+
+        <div className="campaign-detail-feedback-container">
+          <div className="campaign-detail-feedback-header">
+            <h2>Feedback</h2>
+            <button className="new-feedback-button" onClick={this.generateFeedbackForm}>Add Feedback</button>
+          </div>
+          <FeedbackIndexContainer postingDetail={this.props.postingDetail}/>
+        </div>
+
         {this.props.children}
       </div>
     );

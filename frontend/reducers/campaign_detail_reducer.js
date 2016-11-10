@@ -14,7 +14,6 @@ const CampaignDetailReducer = (state = _defaultState, action) => {
     case RECEIVE_CAMPAIGN:
       newState["campaign"] = action.campaign;
       newState["errors"] = [];
-      console.log("campaignDetail newState:", newState);
       return newState;
     case UPDATE_MEDIA_TYPE:
       newState["mediaType"] = action.mediaType;

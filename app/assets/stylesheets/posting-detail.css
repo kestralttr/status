@@ -1,0 +1,6 @@
+.campaign-detail-posting-detail {
+  position: fixed;
+  top: 200px;
+  left: 600px;
+  z-index: 11;
+}

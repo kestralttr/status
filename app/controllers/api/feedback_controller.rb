@@ -4,6 +4,8 @@ class Api::FeedbackController < ApplicationController
   end
 
   def index
+    @posting = Posting.find(feedback_params[:posting_id])
+    @feedback = @posting.feedback
   end
 
   def destroy

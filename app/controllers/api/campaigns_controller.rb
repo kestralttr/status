@@ -2,13 +2,12 @@ class Api::CampaignsController < ApplicationController
 
   def create
     @campaign = Campaign.new(
-      title: params[:campaign][:title],
-      manager_id: params[:campaign][:manager_id]
+      title: campaign_params[:title],
+      manager_id: campaign_params[:manager_id]
     )
     if @campaign.save
       @campaign_id = Campaign.find_by(title: @campaign.title).id
-      params[:campaign][:members].each do |member|
-        p "Should be guest.id (1):#{User.find_by(username: member).id}"
+      campaign_params[:members].each do |member|
         needed_id = User.find_by(username: member).id
         Membership.create(campaign_id: @campaign_id, member_id: needed_id)
         Approvership.create(campaign_id: @campaign_id, approver_id: needed_id)
@@ -16,7 +15,7 @@ class Api::CampaignsController < ApplicationController
       @campaigns = current_user.campaigns
       render "api/campaigns/index"
     else
-      render json: @campaign.errors.full_messages, status: 422
+      render json: ["Campaign creation failed."], status: 422
     end
   end
 
@@ -31,8 +30,8 @@ class Api::CampaignsController < ApplicationController
   def destroy
   end
 
-  # def campaign_params
-  #   params.require(:campaign).permit(:title, :manager_id, :members, :approvers)
-  # end
+  def campaign_params
+    params.require(:campaign).permit(:title, :manager_id, members: [], approvers: [])
+  end
 
 end

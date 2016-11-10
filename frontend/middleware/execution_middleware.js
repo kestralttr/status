@@ -7,7 +7,6 @@ const ExecutionMiddleware = ({getState,dispatch}) => next => action => {
   const createExecutionSuccess = executions => dispatch(receiveExecutions(executions));
   const errorCallback = errors => dispatch(receiveErrors(errors.responseJSON));
 
-  console.log("execution middleware action type:", action.type);
   switch(action.type) {
     case REQUEST_EXECUTIONS:
       fetchExecutions(action.campaignId, action.mediaType, executionsSuccess, errorCallback);

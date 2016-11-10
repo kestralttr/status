@@ -53,7 +53,7 @@ class PostingIndex extends React.Component {
   }
 
   renderPostings(postings) {
-    if (postings === null || postings === []) {
+    if (postings === null || postings === [] || this.state.parentExecutionId === null) {
       return;
     }
     return(
@@ -73,7 +73,6 @@ class PostingIndex extends React.Component {
         this.props.requestPosting()
       );
     }
-    console.log("HERE:",postings[0]);
     return(
       this.props.requestPosting(postings[0].id)
     );

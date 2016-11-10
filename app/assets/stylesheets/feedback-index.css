@@ -1,0 +1,11 @@
+.campaign-detail-feedback-container {
+  position: fixed;
+  top: 400px;
+  left: 500px;
+  z-index: 11;
+}
+
+.feedback-list {
+  position: fixed;
+  top: 300px;
+}
