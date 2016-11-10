@@ -3,5 +3,5 @@ json.array! @postings do |posting|
   json.title posting.title
   json.comments posting.comments
   json.link_url posting.link_url
-  json.execution_id posting.execution_url
+  json.execution_id posting.execution_id
 end

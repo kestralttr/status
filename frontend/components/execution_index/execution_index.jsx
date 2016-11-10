@@ -17,16 +17,7 @@ class ExecutionIndex extends React.Component {
   triggerMediaType(mediaType) {
     if (mediaType) {
       return(this.setState({activeMediaType: mediaType}));
-    } else {
-      return(this.setState({activeMediaType: "TV"}));
     }
-  }
-
-  componentDidMount() {
-    if (this.props.campaignDetail) {
-      return this.props.requestExecutions(this.props.params.campaignId, this.props.mediaType ? this.props.mediaType : "TV");
-    }
-    return null;
   }
 
   componentWillUnmount() {
@@ -37,25 +28,21 @@ class ExecutionIndex extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (!nextProps.currentUser) {
-      this.props.router.push("login");
-    }
+
     this.triggerMediaType(nextProps.mediaType);
 
     if (this.state.activeMediaType === "initial") {
       return(
-        this.setState({activeMediaType: ""}),
+        this.setState({activeMediaType: "TV"}),
         this.props.requestExecutions(this.props.params.campaignId, "TV")
       );
     }
-    console.log(nextProps);
     if (nextProps.campaignDetail && nextProps.mediaType && nextProps.mediaType !== this.state.activeMediaType) {
       return(
         this.props.requestExecutions(this.props.params.campaignId, nextProps.mediaType ? nextProps.mediaType : "TV")
       );
     }
     if (nextProps.executionIndex !== this.props.executionIndex) {
-      console.log("INITIAL EXECUTION DETAIL FIRING!!!!");
       return(
         this.renderFirstExecutionDetail(nextProps.executionIndex)
       );

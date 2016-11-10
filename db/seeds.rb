@@ -34,6 +34,20 @@ Campaign.create(
     creator_id: 1,
     campaign_id: 1
   )
+    #POSTING 1
+    Posting.create(
+    title: "Script",
+    comments: "Let us know what you think.",
+    link_url: "www.google.com",
+    execution_id: 1
+    )
+    #POSTING 2
+    Posting.create(
+    title: "RC1",
+    comments: "The studio put together an early mock.",
+    link_url: "www.google.com",
+    execution_id: 1
+    )
   #EXECUTION 2
   Execution.create(
     title: "Kirby amiibo :15",
@@ -41,12 +55,33 @@ Campaign.create(
     creator_id: 1,
     campaign_id: 1
   )
+    #POSTING 3
+    Posting.create(
+    title: "RC1",
+    comments: "RC1 is ready for the :15 as well, as a cut-down.",
+    link_url: "www.google.com",
+    execution_id: 2
+    )
+  #EXECUTION 3
+  Execution.create(
+    title: "Kirby Spread",
+    media_type: "Print",
+    creator_id: 1,
+    campaign_id: 1
+  )
+    #POSTING 4
+    Posting.create(
+    title: "Layout",
+    comments: "Here's how we think it's going to go",
+    link_url: "www.google.com",
+    execution_id: 3
+    )
 #CAMPAIGN 2
 Campaign.create(
   title: "Nintendo Switch",
   manager_id: 1
 )
-  #EXECUTION 3
+  #EXECUTION 4
   Execution.create(
     title: "Switch Reveal :60",
     media_type: "TV",
@@ -58,7 +93,7 @@ Campaign.create(
   title: "Mario and Sonic Wii U",
   manager_id: 1
 )
-  #EXECUTION 4
+  #EXECUTION 5
   Execution.create(
     title: "Welcome to Rio :30",
     media_type: "TV",
@@ -70,7 +105,7 @@ Campaign.create(
   title: "Mario and Sonic 3DS",
   manager_id: 2
 )
-  #EXECUTION 5
+  #EXECUTION 6
   Execution.create(
     title: "Compete with Friends :30",
     media_type: "TV",

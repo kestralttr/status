@@ -6,22 +6,36 @@ class PostingIndex extends React.Component {
   constructor(props) {
     super(props);
     console.log("PI REACHED!!!");
-    this.state = {};
+    this.state = {
+      parentExecutionId: null
+    };
     this.renderPostings = this.renderPostings.bind(this);
+    this.triggerParentExecution = this.triggerParentExecution.bind(this);
   }
 
-  componentDidMount() {
-    if (this.props.executionDetail) {
-      return this.props.requestPostings(this.props.executionDetail.id);
+  triggerParentExecution(executionDetail) {
+    if (executionDetail) {
+      return(this.setState({parentExecution: executionDetail}));
     }
-    return;
+  }
+
+  componentWillUnmount() {
+    return(
+      this.setState({parentExecutionId: null})
+    );
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log("PI nextProps:", nextProps, "PI this.props:", this.props);
-    if (nextProps.executionDetail && nextProps.executionDetail !== this.props.executionDetail) {
-      console.log("PI NEXTPROPS EXECUTIONDETAIL:",nextProps.executionDetail);
+
+    if (!this.props.executionDetail && !this.props.postingIndex && nextProps.executionDetail) {
       return(
+        this.setState({parentExecutionId: nextProps.executionDetail.id}),
+        this.props.requestPostings(nextProps.executionDetail.id)
+      );
+    }
+    if (this.props.executionDetail && nextProps.executionDetail.id !== this.props.executionDetail.id) {
+      return(
+        this.setState({parentExecutionId: nextProps.executionDetail.id}),
         this.props.requestPostings(nextProps.executionDetail.id)
       );
     }
