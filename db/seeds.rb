@@ -30,6 +30,13 @@ Campaign.create(
     link_url: "www.google.com",
     execution_id: 1
     )
+    #FEEDBACK 1
+    Feedback.create(
+    comments: "I hate this so much",
+    link_url: "www.google.com",
+    posting_id: 1,
+    creator_id: 1
+    )
     #POSTING 2
     Posting.create(
     title: "RC1",
