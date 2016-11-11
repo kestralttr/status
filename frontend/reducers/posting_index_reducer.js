@@ -11,11 +11,7 @@ const PostingIndexReducer = (state = _defaultState, action) => {
   let newState = merge({}, state);
   switch (action.type) {
     case RECEIVE_POSTINGS:
-      if(action.postings === []) {
-        newState["postings"] = null;
-      } else {
-        newState["postings"] = action.postings;
-      }
+      newState["postings"] = action.postings;
       newState["errors"] = [];
       return newState;
     case RECEIVE_POSTING_ERRORS:

@@ -41,8 +41,7 @@ class PostingIndex extends React.Component {
     }
     if (!nextProps.executionDetail) {
       return(
-        this.setState({parentExecutionId: null}),
-        this.props.requestPostings(0)
+        this.setState({parentExecutionId: null})
       );
     }
     if (nextProps.postingIndex !== this.props.postingIndex) {
@@ -69,9 +68,7 @@ class PostingIndex extends React.Component {
 
   renderFirstPostingDetail(postings) {
     if (!Array.isArray(postings) || postings === [] || !postings[0]) {
-      return(
-        this.props.requestPosting()
-      );
+      return;
     }
     return(
       this.props.requestPosting(postings[0].id)

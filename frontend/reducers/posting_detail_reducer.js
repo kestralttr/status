@@ -7,7 +7,7 @@ const _defaultState = {
 };
 
 const PostingDetailReducer = (state = _defaultState, action) => {
-  debugger;
+
   Object.freeze(state);
   let newState = merge({}, state);
   switch (action.type) {

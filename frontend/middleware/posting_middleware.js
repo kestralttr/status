@@ -7,7 +7,7 @@ const PostingMiddleware = ({getState,dispatch}) => next => action => {
   const createPostingSuccess = postings => dispatch(receivePostings(postings));
   const errorCallback = errors => dispatch(receiveErrors(errors.responseJSON));
 
-  debugger;
+
   switch(action.type) {
     case REQUEST_POSTINGS:
       fetchPostings(action.executionId, postingsSuccess, errorCallback);
