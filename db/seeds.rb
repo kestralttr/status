@@ -6,10 +6,62 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-#USER 1
+
+#USER1
 User.create(username: "guest", password: "password")
-#USER 2
+#USER2
+User.create(username: "jeff", password: "password")
+#USER3
 User.create(username: "alex", password: "password")
+#USER4
+User.create(username: "ben", password: "password")
+
+#CAMPAIGN 1
+Campaign.create(
+  title: "Stinky Candle Company - Garlic Candle",
+  manager_id: 1
+)
+  #EXECUTION 1
+  Execution.create(
+    title: ":30 Spot",
+    format: "Network specs"
+    media_type: "TV",
+    creator_id: 1,
+    campaign_id: 1
+  )
+    #POSTING 1
+    Posting.create(
+    title: "Script",
+    comments: "Let us know what you think.  We're thinking of doing a vampire-themed spot to focus more attention on the garlic candle.  :)",
+    link_url: "http://s000.tinyupload.com/download.php?file_id=67041491816113493351&t=6704149181611349335122024",
+    execution_id: 1
+    )
+      #FEEDBACK 1
+      Feedback.create(
+      comments: "We love it!  The idea is approved.  Can't wait to see the video!",
+      posting_id: 1,
+      creator_id: 2
+      )
+    #POSTING 2
+    Posting.create(
+    title: "Final Video",
+    comments: "Video has been finished.  Can we get this on the air?",
+    link_url: "https://www.youtube.com/watch?v=oq7dF7bgZHw",
+    execution_id: 1
+    )
+      #FEEDBACK 1
+      Feedback.create(
+      comments: "Absolutely!  Thanks!",
+      posting_id: 2,
+      creator_id: 2
+      )
+#CAMPAIGN 2
+Campaign.create(
+  title: "Stinky Candle Company - Fire Safety",
+  manager_id: 1
+)
+
+
 
 #CAMPAIGN 1
 Campaign.create(

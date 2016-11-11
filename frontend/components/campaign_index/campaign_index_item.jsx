@@ -25,14 +25,15 @@ class CampaignIndexItem extends React.Component {
     };
   }
 
-  handleDelete(id,managerId) {
+  handleDelete(campaign) {
     return e => {
-      if (managerId !== this.props.currentUser.id) {
+      console.log("managerId:",campaign.manager_id,"campaignId:",campaign.id);
+      if (campaign.manager_id !== this.props.currentUser.id) {
         return;
       } else {
         return(
           this.setState({deleted: true}),
-          this.props.deleteCampaign(id)
+          this.props.deleteCampaign(campaign.id)
         );
       }
     };
@@ -58,7 +59,7 @@ class CampaignIndexItem extends React.Component {
           </li>
 
           <li className="campaign-index-item-delete"
-            onClick={this.handleDelete(this.props.campaign.id, this.props.campaign.managerId)}
+            onClick={this.handleDelete(this.props.campaign)}
             disabled={this.validateManager(this.props.campaign.managerId)}>
             Delete
           </li>

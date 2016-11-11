@@ -21,7 +21,7 @@ const ExecutionIndexReducer = (state = _defaultState, action) => {
       return newState;
     case RECEIVE_EXECUTION_ERRORS:
       newState["executions"] = state.executions;
-      newState["errors"] = action.errors;
+      newState["errors"] = [];
       return newState;
     default:
       return state;

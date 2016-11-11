@@ -75,13 +75,13 @@
   font-size: 16px;
 }
 
+#campaign-form-submit-button {
+  display: block;
+  margin: 0 auto 0 auto;
+}
+
 .campaign-form-button:hover {
   cursor: pointer;
   border: 2px solid #1AAFD0;
-  margin: 4px 0 4px 19px;
-}
-
-#campaign-form-submit-button {
-  display: block;
-  margin: auto;
+  margin: 4px 0 4px 4px;
 }
