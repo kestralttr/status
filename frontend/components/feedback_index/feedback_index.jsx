@@ -44,7 +44,6 @@ class FeedbackIndex extends React.Component {
       <ul className="feedback-list">
         {feedback.map(feedback_item => (
           <li key={feedback_item.id}>
-            <a href={feedback_item.link_url} target="_blank">LINK</a><br></br>
             <span>{feedback_item.comments}</span>
           </li>
         ))}

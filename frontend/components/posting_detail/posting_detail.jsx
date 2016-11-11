@@ -21,8 +21,8 @@ class PostingDetail extends React.Component {
       return(
           <ul className="campaign-detail-posting-detail">
             <li className="campaign-detail-posting-detail-item">
-              <span>{this.props.postingDetail.title}</span><br></br>
-              <a href={this.props.postingDetail.link_url} /><br></br>{`\n`}
+              <span className="campaign-detail-posting-detail-data-title">{this.props.postingDetail.title}</span><br></br>
+              <a className="campaign-detail-posting-detail-data-link" href={this.props.postingDetail.link_url}>LINK</a><br></br>{`\n`}
               <span>{this.props.postingDetail.comments}</span><br></br>
             </li>
           </ul>

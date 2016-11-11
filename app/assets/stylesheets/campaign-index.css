@@ -125,6 +125,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   text-align:center;
   transition-property: background-color;
   transition-duration: 0.5s;
+  width: 100%;
 }
 
 .campaign-index-item-delete:hover {

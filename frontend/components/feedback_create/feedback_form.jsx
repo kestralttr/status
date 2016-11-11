@@ -60,12 +60,6 @@ class FeedbackForm extends React.Component {
           </div>
           {this.renderErrors()}
           <form>
-            <span>Link Url:</span><br></br>
-            <input className="feedback-form-input"
-              type="text"
-              value={this.state.link_url}
-              onChange={this.update("link_url")}>
-            </input> <br></br>
             <span>Comments:</span><br></br>
             <textarea className="feedback-form-input"
               id="feedback-form-comments"

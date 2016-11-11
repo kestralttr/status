@@ -27,7 +27,7 @@ class CampaignIndexItem extends React.Component {
 
   handleDelete(campaign) {
     return e => {
-      console.log("managerId:",campaign.manager_id,"campaignId:",campaign.id);
+
       if (campaign.manager_id !== this.props.currentUser.id) {
         return;
       } else {
@@ -39,8 +39,11 @@ class CampaignIndexItem extends React.Component {
     };
   }
 
-  validateManager(managerId) {
-    if (managerId !== this.props.currentUser.id) {
+  validateManager(campaign) {
+    console.log(campaign.managerId);
+    console.log(this.props.currentUser.id);
+    return;
+    if (campaign.managerId !== this.props.currentUser.id) {
       return true;
     } else {
       return false;
@@ -48,7 +51,7 @@ class CampaignIndexItem extends React.Component {
   }
 
   render() {
-    console.log(this.props.campaign);
+
     return(
       <li className="campaign-index-item">
 
@@ -58,11 +61,11 @@ class CampaignIndexItem extends React.Component {
             {this.props.campaign.title}
           </li>
 
-          <li className="campaign-index-item-delete"
+          <button className="campaign-index-item-delete"
             onClick={this.handleDelete(this.props.campaign)}
-            disabled={this.validateManager(this.props.campaign.managerId)}>
+            disabled={this.validateManager(this.props.campaign)}>
             Delete
-          </li>
+          </button>
         </ul>
 
       </li>
