@@ -15,6 +15,18 @@
   right: 70%;
   border-right: 3px solid #e1e2e4;
 }
+.postings-list > h2 {
+  margin: 4px 5px auto 5px;
+  min-height: 20px;
+  max-height: 20px;
+}
+
+.postings-list > ul {
+  position: absolute;
+  top: 25px;
+  width: 100%;
+  border-top: 2px solid #e1e2e4;
+}
 
 .posting-list-item {
   display: block;

@@ -80,8 +80,9 @@ class PostingIndex extends React.Component {
 
   render() {
     return(
-      <div>
-        <ul className="postings-list">
+      <div className="postings-list">
+        <h2>Postings</h2>
+        <ul>
           {this.renderPostings(this.props.postingIndex)}
         </ul>
       </div>

@@ -19,10 +19,12 @@ class PostingDetail extends React.Component {
   renderPostingDetail() {
     if (this.props.postingDetail) {
       return(
-        <div className="campaign-detail-posting-detail">
-          <span>{this.props.postingDetail.title}</span><br></br>
-          <a href={this.props.postingDetail.link_url} /><br></br>
-          <span>{this.props.postingDetail.comments}</span><br></br>
+        <div>
+          <div className="campaign-detail-posting-detail">
+            <a href={this.props.postingDetail.link_url} /><br></br>{`\n`}
+            <span>{this.props.postingDetail.title}</span><br></br>
+            <span>{this.props.postingDetail.comments}</span><br></br>
+          </div>
         </div>
       );
     } else {
@@ -33,6 +35,7 @@ class PostingDetail extends React.Component {
   render() {
     return(
       <div>
+        <h2 className="campaign-detail-posting-detail-title">Posting Details</h2>
         {this.renderPostingDetail()}
       </div>
     );

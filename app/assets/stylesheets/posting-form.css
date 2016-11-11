@@ -62,10 +62,3 @@
   border-bottom-right-radius: 3px;
   padding: 10px;
 }
-
-.new-posting-button {
-  position: fixed;
-  top: 200px;
-  left: 400px;
-  z-index: 11;
-}

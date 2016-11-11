@@ -41,11 +41,11 @@ class FeedbackIndex extends React.Component {
       return;
     }
     return(
-      <ul>
+      <ul className="feedback-list">
         {feedback.map(feedback_item => (
           <li key={feedback_item.id}>
+            <a href={feedback_item.link_url} target="_blank">LINK</a><br></br>
             <span>{feedback_item.comments}</span>
-            <span>{feedback_item.link_url}</span>
           </li>
         ))}
       </ul>
@@ -55,9 +55,8 @@ class FeedbackIndex extends React.Component {
   render() {
     return(
       <div>
-        <ul className="feedback-list">
+        <h2 className="feedback-list-title">Feedback</h2>
           {this.renderFeedback(this.props.feedbackIndex)}
-        </ul>
       </div>
     );
   }

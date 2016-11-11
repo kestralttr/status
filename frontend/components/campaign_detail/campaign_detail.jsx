@@ -75,6 +75,7 @@ class CampaignDetail extends React.Component {
   render() {
     return (
       <div className="campaign-detail">
+
         <div className="campaign-detail-background"></div>
         <div className="campaign-detail-header">
           <h1 className="campaign-detail-header-title">
@@ -88,6 +89,7 @@ class CampaignDetail extends React.Component {
             <li value="Other" onClick={this.changeMediaType("Other")}>Other</li>
           </ul>
         </div>
+
         <div className="campaign-detail-executions-container">
           <div className="campaign-detail-executions-header">
             <h2>Executions</h2>
@@ -96,23 +98,24 @@ class CampaignDetail extends React.Component {
           </div>
           <ExecutionIndexContainer activeMediaType={this.sendMediaType}/>
         </div>
-        <div className="campaign-detail-execution-detail-container">
-        </div>
+
         <div className="campaign-detail-postings-container">
-          <div className="campaign-detail-execution-detail">
-            <ExecutionDetailContainer />
-            <h2>Postings</h2>
+          <div className="campaign-detail-execution-detail-container">
+            <div className="campaign-detail-execution-detail">
+              <ExecutionDetailContainer />
+
+            </div>
+            <button className="new-feedback-button" onClick={this.generateFeedbackForm}>Add Feedback</button>
             <button className="new-posting-button" onClick={this.generatePostingForm}>New Posting</button>
           </div>
+
           <PostingIndexContainer executionDetail={this.props.executionDetail} />
           <div className="campaign-detail-posting-detail-container">
             <PostingDetailContainer />
-          </div>
+        </div>
 
           <div className="campaign-detail-feedback-container">
             <div className="campaign-detail-feedback-header">
-              <h2>Feedback</h2>
-              <button className="new-feedback-button" onClick={this.generateFeedbackForm}>Add Feedback</button>
             </div>
             <FeedbackIndexContainer postingDetail={this.props.postingDetail}/>
           </div>

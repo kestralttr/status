@@ -6,6 +6,7 @@ const FeedbackMiddleware = ({getState, dispatch}) => next => action => {
   const createFeedbackSuccess = feedback => dispatch(receiveFeedback(feedback));
   const errorCallback = errors => dispatch(receiveErrors(errors.responseJSON));
 
+
   switch(action.type) {
     case REQUEST_FEEDBACK:
       fetchFeedback(action.postingId, feedbackSuccess, errorCallback);

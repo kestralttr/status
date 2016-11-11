@@ -4,7 +4,7 @@ class Api::PostingsController < ApplicationController
     @posting = Posting.new(posting_params)
 
     if @posting.save
-      @postings = @posting.execution.postings
+      @postings = @posting.execution.postings.reverse
       render "api/postings/index"
     else
       render json: @posting.errors.full_messages, status: 422
@@ -13,7 +13,7 @@ class Api::PostingsController < ApplicationController
 
   def index
     @execution = Execution.find(posting_params[:execution_id])
-    @postings = @execution.postings
+    @postings = @execution.postings.reverse
   end
 
   def show

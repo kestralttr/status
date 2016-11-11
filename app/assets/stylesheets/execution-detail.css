@@ -1,4 +1,4 @@
-.campaign-detail-execution-detail {
+.campaign-detail-execution-detail-container {
   background-color: white;
   position: absolute;
   top: 0;
@@ -8,4 +8,35 @@
   border-bottom: 3px solid #e1e2e4;
   padding: 5px;
   z-index: 1;
+}
+
+.campaign-detail-execution-detail {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 30%;
+  height: 100%;
+  padding: 5px;
+}
+
+.new-posting-button {
+  float: right;
+  padding: 5px;
+  font-weight: 500;
+  border: 1px solid #1AAFD0;
+  color: #1AAFD0;
+  border-radius: 5px;
+  margin: 5px 5px 5px 5px;
+  font-size: 16px;
+}
+
+.new-feedback-button {
+  float: right;
+  padding: 5px;
+  font-weight: 500;
+  border: 1px solid #1AAFD0;
+  color: #1AAFD0;
+  border-radius: 5px;
+  margin: 5px 5px 5px 5px;
+  font-size: 16px;
 }
