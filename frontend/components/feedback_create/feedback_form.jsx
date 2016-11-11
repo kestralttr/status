@@ -51,8 +51,8 @@ class FeedbackForm extends React.Component {
   modal() {
     return(
       <div>
-        <div className='modal-background'></div>
-        <div className="modal">
+        <div className='feedback-form-modal-background'></div>
+        <div className="feedback-form-modal">
           <div className="feedback-form-header">
             <h1>New Feedback</h1>
             <Link to={`/campaigns/${this.props.campaignDetail.id}`}
@@ -60,21 +60,23 @@ class FeedbackForm extends React.Component {
           </div>
           {this.renderErrors()}
           <form>
-          <span>Comments:</span>
-          <input className="feedback-form-input"
-            type="text"
-            value={this.state.comments}
-            onChange={this.update("comments")}>
-          </input> <br></br>
-        <span>Link Url:</span>
-          <input className="feedback-form-input"
-            type="text"
-            value={this.state.link_url}
-            onChange={this.update("link_url")}>
-          </input> <br></br>
-        <input className="feedback-form-submit-button"
-          type="submit"
-          onClick={this.handleSubmit}></input>
+            <span>Link Url:</span><br></br>
+            <input className="feedback-form-input"
+              type="text"
+              value={this.state.link_url}
+              onChange={this.update("link_url")}>
+            </input> <br></br>
+            <span>Comments:</span><br></br>
+            <textarea className="feedback-form-input"
+              id="feedback-form-comments"
+              rows="10"
+              cols="1"
+              value={this.state.comments}
+              onChange={this.update("comments")}>
+            </textarea> <br></br>
+            <input className="feedback-form-submit-button"
+              type="submit"
+              onClick={this.handleSubmit}></input>
           </form>
         </div>
       </div>

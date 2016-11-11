@@ -51,8 +51,8 @@ class PostingForm extends React.Component {
   modal() {
     return(
       <div>
-        <div className='modal-background'></div>
-        <div className="modal">
+        <div className='posting-form-modal-background'></div>
+        <div className="posting-form-modal">
           <div className="posting-form-header">
             <h1>New Posting</h1>
             <Link to={`/campaigns/${this.props.campaignDetail.id}`}
@@ -60,24 +60,26 @@ class PostingForm extends React.Component {
           </div>
           {this.renderErrors()}
           <form>
-          <span>Title:</span>
+          <span>Title:</span><br></br>
           <input className="posting-form-input"
             type="text"
+            maxLength="15"
             value={this.state.title}
             onChange={this.update("title")}>
           </input> <br></br>
-        <span>Comments:</span>
-          <input className="posting-form-input"
-            type="text"
-            value={this.state.comments}
-            onChange={this.update("comments")}>
-          </input> <br></br>
-        <span>Link Url:</span>
+          <span>Link Url:</span><br></br>
           <input className="posting-form-input"
             type="text"
             value={this.state.link_url}
             onChange={this.update("link_url")}>
           </input> <br></br>
+          <span>Comments:</span><br></br>
+          <textarea className="posting-form-input"
+            rows="3"
+            cols="1"
+            value={this.state.comments}
+            onChange={this.update("comments")}>
+          </textarea> <br></br>
         <input className="posting-form-submit-button"
           type="submit"
           onClick={this.handleSubmit}></input>

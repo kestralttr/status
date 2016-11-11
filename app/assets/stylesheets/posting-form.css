@@ -7,7 +7,7 @@
   padding: 6px;
 }
 
-.modal-background {
+.posting-form-modal-background {
   position: fixed;
   padding: 0;
   margin: 0;
@@ -21,10 +21,10 @@
 
 .posting-form-header {
   position: fixed;
-  top: 25%;
-  left: 10%;
-  right: 10%;
-  bottom: 65%;
+  top: 20%;
+  left: 30%;
+  right: 30%;
+  bottom: 70%;
   background-color: white;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
@@ -46,14 +46,14 @@
   right: 10px;
 }
 
-.modal {
+.posting-form-modal {
   position: fixed;
   margin: 0;
   padding: 0;
-  top: 35%;
-  left: 10%;
-  right: 10%;
-  bottom: 25%;
+  top: 30%;
+  left: 30%;
+  right: 30%;
+  bottom: 20%;
   z-index: 11;
   opacity: 1;
   background-color: white;
@@ -61,4 +61,21 @@
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
   padding: 10px;
+}
+
+.posting-form-submit-button {
+  padding: 5px;
+  font-weight: 500;
+  border: 1px solid #1AAFD0;
+  color: #1AAFD0;
+  border-radius: 5px;
+  margin: 5px auto 5px auto;
+  font-size: 16px;
+  display: block;
+}
+
+.posting-form-submit-button:hover {
+  cursor: pointer;
+  border: 2px solid #1AAFD0;
+  margin: 4px auto 4px auto;
 }

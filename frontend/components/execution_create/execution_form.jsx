@@ -76,20 +76,21 @@ class ExecutionForm extends React.Component {
             onChange={this.update("title")}>
           </input> <br></br>
 
-          <span>Format:</span>
+        <span>Format:</span><br></br>
           <input className="execution-form-input"
             type="text"
             value={this.state.format}
             maxLength="30"
             onChange={this.update("format")}>
           </input> <br></br>
-        <span>Info:</span>
-          <input className="execution-form-input"
-            type="text"
+        <span>Info:</span><br></br>
+          <textarea className="execution-form-input"
+            rows="2"
+            cols="1"
             value={this.state.info}
             maxLength="200"
             onChange={this.update("info")}>
-          </input> <br></br>
+          </textarea> <br></br>
         <input className="execution-form-submit-button"
           type="submit"
           onClick={this.handleSubmit}></input>

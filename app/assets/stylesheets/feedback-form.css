@@ -1,4 +1,4 @@
-.execution-form-input {
+.feedback-form-input {
   border: 1px solid #898E95;
   border-radius: 5px;
   margin: 0 0 20px 0;
@@ -7,7 +7,11 @@
   padding: 6px;
 }
 
-.execution-form-modal-background {
+#feedback-form-comments {
+  width: 90%;
+}
+
+.feedback-form-modal-background {
   position: fixed;
   padding: 0;
   margin: 0;
@@ -19,12 +23,12 @@
   background: rgba(0,0,0,0.7);
 }
 
-.execution-form-header {
+.feedback-form-header {
   position: fixed;
-  top: 20%;
-  left: 30%;
-  right: 30%;
-  bottom: 70%;
+  top: 15%;
+  left: 20%;
+  right: 20%;
+  bottom: 75%;
   background-color: white;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
@@ -32,28 +36,28 @@
   border-bottom: 1px solid #e1e2e4;
 }
 
-.execution-form-header > h1 {
+.feedback-form-header > h1 {
   font-family: lato;
   font-size: 24px;
   display: inline-block;
   margin: 5px 0 0 0;
 }
 
-.execution-form-close-button {
+.feedback-form-close-button {
   font-family: open+sans;
   font-size: 12px;
   position: absolute;
   right: 10px;
 }
 
-.execution-form-modal {
+.feedback-form-modal {
   position: fixed;
   margin: 0;
   padding: 0;
-  top: 30%;
-  left: 30%;
-  right: 30%;
-  bottom: 20%;
+  top: 25%;
+  left: 20%;
+  right: 20%;
+  bottom: 15%;
   z-index: 11;
   opacity: 1;
   background-color: white;
@@ -63,7 +67,7 @@
   padding: 10px;
 }
 
-.execution-form-submit-button {
+.feedback-form-submit-button {
   padding: 5px;
   font-weight: 500;
   border: 1px solid #1AAFD0;
@@ -74,7 +78,7 @@
   display: block;
 }
 
-.execution-form-submit-button:hover {
+.feedback-form-submit-button:hover {
   cursor: pointer;
   border: 2px solid #1AAFD0;
   margin: 4px auto 4px auto;
