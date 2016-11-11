@@ -27,3 +27,12 @@ export const createCampaign = (campaign, success, error) => {
     error: error
   });
 };
+
+export const deleteCampaign = (id, success, error) => {
+  $.ajax({
+    type: "DELETE",
+    url: `api/campaigns/${id}`,
+    success: success,
+    error: error
+  });
+};

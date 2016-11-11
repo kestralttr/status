@@ -55,7 +55,7 @@ class CampaignIndex extends React.Component {
           <div className="campaign-index-tableau">
             <ul>
               {this.props.campaignIndex.map(campaign => (
-                <CampaignIndexItem key={campaign.id} campaign={campaign} />
+                <CampaignIndexItem key={campaign.id} campaign={campaign} deleteCampaign={this.props.deleteCampaign} />
               ))}
             </ul>
           </div>

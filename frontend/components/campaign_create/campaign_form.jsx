@@ -92,6 +92,7 @@ class CampaignForm extends React.Component {
           <input className="campaign-form-input"
             type="text"
             value={this.state.title}
+            maxLength="30"
             onChange={this.update("title")}>
           </input> <br></br>
           <span>Members:</span>
@@ -106,6 +107,7 @@ class CampaignForm extends React.Component {
           <input className="campaign-form-input"
             type="text"
             value={this.state.newMemberValue}
+            maxLength="15"
             onChange={this.update("newMemberValue")}>
           </input>
           <button className="campaign-form-add-member-button"

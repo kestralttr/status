@@ -28,6 +28,13 @@ class Api::CampaignsController < ApplicationController
   end
 
   def destroy
+    @campaign = Campaign.find(params[:id])
+    if @campaign.destroy
+      @campaigns = current_user.campaigns
+      render "api/campaigns/index"
+    else
+      render json: ["Campaign deletion failed."], status: 422
+    end
   end
 
   def campaign_params

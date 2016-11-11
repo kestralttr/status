@@ -22,7 +22,7 @@ class Splash extends React.Component {
   render() {
     return(
       <div className="splash">
-        <img className='splash-initial-background' src="/assets/colorful.jpg"/>
+        <img className='splash-initial-background' src="https://s14.postimg.org/kqcnjv469/colorful.jpg"/>
         <div className="splash-bar">
           <h1>• status •</h1>
           <Link className="splash-login-link" to="/login">  Log In  </Link>

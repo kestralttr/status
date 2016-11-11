@@ -107,3 +107,8 @@
   cursor: pointer;
 
 }
+
+.campaign-delete-button {
+  position: relative;
+  z-index: 5;
+};

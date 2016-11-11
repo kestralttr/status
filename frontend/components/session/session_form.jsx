@@ -95,7 +95,7 @@ class SessionForm extends React.Component {
   render() {
     return (
       <div className='auth-form'>
-        <img className='auth-form-background' src="/assets/colorful3.png"/>
+        <img className='auth-form-background' src="https://s11.postimg.org/e2znqrxyb/colorful3_smallest.jpg"/>
         <h1 className='auth-form-site-name'>• status •</h1>
         <form onSubmit={this.handleSubmit}>
           {this.title()}
@@ -108,6 +108,7 @@ class SessionForm extends React.Component {
               <input className="auth-form-input"
                 type="text"
                 value={this.state.username}
+                maxLength="15"
                 onChange={this.update("username")}/>
             </label>
             <br/>
@@ -116,6 +117,7 @@ class SessionForm extends React.Component {
               <input className="auth-form-input"
                 type="password"
                 value={this.state.password}
+                maxLength="15"
                 onChange={this.update("password")}/>
             </label>
             <br/>
