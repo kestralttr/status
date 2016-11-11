@@ -7,6 +7,11 @@
   left: 30%;
   right: 0;
   bottom: 0;
+  background: rgb(255,255,255);
+  background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(229,229,229,1) 49%);
+  background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 49%);
+  background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 49%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 );
 }
 
 .feedback-list-title {
@@ -14,18 +19,21 @@
   max-height: 20px;
   border-bottom: 2px solid #e1e2e4;
   padding-left: 5px;
+  background-color: white;
 }
 
 .feedback-list {
   position: absolute;
   top: 25px;
   width: 100%;
+  /*background-color: white;*/
 }
 
 .feedback-list > li {
   display: block;
   padding: 5px;
   border-bottom: 1px solid #e1e2e4;
-  width: 100%;
-  background-color: white;
+  width: 95%;
+  /*background-color: white;*/
+  word-wrap: break-word;
 }

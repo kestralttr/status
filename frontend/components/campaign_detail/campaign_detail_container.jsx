@@ -5,10 +5,11 @@ import {updateMediaType} from '../../actions/campaign_actions';
 
 const mapStateToProps = state => {
   return({
-  campaignDetail: state.campaignDetail.campaign,
-  currentUser: state.session.currentUser,
-  mediaType: state.campaignDetail.mediaType,
-  executionDetail: state.executionDetail.execution
+    postingDetail: state.postingDetail.posting,
+    campaignDetail: state.campaignDetail.campaign,
+    currentUser: state.session.currentUser,
+    mediaType: state.campaignDetail.mediaType,
+    executionDetail: state.executionDetail.execution
   });
 };
 

@@ -80,19 +80,19 @@ class CampaignForm extends React.Component {
   modal() {
     return(
       <div>
-        <div className='modal-background'></div>
-        <div className='modal'>
+        <div className='campaign-form-modal-background'></div>
+        <div className='campaign-form-modal'>
           <div className="campaign-form-header">
             <h1>New Campaign</h1>
             <Link to="/campaignindex"
               className="campaign-form-close-button">Close</Link>
           </div>
           {this.renderErrors()}
-          <span>Title:</span>
+          <span>Title:</span><br></br>
           <input className="campaign-form-input"
             type="text"
             value={this.state.title}
-            maxLength="30"
+            maxLength="20"
             onChange={this.update("title")}>
           </input> <br></br>
           <span>Members:</span>
@@ -103,16 +103,21 @@ class CampaignForm extends React.Component {
               );
             })}
           </ul> <br></br>
-        <span>Add New Member:</span>
+        <span>Add New Member:</span><br></br>
+        <form>
           <input className="campaign-form-input"
             type="text"
             value={this.state.newMemberValue}
             maxLength="15"
             onChange={this.update("newMemberValue")}>
           </input>
-          <button className="campaign-form-add-member-button"
-            onClick={this.addMember}>Add Member</button> <br></br>
-          <button className="campaign-form-submit-button"
+          <input type="submit"
+            className="campaign-form-button"
+            onClick={this.addMember}
+            value="Add Member" /> <br></br>
+        </form>
+          <button className="campaign-form-button"
+            id="campaign-form-submit-button"
             disabled={!this.state.title}
             onClick={this.handleSubmit}>Create!</button>
         </div>
@@ -123,8 +128,6 @@ class CampaignForm extends React.Component {
   render() {
     return(
       <div className="campaign-form">
-        <button className="new-campaign-button"
-          onClick={this.handleModalOpen}>New Campaign</button>
         {this.modal()}
       </div>
     );

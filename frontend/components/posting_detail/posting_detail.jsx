@@ -19,13 +19,13 @@ class PostingDetail extends React.Component {
   renderPostingDetail() {
     if (this.props.postingDetail) {
       return(
-        <div>
-          <div className="campaign-detail-posting-detail">
-            <a href={this.props.postingDetail.link_url} /><br></br>{`\n`}
-            <span>{this.props.postingDetail.title}</span><br></br>
-            <span>{this.props.postingDetail.comments}</span><br></br>
-          </div>
-        </div>
+          <ul className="campaign-detail-posting-detail">
+            <li className="campaign-detail-posting-detail-item">
+              <span>{this.props.postingDetail.title}</span><br></br>
+              <a href={this.props.postingDetail.link_url} /><br></br>{`\n`}
+              <span>{this.props.postingDetail.comments}</span><br></br>
+            </li>
+          </ul>
       );
     } else {
       return null;

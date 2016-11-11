@@ -23,6 +23,7 @@ class CampaignDetail extends React.Component {
 
   componentDidMount() {
     this.props.requestCampaign(this.props.params.campaignId);
+    this.props.updateMediaType("TV");
   }
 
   componentWillReceiveProps(nextProps) {
@@ -101,12 +102,12 @@ class CampaignDetail extends React.Component {
 
         <div className="campaign-detail-postings-container">
           <div className="campaign-detail-execution-detail-container">
-            <div className="campaign-detail-execution-detail">
+
               <ExecutionDetailContainer />
 
-            </div>
-            <button className="new-feedback-button" onClick={this.generateFeedbackForm}>Add Feedback</button>
-            <button className="new-posting-button" onClick={this.generatePostingForm}>New Posting</button>
+
+            <button className="new-feedback-button" disabled={!this.props.postingDetail} onClick={this.generateFeedbackForm}>Add Feedback</button>
+            <button className="new-posting-button" disabled={!this.props.executionDetail} onClick={this.generatePostingForm}>New Posting</button>
           </div>
 
           <PostingIndexContainer executionDetail={this.props.executionDetail} />

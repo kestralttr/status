@@ -14,9 +14,10 @@
   position: absolute;
   left: 0;
   top: 0;
-  right: 30%;
   height: 100%;
-  padding: 5px;
+  padding-top: 5px;
+  overflow: hidden;
+  padding-left: 5px;
 }
 
 .new-posting-button {
@@ -30,6 +31,12 @@
   font-size: 16px;
 }
 
+.new-posting-button:hover {
+  cursor: pointer;
+  border: 2px solid #1AAFD0;
+  margin: 4px 4px 4px 4px;
+}
+
 .new-feedback-button {
   float: right;
   padding: 5px;
@@ -39,4 +46,10 @@
   border-radius: 5px;
   margin: 5px 5px 5px 5px;
   font-size: 16px;
+}
+
+.new-feedback-button:hover {
+  cursor: pointer;
+  border: 2px solid #1AAFD0;
+  margin: 4px 4px 4px 4px;
 }

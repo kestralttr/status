@@ -5,9 +5,10 @@ class ExecutionForm extends React.Component {
 
   constructor(props) {
     super(props);
+    console.log(props);
     this.state = {
       title: "",
-      media_type: "TV",
+      media_type: props.mediaType,
       creator_id: props.currentUser.id,
       campaign_id: props.campaignDetail.id,
       approved: false,
@@ -58,8 +59,8 @@ class ExecutionForm extends React.Component {
   modal() {
     return(
       <div>
-        <div className='modal-background'></div>
-        <div className="modal">
+        <div className='execution-form-modal-background'></div>
+        <div className="execution-form-modal">
           <div className="execution-form-header">
             <h1>New Execution</h1>
             <Link to={`/campaigns/${this.props.campaignDetail.id}`}
@@ -67,35 +68,26 @@ class ExecutionForm extends React.Component {
           </div>
           {this.renderErrors()}
           <form>
-          <span>Title:</span>
+          <span>Title:</span><br></br>
           <input className="execution-form-input"
             type="text"
             value={this.state.title}
             maxLength="15"
             onChange={this.update("title")}>
           </input> <br></br>
-          <span>Media</span>
-          <select className="execution-form-dropdown"
-            value={this.state.media_type}
-            onChange={this.update("media_type")}>
-            <option value="TV">TV</option>
-            <option value="Radio">Radio</option>
-            <option value="Print">Print</option>
-            <option value="Digital">Digital</option>
-            <option value="Other">Other</option>
-          </select> <br></br><br></br>
+
           <span>Format:</span>
           <input className="execution-form-input"
             type="text"
             value={this.state.format}
-            maxLength="15"
+            maxLength="30"
             onChange={this.update("format")}>
           </input> <br></br>
         <span>Info:</span>
           <input className="execution-form-input"
             type="text"
             value={this.state.info}
-            maxLength="300"
+            maxLength="200"
             onChange={this.update("info")}>
           </input> <br></br>
         <input className="execution-form-submit-button"

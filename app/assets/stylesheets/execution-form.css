@@ -7,7 +7,7 @@
   padding: 6px;
 }
 
-.modal-background {
+.execution-form-modal-background {
   position: fixed;
   padding: 0;
   margin: 0;
@@ -46,7 +46,7 @@
   right: 10px;
 }
 
-.modal {
+.execution-form-modal {
   position: fixed;
   margin: 0;
   padding: 0;

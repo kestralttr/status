@@ -7,7 +7,8 @@ const mapStateToProps = state => {
     currentUser: state.session.currentUser,
     errors: state.executionIndex.errors,
     executionIndex: state.executionIndex.executions,
-    campaignDetail: state.campaignDetail.campaign
+    campaignDetail: state.campaignDetail.campaign,
+    mediaType: state.campaignDetail.mediaType
   });
 };
 
