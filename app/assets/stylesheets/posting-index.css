@@ -6,6 +6,21 @@
 }
 
 .postings-list {
-  position: fixed;
-  top: 200px;
+  position: absolute;
+  top: 80px;
+  overflow: auto;
+  bottom: 0;
+  background-color: white;
+  left: 0;
+  right: 70%;
+  border-right: 3px solid #e1e2e4;
+}
+
+.posting-list-item {
+  display: block;
+  padding: 5px;
+  border-bottom: 1px solid #e1e2e4;
+  width: 100%;
+  height: 50px;
+  background-color: white;
 }

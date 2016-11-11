@@ -97,25 +97,25 @@ class CampaignDetail extends React.Component {
           <ExecutionIndexContainer activeMediaType={this.sendMediaType}/>
         </div>
         <div className="campaign-detail-execution-detail-container">
-          <ExecutionDetailContainer />
         </div>
         <div className="campaign-detail-postings-container">
-          <div className="campaign-detail-postings-header">
+          <div className="campaign-detail-execution-detail">
+            <ExecutionDetailContainer />
             <h2>Postings</h2>
             <button className="new-posting-button" onClick={this.generatePostingForm}>New Posting</button>
           </div>
           <PostingIndexContainer executionDetail={this.props.executionDetail} />
-        </div>
-        <div className="campaign-detail-posting-detail-container">
-          <PostingDetailContainer />
-        </div>
-
-        <div className="campaign-detail-feedback-container">
-          <div className="campaign-detail-feedback-header">
-            <h2>Feedback</h2>
-            <button className="new-feedback-button" onClick={this.generateFeedbackForm}>Add Feedback</button>
+          <div className="campaign-detail-posting-detail-container">
+            <PostingDetailContainer />
           </div>
-          <FeedbackIndexContainer postingDetail={this.props.postingDetail}/>
+
+          <div className="campaign-detail-feedback-container">
+            <div className="campaign-detail-feedback-header">
+              <h2>Feedback</h2>
+              <button className="new-feedback-button" onClick={this.generateFeedbackForm}>Add Feedback</button>
+            </div>
+            <FeedbackIndexContainer postingDetail={this.props.postingDetail}/>
+          </div>
         </div>
 
         {this.props.children}

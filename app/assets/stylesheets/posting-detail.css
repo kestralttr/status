@@ -1,6 +1,18 @@
 .campaign-detail-posting-detail {
-  position: fixed;
+  /*position: fixed;
   top: 200px;
   left: 600px;
-  z-index: 11;
+  z-index: 11;*/
+}
+
+.campaign-detail-posting-detail-container {
+  position: absolute;
+  top: 80px;
+  overflow: auto;
+  bottom: 0;
+  background-color: white;
+  left: 30%;
+  right: 0;
+  bottom: 45%;
+  border-bottom: 3px solid #e1e2e4;
 }

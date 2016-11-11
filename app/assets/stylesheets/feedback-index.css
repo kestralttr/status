@@ -1,11 +1,15 @@
 .campaign-detail-feedback-container {
-  position: fixed;
-  top: 400px;
-  left: 500px;
-  z-index: 11;
+  position: absolute;
+  top: 55%;
+  overflow: auto;
+  bottom: 0;
+  background-color: white;
+  left: 30%;
+  right: 0;
+  bottom: 0;
 }
 
 .feedback-list {
-  position: fixed;
-  top: 300px;
+  /*position: fixed;
+  top: 300px;*/
 }
