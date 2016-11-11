@@ -91,30 +91,50 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 .campaign-index-item {
   float: left;
-  height: 50px;
+  height: 100px;
   width: 300px;
   border: 1px solid #e1e2e4;
   border-radius: 5px;
   margin: 5px 5px 5px 5px;
-  padding: 10px;
   -webkit-box-shadow: 2px 2px 9px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 2px 2px 9px 0px rgba(0,0,0,0.75);
   box-shadow: 2px 2px 9px 0px rgba(0,0,0,0.75);
   background-color: white;
-  transition-property: background-color, border;
-  transition-duration: 0.5s;
+  overflow: hidden;
 }
 
-.campaign-index-item:hover {
+.campaign-index-item-show {
+  display:block;
+  height:60px;
+  text-align: center;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  font-size: 24px;
+  padding-top: 20px;
+}
+
+.campaign-index-item-show:hover {
   background-color: #1AAFD0;
   border: 1px solid #1AAFD0;
-  transition-property: background-color, border;
+  transition-property: background-color;
   transition-duration: 0.5s;
   cursor: pointer;
-
 }
 
-.campaign-delete-button {
-  position: relative;
-  z-index: 5;
-};
+.campaign-index-item-delete {
+  text-align:center;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+.campaign-index-item-delete:hover {
+  background-color: #d82020;
+  border: 1px solid #d82020;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+
+.campaign-index-item-delete:disabled {
+  background-color: grey;
+}

@@ -8,8 +8,9 @@ class CampaignIndexItem extends React.Component {
     this.state = {
       deleted: false
     };
-    this.handleClick.bind(this);
-    this.handleDelete.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
+    this.validateManager = this.validateManager.bind(this);
   }
 
   handleClick(url) {
@@ -24,20 +25,44 @@ class CampaignIndexItem extends React.Component {
     };
   }
 
-  handleDelete(id) {
-    return e => (
-      this.setState({deleted: true}),
-      this.props.deleteCampaign(id)
-    );
+  handleDelete(id,managerId) {
+    return e => {
+      if (managerId !== this.props.currentUser.id) {
+        return;
+      } else {
+        return(
+          this.setState({deleted: true}),
+          this.props.deleteCampaign(id)
+        );
+      }
+    };
+  }
+
+  validateManager(managerId) {
+    if (managerId !== this.props.currentUser.id) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   render() {
+    console.log(this.props.campaign);
     return(
-      <li className="campaign-index-item"
-        onClick={this.handleClick(`/campaigns/${this.props.campaign.id}`)}>
+      <li className="campaign-index-item">
 
-        <div>{this.props.campaign.title}</div>
+        <ul>
+          <li className="campaign-index-item-show"
+            onClick={this.handleClick(`/campaigns/${this.props.campaign.id}`)}>
+            {this.props.campaign.title}
+          </li>
 
+          <li className="campaign-index-item-delete"
+            onClick={this.handleDelete(this.props.campaign.id, this.props.campaign.managerId)}
+            disabled={this.validateManager(this.props.campaign.managerId)}>
+            Delete
+          </li>
+        </ul>
 
       </li>
     );

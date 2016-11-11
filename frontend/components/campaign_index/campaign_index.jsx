@@ -8,6 +8,7 @@ class CampaignIndex extends React.Component {
     super(props);
     this.state = {
     };
+    console.log(props);
     this.generateForm = this.generateForm.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
   }
@@ -55,7 +56,10 @@ class CampaignIndex extends React.Component {
           <div className="campaign-index-tableau">
             <ul>
               {this.props.campaignIndex.map(campaign => (
-                <CampaignIndexItem key={campaign.id} campaign={campaign} deleteCampaign={this.props.deleteCampaign} />
+                <CampaignIndexItem key={campaign.id}
+                  campaign={campaign}
+                  deleteCampaign={this.props.deleteCampaign}
+                  currentUser={this.props.currentUser} />
               ))}
             </ul>
           </div>
