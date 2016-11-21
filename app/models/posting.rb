@@ -1,5 +1,5 @@
 class Posting < ApplicationRecord
-  validates :title, :execution_id, :link_url, presence: true
+  validates :title, :execution_id, presence: true
 
   belongs_to :execution,
   primary_key: :id,

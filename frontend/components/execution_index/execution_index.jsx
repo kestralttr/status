@@ -56,6 +56,7 @@ class ExecutionIndex extends React.Component {
     }
     return(
       <ul>
+
         {executions.map(execution => (
           <ExecutionIndexItem key={execution.id}
             requestExecution={this.props.requestExecution}

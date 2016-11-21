@@ -98,6 +98,7 @@ class CampaignDetail extends React.Component {
             <p>{this.state.activeMediaType}</p>
           </div>
           <ExecutionIndexContainer activeMediaType={this.sendMediaType}/>
+
         </div>
 
         <div className="campaign-detail-postings-container">
