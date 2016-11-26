@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link, withRouter} from 'react-router';
-import ExecutionIndexContainer from '../execution_index/execution_index_container';
+import ExecutionIndex from '../execution_index/execution_index';
 import ExecutionDetailContainer from '../execution_detail/execution_detail_container';
 import PostingIndexContainer from '../posting_index/posting_index_container';
 import PostingDetailContainer from '../posting_detail/posting_detail_container';
@@ -97,7 +97,17 @@ class CampaignDetail extends React.Component {
             <button className="new-execution-button" onClick={this.generateExecutionForm}>New Execution</button>
             <p>{this.state.activeMediaType}</p>
           </div>
-          <ExecutionIndexContainer activeMediaType={this.sendMediaType}/>
+          <ExecutionIndex
+            activeMediaType={this.sendMediaType}
+            executionIndex={this.props.executionIndex}
+            currentUser={this.props.currentUser}
+            mediaType={this.props.mediaType}
+            campaignDetail={this.props.campaignDetail}
+            requestExecutions={this.props.requestExecutions}
+            requestExecution={this.props.requestExecution}
+            requestCampaign={this.props.requestCampaign}
+            updateMediaType={this.props.updateMediaType}
+            />
 
         </div>
 

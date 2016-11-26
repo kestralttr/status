@@ -40,14 +40,14 @@ class CampaignIndexItem extends React.Component {
   }
 
   validateManager(campaign) {
-    console.log(campaign.managerId);
-    console.log(this.props.currentUser.id);
-    return;
-    if (campaign.managerId !== this.props.currentUser.id) {
-      return true;
-    } else {
-      return false;
-    }
+    // // console.log(campaign.managerId);
+    // // console.log(this.props.currentUser.id);
+    // return;
+    // if (campaign.managerId !== this.props.currentUser.id) {
+    //   return true;
+    // } else {
+    //   return false;
+    // }
   }
 
   render() {
