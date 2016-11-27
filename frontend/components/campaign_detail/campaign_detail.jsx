@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link, withRouter} from 'react-router';
 import ExecutionIndex from '../execution_index/execution_index';
-import ExecutionDetailContainer from '../execution_detail/execution_detail_container';
+import ExecutionDetail from '../execution_detail/execution_detail';
 import PostingIndexContainer from '../posting_index/posting_index_container';
 import PostingDetailContainer from '../posting_detail/posting_detail_container';
 import FeedbackIndexContainer from '../feedback_index/feedback_index_container';
@@ -107,15 +107,18 @@ class CampaignDetail extends React.Component {
             requestExecution={this.props.requestExecution}
             requestCampaign={this.props.requestCampaign}
             updateMediaType={this.props.updateMediaType}
-            />
+          />
 
         </div>
 
         <div className="campaign-detail-postings-container">
           <div className="campaign-detail-execution-detail-container">
 
-              <ExecutionDetailContainer />
-
+              <ExecutionDetail
+                executionDetail={this.props.executionDetail}
+                currentUser={this.props.currentUser}
+                requestExecution={this.props.requestExecution}
+              />
 
             <button className="new-feedback-button" disabled={!this.props.postingDetail} onClick={this.generateFeedbackForm}>Add Feedback</button>
             <button className="new-posting-button" disabled={!this.props.executionDetail} onClick={this.generatePostingForm}>New Posting</button>
