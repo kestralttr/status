@@ -46,11 +46,24 @@ class PostingIndex extends React.Component {
         this.props.clearPosting()
       );
     }
-    if (nextProps.executionDetail && nextProps.postingIndex !== this.props.postingIndex) {
+    if (nextProps.postingIndex !== this.props.postingIndex) {
+      console.log("will return first posting detail");
+      console.log("nextProps postingIndex: ", nextProps.postingIndex);
       return(
         this.renderFirstPostingDetail(nextProps.postingIndex)
       );
     }
+  }
+
+  renderFirstPostingDetail(postings) {
+    if (!postings || !Array.isArray(postings) || postings === [] || !postings[0]) {
+      return(
+        this.props.clearPosting()
+      );
+    } else
+    return(
+      this.props.requestPosting(postings[0].id)
+    );
   }
 
   renderPostings(postings) {
@@ -68,14 +81,6 @@ class PostingIndex extends React.Component {
     );
   }
 
-  renderFirstPostingDetail(postings) {
-    if (!Array.isArray(postings) || postings === [] || !postings[0]) {
-      return(
-        this.props.clearPosting()
-      );
-    }
-
-  }
 
   render() {
     return(
