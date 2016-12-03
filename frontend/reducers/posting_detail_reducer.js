@@ -1,4 +1,4 @@
-import {RECEIVE_POSTING, RECEIVE_POSTING_ERRORS} from '../actions/posting_actions';
+import {RECEIVE_POSTING, CLEAR_POSTING, RECEIVE_POSTING_ERRORS} from '../actions/posting_actions';
 import {merge} from 'lodash';
 
 const _defaultState = {
@@ -13,6 +13,10 @@ const PostingDetailReducer = (state = _defaultState, action) => {
   switch (action.type) {
     case RECEIVE_POSTING:
       newState["posting"] = action.posting;
+      newState["errors"] = [];
+      return newState;
+    case CLEAR_POSTING:
+      newState["posting"] = null;
       newState["errors"] = [];
       return newState;
     case RECEIVE_POSTING_ERRORS:

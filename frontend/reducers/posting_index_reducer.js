@@ -1,4 +1,4 @@
-import {RECEIVE_POSTINGS, RECEIVE_POSTING_ERRORS} from '../actions/posting_actions';
+import {RECEIVE_POSTINGS, CLEAR_POSTINGS, RECEIVE_POSTING_ERRORS} from '../actions/posting_actions';
 import {merge} from 'lodash';
 
 const _defaultState = {
@@ -14,6 +14,9 @@ const PostingIndexReducer = (state = _defaultState, action) => {
       newState["postings"] = action.postings;
       newState["errors"] = [];
       return newState;
+    case CLEAR_POSTINGS:
+      newState["postings"] = null;
+      newState["errors"] = [];
     case RECEIVE_POSTING_ERRORS:
       newState["postings"] = null;
       newState["errors"] = action.errors;

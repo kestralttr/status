@@ -69,7 +69,7 @@ class ExecutionIndex extends React.Component {
   renderFirstExecutionDetail(executions) {
     if (!Array.isArray(executions) || executions === [] || !executions[0]) {
       return(
-        this.props.requestExecution()
+        this.props.clearExecution()
       );
     }
     return(

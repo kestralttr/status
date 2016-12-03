@@ -4,6 +4,7 @@ export const REQUEST_EXECUTIONS = "REQUEST_EXECUTIONS";
 export const REQUEST_EXECUTION = "REQUEST_EXECUTION";
 export const CREATE_EXECUTION = "CREATE_EXECUTION";
 export const RECEIVE_EXECUTION_ERRORS = "RECEIVE_EXECUTION_ERRORS";
+export const CLEAR_EXECUTION = "CLEAR_EXECUTION";
 
 export const receiveExecutions = (executions) => ({
   type: RECEIVE_EXECUTIONS,
@@ -24,6 +25,10 @@ export const requestExecutions = (campaignId, mediaType) => ({
 export const requestExecution = (id) => ({
   type: REQUEST_EXECUTION,
   id: id
+});
+
+export const clearExecution = () => ({
+  type: CLEAR_EXECUTION
 });
 
 export const createExecution = (execution) => ({

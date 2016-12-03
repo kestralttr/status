@@ -27,25 +27,25 @@ class PostingIndex extends React.Component {
 
   componentWillReceiveProps(nextProps) {
 
-    if (!this.props.executionDetail && !this.props.postingIndex && nextProps.executionDetail) {
+    if (!this.props.executionDetail && !this.state.parentExecutionId && !this.props.postingIndex && nextProps.executionDetail) {
       return(
         this.setState({parentExecutionId: nextProps.executionDetail.id}),
         this.props.requestPostings(nextProps.executionDetail.id)
       );
-    }
-    if (this.props.executionDetail && nextProps.executionDetail && nextProps.executionDetail.id !== this.props.executionDetail.id) {
+    } else
+    if (this.props.executionDetail && this.props.postingIndex && nextProps.executionDetail && nextProps.executionDetail.id !== this.props.executionDetail.id) {
       return(
         this.setState({parentExecutionId: nextProps.executionDetail.id}),
         this.props.requestPostings(nextProps.executionDetail.id)
       );
-    }
-    if (!nextProps.executionDetail) {
+    } else
+    if (nextProps.executionDetail === null ) {
       return(
         this.setState({parentExecutionId: null}),
-        this.props.requestPostings(0)
+        this.props.clearPostings()
       );
     }
-    if (nextProps.postingIndex !== this.props.postingIndex) {
+    if (nextProps.executionDetail && nextProps.postingIndex !== this.props.postingIndex) {
       return(
         this.renderFirstPostingDetail(nextProps.postingIndex)
       );
@@ -70,12 +70,10 @@ class PostingIndex extends React.Component {
   renderFirstPostingDetail(postings) {
     if (!Array.isArray(postings) || postings === [] || !postings[0]) {
       return(
-        this.props.requestPosting(0)
+        this.props.clearPosting()
       );
     }
-    return(
-      this.props.requestPosting(postings[0].id)
-    );
+
   }
 
   render() {

@@ -1,7 +1,9 @@
 export const RECEIVE_POSTINGS = "RECEIVE_POSTINGS";
 export const RECEIVE_POSTING = "RECEIVE_POSTING";
 export const REQUEST_POSTINGS = "REQUEST_POSTINGS";
+export const CLEAR_POSTINGS = "CLEAR_POSTINGS";
 export const REQUEST_POSTING = "REQUEST_POSTING";
+export const CLEAR_POSTING = "CLEAR_POSTING";
 export const CREATE_POSTING = "CREATE_POSTING";
 export const RECEIVE_POSTING_ERRORS = "RECEIVE_POSTING_ERRORS";
 
@@ -20,9 +22,17 @@ export const requestPostings = (executionId) => ({
   executionId: executionId
 });
 
+export const clearPostings = () => ({
+  type: CLEAR_POSTINGS
+});
+
 export const requestPosting = (id) => ({
   type: REQUEST_POSTING,
   id: id
+});
+
+export const clearPosting = () => ({
+  type: CLEAR_POSTING
 });
 
 export const createPosting = (posting) => ({

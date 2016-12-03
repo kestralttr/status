@@ -2,7 +2,7 @@ import React from 'react';
 import {Link, withRouter} from 'react-router';
 import ExecutionIndex from '../execution_index/execution_index';
 import ExecutionDetail from '../execution_detail/execution_detail';
-import PostingIndexContainer from '../posting_index/posting_index_container';
+import PostingIndex from '../posting_index/posting_index';
 import PostingDetailContainer from '../posting_detail/posting_detail_container';
 import FeedbackIndexContainer from '../feedback_index/feedback_index_container';
 
@@ -105,6 +105,7 @@ class CampaignDetail extends React.Component {
             campaignDetail={this.props.campaignDetail}
             requestExecutions={this.props.requestExecutions}
             requestExecution={this.props.requestExecution}
+            clearExecution={this.props.clearExecution}
             requestCampaign={this.props.requestCampaign}
             updateMediaType={this.props.updateMediaType}
           />
@@ -124,15 +125,22 @@ class CampaignDetail extends React.Component {
             <button className="new-posting-button" disabled={!this.props.executionDetail} onClick={this.generatePostingForm}>New Posting</button>
           </div>
 
-          <PostingIndexContainer executionDetail={this.props.executionDetail} />
-          <div className="campaign-detail-posting-detail-container">
-            <PostingDetailContainer />
-        </div>
+          <PostingIndex
+            executionDetail={this.props.executionDetail}
+            postingIndex={this.props.postingIndex}
+            requestPostings={this.props.requestPostings}
+            requestPosting={this.props.requestPosting}
+            clearPostings={this.props.clearPostings}
+            clearPosting={this.props.clearPosting}
+        	/>
 
+          <div className="campaign-detail-posting-detail-container">
+
+        </div>
           <div className="campaign-detail-feedback-container">
             <div className="campaign-detail-feedback-header">
             </div>
-            <FeedbackIndexContainer postingDetail={this.props.postingDetail}/>
+
           </div>
         </div>
 
