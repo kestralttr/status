@@ -42,7 +42,8 @@ class PostingIndex extends React.Component {
     if (nextProps.executionDetail === null ) {
       return(
         this.setState({parentExecutionId: null}),
-        this.props.clearPostings()
+        this.props.clearPostings(),
+        this.props.clearPosting()
       );
     }
     if (nextProps.executionDetail && nextProps.postingIndex !== this.props.postingIndex) {

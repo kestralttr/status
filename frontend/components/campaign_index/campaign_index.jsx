@@ -15,6 +15,10 @@ class CampaignIndex extends React.Component {
 
   componentDidMount() {
     this.props.requestCampaigns();
+    this.props.clearExecutions();
+    this.props.clearExecution();
+    this.props.clearPostings();
+    this.props.clearPosting();
   }
 
   componentWillReceiveProps(nextProps) {

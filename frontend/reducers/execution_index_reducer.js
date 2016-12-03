@@ -1,4 +1,4 @@
-import {RECEIVE_EXECUTIONS, RECEIVE_EXECUTION_ERRORS} from '../actions/execution_actions';
+import {RECEIVE_EXECUTIONS, CLEAR_EXECUTIONS, RECEIVE_EXECUTION_ERRORS} from '../actions/execution_actions';
 import {merge} from 'lodash';
 
 const _defaultState = {
@@ -17,6 +17,10 @@ const ExecutionIndexReducer = (state = _defaultState, action) => {
       } else {
         newState["executions"] = action.executions;
       }
+      newState["errors"] = [];
+      return newState;
+    case CLEAR_EXECUTIONS:
+      newState["executions"] = null;
       newState["errors"] = [];
       return newState;
     case RECEIVE_EXECUTION_ERRORS:
