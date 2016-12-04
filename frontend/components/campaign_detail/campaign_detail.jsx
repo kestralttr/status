@@ -144,7 +144,13 @@ class CampaignDetail extends React.Component {
           <div className="campaign-detail-feedback-container">
             <div className="campaign-detail-feedback-header">
             </div>
-
+              <FeedbackIndexContainer
+                postingDetail={this.props.postingDetail}
+                feedbackIndex={this.props.feedbackIndex}
+                currentUser={this.props.currentUser}
+                requestFeedback={this.props.requestFeedback}
+                clearFeedback={this.props.clearFeedback}
+              />
           </div>
         </div>
 

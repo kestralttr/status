@@ -1,4 +1,4 @@
-import {RECEIVE_FEEDBACK, RECEIVE_FEEDBACK_ERRORS} from '../actions/feedback_actions';
+import {RECEIVE_FEEDBACK, CLEAR_FEEDBACK, RECEIVE_FEEDBACK_ERRORS} from '../actions/feedback_actions';
 import {merge} from 'lodash';
 
 const _defaultState = {
@@ -12,6 +12,10 @@ const FeedbackIndexReducer = (state = _defaultState, action) => {
   switch (action.type) {
     case RECEIVE_FEEDBACK:
       newState["feedback"] = action.feedback;
+      newState["errors"] = [];
+      return newState;
+    case CLEAR_FEEDBACK:
+      newState["feedback"] = null;
       newState["errors"] = [];
       return newState;
     case RECEIVE_FEEDBACK_ERRORS:

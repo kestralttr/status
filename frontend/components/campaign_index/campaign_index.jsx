@@ -8,7 +8,6 @@ class CampaignIndex extends React.Component {
     super(props);
     this.state = {
     };
-    console.log(props);
     this.generateForm = this.generateForm.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
   }

@@ -47,8 +47,6 @@ class PostingIndex extends React.Component {
       );
     }
     if (nextProps.postingIndex !== this.props.postingIndex) {
-      console.log("will return first posting detail");
-      console.log("nextProps postingIndex: ", nextProps.postingIndex);
       return(
         this.renderFirstPostingDetail(nextProps.postingIndex)
       );
