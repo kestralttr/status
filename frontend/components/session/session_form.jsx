@@ -14,6 +14,7 @@ class SessionForm extends React.Component {
     this.title = this.title.bind(this);
     this.altAuth = this.altAuth.bind(this);
     this.testModal = this.testModal.bind(this);
+    this.redirectToMain = this.redirectToMain.bind(this);
   }
 
   handleSubmit(e) {
@@ -43,6 +44,12 @@ class SessionForm extends React.Component {
   redirectIfLoggedIn() {
     if (this.props.loggedIn) {
       this.props.router.push("/campaignindex");
+    }
+  }
+
+  redirectToMain() {
+    if (!this.props.loggedIn) {
+      this.props.router.push("/");
     }
   }
 
@@ -96,7 +103,7 @@ class SessionForm extends React.Component {
     return (
       <div className='auth-form'>
         <img className='auth-form-background' src="https://s11.postimg.org/e2znqrxyb/colorful3_smallest.jpg"/>
-        <h1 className='auth-form-site-name'>• status •</h1>
+        <h1 onClick={this.redirectToMain} className='auth-form-site-name'>• status •</h1>
         <form onSubmit={this.handleSubmit}>
           {this.title()}
           <br/>
