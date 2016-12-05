@@ -6,6 +6,7 @@ class PostingIndexItem extends React.Component {
     super(props);
 
     this.handleClick = this.handleClick.bind(this);
+    this.renderItem = this.renderItem.bind(this);
   }
 
   handleClick(postingId) {
@@ -14,13 +15,26 @@ class PostingIndexItem extends React.Component {
     };
   }
 
+  renderItem() {
+    if (this.props.postingDetail && this.props.posting && this.props.postingDetail.id === this.props.posting.id) {
+      return(
+        <li className="posting-list-item-selected"
+          onClick={this.handleClick(this.props.posting.id)}>
+          {this.props.posting.title}
+        </li>
+      );
+    } else {
+      return(
+        <li className="posting-list-item"
+          onClick={this.handleClick(this.props.posting.id)}>
+          {this.props.posting.title}
+        </li>
+      );
+    }
+  }
+
   render() {
-    return(
-      <li className="posting-list-item"
-        onClick={this.handleClick(this.props.posting.id)}>
-        {this.props.posting.title}
-      </li>
-    );
+    return this.renderItem();
   }
 
 }

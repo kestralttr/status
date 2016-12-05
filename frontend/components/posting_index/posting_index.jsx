@@ -72,6 +72,7 @@ class PostingIndex extends React.Component {
       <ul>
         {postings.map(posting => (
           <PostingIndexItem key={posting.id}
+            postingDetail={this.props.postingDetail}
             requestPosting={this.props.requestPosting}
             posting={posting} />
         ))}

@@ -100,6 +100,7 @@ class CampaignDetail extends React.Component {
           <ExecutionIndex
             activeMediaType={this.sendMediaType}
             executionIndex={this.props.executionIndex}
+            executionDetail={this.props.executionDetail}
             currentUser={this.props.currentUser}
             mediaType={this.props.mediaType}
             campaignDetail={this.props.campaignDetail}
@@ -128,6 +129,7 @@ class CampaignDetail extends React.Component {
           <PostingIndex
             executionDetail={this.props.executionDetail}
             postingIndex={this.props.postingIndex}
+            postingDetail={this.props.postingDetail}
             requestPostings={this.props.requestPostings}
             requestPosting={this.props.requestPosting}
             clearPostings={this.props.clearPostings}
