@@ -46,7 +46,8 @@ Campaign.create(
       Feedback.create(
       comments: "We love it!  The idea is approved.  Can't wait to see the video!",
       posting_id: 1,
-      creator_id: 2
+      creator_id: 2,
+      creator_name: "jeff"
       )
     #POSTING 2
     Posting.create(
@@ -59,7 +60,8 @@ Campaign.create(
       Feedback.create(
       comments: "Absolutely!  Thanks!",
       posting_id: 2,
-      creator_id: 2
+      creator_id: 2,
+      creator_name: "jeff"
       )
   #EXECUTION 2
   Execution.create(
@@ -93,7 +95,8 @@ Campaign.create(
       Feedback.create(
       comments: "The script looks good.  However, let's make sure we hit the humor in more obvious ways as well.  As funny as this is, it's coming across understated.  So let's move forward with production, but look to make the humor more pronounced",
       posting_id: 3,
-      creator_id: 3
+      creator_id: 3,
+      creator_name: "alex"
       )
     #POSTING 4
     Posting.create(
@@ -134,7 +137,8 @@ Campaign.create(
       Feedback.create(
       comments: "Nope, looks good to us.  The goal was to make a simple spot with the leftover funds we had, and it looks like we've done that.  Approved.",
       posting_id: 5,
-      creator_id: 4
+      creator_id: 4,
+      creator_name: "ben"
       )
   #EXECUTION 6
   Execution.create(
@@ -155,7 +159,8 @@ Campaign.create(
       Feedback.create(
       comments: "Looks good.  Approved.",
       posting_id: 6,
-      creator_id: 3
+      creator_id: 3,
+      creator_name: "alex"
       )
   #EXECUTION 7
   Execution.create(
@@ -176,7 +181,8 @@ Campaign.create(
       Feedback.create(
       comments: "Go sign given.  Approved.",
       posting_id: 7,
-      creator_id: 3
+      creator_id: 3,
+      creator_name: "alex"
       )
   #EXECUTION 8
   Execution.create(
@@ -197,7 +203,8 @@ Campaign.create(
       Feedback.create(
       comments: "Let's make the background more engaging.  Can we try a brighter color that grabs attention?",
       posting_id: 8,
-      creator_id: 2
+      creator_id: 2,
+      creator_name: "jeff"
       )
     #POSTING 9
     Posting.create(
@@ -210,7 +217,8 @@ Campaign.create(
       Feedback.create(
       comments: "Looks great!  Approved.",
       posting_id: 9,
-      creator_id: 2
+      creator_id: 2,
+      creator_name: "jeff"
       )
   #EXECUTION 9
   Execution.create(
@@ -231,7 +239,8 @@ Campaign.create(
       Feedback.create(
       comments: "We're aligned with this.  We're ready to proceed with reviewing mocks.",
       posting_id: 10,
-      creator_id: 4
+      creator_id: 4,
+      creator_name: "ben"
       )
     #POSTING 11
     Posting.create(
@@ -244,7 +253,8 @@ Campaign.create(
       Feedback.create(
       comments: "We agree.  Let's post it!",
       posting_id: 11,
-      creator_id: 4
+      creator_id: 4,
+      creator_name: "ben"
       )
   #EXECUTION 10
   Execution.create(
@@ -265,7 +275,8 @@ Campaign.create(
       Feedback.create(
       comments: "Yup, we like it too.  Send it out!  :)",
       posting_id: 12,
-      creator_id: 4
+      creator_id: 4,
+      creator_name: "ben"
       )
   #EXECUTION 11
   Execution.create(
@@ -306,7 +317,8 @@ Campaign.create(
       Feedback.create(
       comments: "Thanks for the quick posting.  We like the approach, but want to add product shots at the beginning as well.  Let us know when we might be able to see a revision. Thanks.",
       posting_id: 14,
-      creator_id: 4
+      creator_id: 4,
+      creator_name: "ben"
       )
     #POSTING 15
     Posting.create(
@@ -319,7 +331,8 @@ Campaign.create(
       Feedback.create(
       comments: "Yup, looks good.  Let's move into production.",
       posting_id: 15,
-      creator_id: 4
+      creator_id: 4,
+      creator_name: "ben"
       )
     #POSTING 16
     Posting.create(
@@ -332,7 +345,8 @@ Campaign.create(
       Feedback.create(
       comments: "Timing looks good to us, but let's swap out the intro shot with one that is closer up.",
       posting_id: 16,
-      creator_id: 4
+      creator_id: 4,
+      creator_name: "ben"
       )
     #POSTING 17
     Posting.create(
@@ -345,7 +359,8 @@ Campaign.create(
       Feedback.create(
       comments: "Nope, good on our end.  Let's do it!",
       posting_id: 17,
-      creator_id: 4
+      creator_id: 4,
+      creator_name: "ben"
       )
   #EXECUTION 13
   Execution.create(
@@ -366,7 +381,8 @@ Campaign.create(
       Feedback.create(
       comments: "Totally.  Look out for some incoming end frame details next week, but for now we're aligned.",
       posting_id: 18,
-      creator_id: 4
+      creator_id: 4,
+      creator_name: "ben"
       )
   #EXECUTION 14
   Execution.create(
@@ -387,7 +403,8 @@ Campaign.create(
       Feedback.create(
       comments: "Love the atmosphere you feel while you're listening to it.  Let's keep that, but add at least one addtional reference to product.  It currently seems like a last minute consideration.",
       posting_id: 19,
-      creator_id: 4
+      creator_id: 4,
+      creator_name: "ben"
       )
     #POSTING 20
     Posting.create(
@@ -400,7 +417,8 @@ Campaign.create(
       Feedback.create(
       comments: "We're onboard.  Sounds like Christmas at my house.  :)",
       posting_id: 20,
-      creator_id: 4
+      creator_id: 4,
+      creator_name: "ben"
       )
   #EXECUTION 15
   Execution.create(
@@ -421,7 +439,8 @@ Campaign.create(
       Feedback.create(
       comments: "Looks good, guys.  The colors connect the campaign together really well.  Awaiting next posting.",
       posting_id: 21,
-      creator_id: 3
+      creator_id: 3,
+      creator_name: "alex"
       )
     #POSTING 22
     Posting.create(
@@ -434,7 +453,8 @@ Campaign.create(
       Feedback.create(
       comments: "Thanks for adding those in.  However, we need the candles to look a lot bigger.  Currently it's too small to read the font.",
       posting_id: 22,
-      creator_id: 3
+      creator_id: 3,
+      creator_name: "alex"
       )
   #EXECUTION 16
   Execution.create(
@@ -455,7 +475,8 @@ Campaign.create(
       Feedback.create(
       comments: "Very nice.  Let's proceed to production.",
       posting_id: 23,
-      creator_id: 3
+      creator_id: 3,
+      creator_name: "alex"
       )
     #POSTING 24
     Posting.create(
@@ -468,7 +489,8 @@ Campaign.create(
       Feedback.create(
       comments: "They've done a good job on recreating the design, but the color seems excessively muted.  Can we fix that?",
       posting_id: 24,
-      creator_id: 3
+      creator_id: 3,
+      creator_name: "alex"
       )
 #CAMPAIGN 5
 Campaign.create(
@@ -494,7 +516,8 @@ Campaign.create(
       Feedback.create(
       comments: "Oh my.  We like it a lot.  We're still waiting for some internal comments, but we can address those in the production phase.  Let's get started.",
       posting_id: 25,
-      creator_id: 5
+      creator_id: 5,
+      creator_name: "greg"
       )
     #POSTING 26
     Posting.create(
@@ -507,7 +530,8 @@ Campaign.create(
       Feedback.create(
       comments: "Let's start with the guitar shot instead.  Other than that, we're good to lock timing.",
       posting_id: 26,
-      creator_id: 5
+      creator_id: 5,
+      creator_name: "greg"
       )
   #EXECUTION 18
   Execution.create(
@@ -528,7 +552,8 @@ Campaign.create(
       Feedback.create(
       comments: "The right page looks good, but the left page needs some work.  Let's bring the focus more on the product.",
       posting_id: 27,
-      creator_id: 6
+      creator_id: 6,
+      creator_name: "andy"
       )
   #EXECUTION 19
   Execution.create(
@@ -569,7 +594,8 @@ Campaign.create(
       Feedback.create(
       comments: "Yup, this is exactly what we had in mind.  Let's move with it.",
       posting_id: 29,
-      creator_id: 6
+      creator_id: 6,
+      creator_name: "andy"
       )
     #POSTING 30
     Posting.create(
@@ -582,7 +608,8 @@ Campaign.create(
       Feedback.create(
       comments: "Love it.  Let's get some reads from VO actors.",
       posting_id: 30,
-      creator_id: 6
+      creator_id: 6,
+      creator_name: "andy"
       )
   #EXECUTION 21
   Execution.create(
@@ -603,7 +630,8 @@ Campaign.create(
       Feedback.create(
       comments: "We are cracking up over here.  Can't believe they made it.  :)",
       posting_id: 31,
-      creator_id: 5
+      creator_id: 5,
+      creator_name: "greg"
       )
 
 
