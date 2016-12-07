@@ -5,6 +5,7 @@ import ExecutionMiddleware from './execution_middleware';
 import PostingMiddleware from './posting_middleware';
 import FeedbackMiddleware from './feedback_middleware';
 
+
 const RootMiddleware = applyMiddleware(
   SessionMiddleware,
   CampaignMiddleware,

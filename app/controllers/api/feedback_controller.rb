@@ -16,7 +16,7 @@ class Api::FeedbackController < ApplicationController
     @posting = Posting.find(feedback_params[:posting_id])
     initial_feedback_array = @posting.feedback
     @feedback = initial_feedback_array.map do |feedback_item|
-      creator_username = User.find(feedback_item.creator_id)
+    #   creator_name = User.find(feedback_item.creator_id)
       # feedback_item[:creator_username] = User.find(feedback_item.creator_id).username
       feedback_item
     end
@@ -26,7 +26,7 @@ class Api::FeedbackController < ApplicationController
   end
 
   def feedback_params
-    params.require(:feedback).permit(:comments, :link_url, :posting_id, :creator_id, :creator_username)
+    params.require(:feedback).permit(:comments, :link_url, :posting_id, :creator_id, :creator_name)
   end
 
 end

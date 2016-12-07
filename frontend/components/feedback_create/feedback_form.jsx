@@ -9,7 +9,8 @@ class FeedbackForm extends React.Component {
       comments: "",
       link_url: "",
       creator_id: props.currentUser.id,
-      posting_id: props.postingDetail.id
+      posting_id: props.postingDetail.id,
+      creator_name: props.currentUser.username
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.modal = this.modal.bind(this);
@@ -21,7 +22,8 @@ class FeedbackForm extends React.Component {
       comments: this.state.comments,
       link_url: this.state.link_url,
       creator_id: this.state.creator_id,
-      posting_id: this.state.posting_id
+      posting_id: this.state.posting_id,
+      creator_name: this.state.creator_name
     };
     this.props.createFeedback({feedback});
     this.props.router.push(`/campaigns/${this.props.campaignDetail.id}`);
