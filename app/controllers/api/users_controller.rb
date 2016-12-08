@@ -25,7 +25,7 @@ class Api::UsersController < ApplicationController
       @users = User.all
     else
       @users = []
-      User.all each do |user|
+      User.all.each do |user|
         if user.username.slice(0,str.length) == str
           @users << user
         end
