@@ -8,10 +8,11 @@ class CampaignForm extends React.Component {
     this.state = {
       title: "",
       manager_id: props.currentUser.id,
-      members: [props.currentUser.username],
+      members: [],
       approvers: [props.currentUser.username],
       newMemberValue: "",
-      modalClass: "active"
+      modalClass: "active",
+      str: ""
     };
     this.modalClass = "hidden";
     this.newMemberValue = "";
@@ -20,6 +21,7 @@ class CampaignForm extends React.Component {
     this.handleModalOpen = this.handleModalOpen.bind(this);
     this.handleModalClose = this.handleModalClose.bind(this);
     this.addMember = this.addMember.bind(this);
+    this.handleUsernameInput = this.handleUsernameInput.bind(this);
   }
 
   handleSubmit(e) {
@@ -57,10 +59,21 @@ class CampaignForm extends React.Component {
     );
   }
 
-  update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value
-    });
+  updateTitle(e) {
+    return (
+      this.setState({
+        ["title"]: e.currentTarget.value
+      })
+    );
+  }
+
+  updateApprover(e) {
+    return (
+      this.state.requestUsers(e.currentTarget.value),
+      this.setState({
+        ["str"]: e.currentTarget.value
+      })
+    );
   }
 
   handleModalOpen(e) {
@@ -75,6 +88,21 @@ class CampaignForm extends React.Component {
     return(
       this.setState({modalClass: "hidden"})
     );
+  }
+
+  handleUsernameInput(e) {
+      e.preventDefault();
+      console.log("working");
+      let str = this.state.str;
+      return(
+        this.setState({str: this.state.str + e.currentTarget.value}),
+        console.log(this.state.str)
+      );
+      this.update("str",e);
+  }
+
+  displayUsernameIndex() {
+
   }
 
   modal() {
@@ -93,9 +121,9 @@ class CampaignForm extends React.Component {
             type="text"
             value={this.state.title}
             maxLength="50"
-            onChange={this.update("title")}>
+            onChange={this.updateTitle}>
           </input> <br></br>
-          <span>Members:</span>
+        <span>Approvers:</span>
           <ul>
             {this.state.members.map(function(member,idx){
               return (
@@ -103,13 +131,14 @@ class CampaignForm extends React.Component {
               );
             })}
           </ul> <br></br>
-        <span>Add New Member:</span><br></br>
+        <span>Add New Approver:</span><br></br>
         <form>
           <input className="campaign-form-input"
+            id="member-input"
             type="text"
-            value={this.state.newMemberValue}
+            value={this.state.str}
             maxLength="15"
-            onChange={this.update("newMemberValue")}>
+            onChange={this.update("str")}>
           </input>
           <input type="submit"
             className="campaign-form-button"

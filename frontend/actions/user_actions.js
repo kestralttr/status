@@ -1,18 +1,18 @@
-export const REQUEST_USER = "REQUEST_USER";
-export const RECEIVE_USER = "RECEIVE_USER";
-export const RECEIVE_USER_ERRORS = "RECEIVE_ERRORS";
+export const REQUEST_USERS = "REQUEST_USER";
+export const RECEIVE_USERS = "RECEIVE_USER";
+export const RECEIVE_USERS_ERRORS = "RECEIVE_ERRORS";
 
-export const requestUser = (id) => ({
-  type: REQUEST_USER,
-  id: id
+export const requestUsers = (str) => ({
+  type: REQUEST_USERS,
+  str: str
 });
 
-export const receiveUser = (user) => ({
-  type: RECEIVE_USER,
-  user: user
+export const receiveUsers = (users) => ({
+  type: RECEIVE_USERS,
+  users: users
 });
 
 export const receiveErrors = (errors) => ({
-  type: RECEIVE_USER_ERRORS,
+  type: RECEIVE_USERS_ERRORS,
   errors: errors
 });

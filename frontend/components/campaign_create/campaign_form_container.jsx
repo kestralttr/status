@@ -1,6 +1,7 @@
 import {connect} from 'react-redux';
 import CampaignForm from './campaign_form';
 import {createCampaign} from '../../actions/campaign_actions';
+import {requestUsers} from '../../actions/user_actions';
 
 const mapStateToProps = state => {
   return({
@@ -11,7 +12,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  createCampaign: (campaign) => dispatch(createCampaign(campaign))
+  createCampaign: (campaign) => dispatch(createCampaign(campaign)),
+  requestUsers: (str) => dispatch(requestUsers(str))
 });
 
 export default connect(

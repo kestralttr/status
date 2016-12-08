@@ -19,8 +19,22 @@ class Api::UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def index
+    str = user_params[:str]
+    if str == ""
+      @users = User.all
+    else
+      @users = []
+      User.all each do |user|
+        if user.username.slice(0,str.length) == str
+          @users << user
+        end
+      end
+    end
+  end
+
   def user_params
-    params.require(:user).permit(:username,:password)
+    params.require(:user).permit(:username,:password,:str)
   end
 
 
