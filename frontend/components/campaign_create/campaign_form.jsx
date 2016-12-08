@@ -22,6 +22,8 @@ class CampaignForm extends React.Component {
     this.handleModalClose = this.handleModalClose.bind(this);
     this.addMember = this.addMember.bind(this);
     this.handleUsernameInput = this.handleUsernameInput.bind(this);
+    this.updateTitle = this.updateTitle.bind(this);
+    this.updateApprover = this.updateApprover.bind(this);
   }
 
   handleSubmit(e) {
@@ -60,20 +62,13 @@ class CampaignForm extends React.Component {
   }
 
   updateTitle(e) {
-    return (
-      this.setState({
-        ["title"]: e.currentTarget.value
-      })
-    );
+      this.setState({["title"]: e.currentTarget.value
+    });
   }
 
   updateApprover(e) {
-    return (
-      this.state.requestUsers(e.currentTarget.value),
-      this.setState({
-        ["str"]: e.currentTarget.value
-      })
-    );
+      this.props.requestUsers(e.currentTarget.value);
+      this.setState({["str"]: e.currentTarget.value});
   }
 
   handleModalOpen(e) {
@@ -138,7 +133,7 @@ class CampaignForm extends React.Component {
             type="text"
             value={this.state.str}
             maxLength="15"
-            onChange={this.update("str")}>
+            onChange={this.updateApprover}>
           </input>
           <input type="submit"
             className="campaign-form-button"
