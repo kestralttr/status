@@ -26,6 +26,14 @@ class CampaignForm extends React.Component {
     this.updateApprover = this.updateApprover.bind(this);
   }
 
+  componentDidMount() {
+    this.props.requestUsers("");
+  }
+
+  componentWillUnmount() {
+    this.props.clearUsers();
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const campaign = {
