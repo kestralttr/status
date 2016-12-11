@@ -66,13 +66,6 @@ class CampaignForm extends React.Component {
     );
   }
 
-  addMember(e) {
-    e.preventDefault();
-    return(
-      this.setState({members: this.state.members.concat(this.state.newMemberValue),
-      newMemberValue: ""})
-    );
-  }
 
   updateTitle(e) {
       this.setState({["title"]: e.currentTarget.value
@@ -136,6 +129,12 @@ class CampaignForm extends React.Component {
 
   }
 
+  addMember(username) {
+    return e => this.setState({
+      members: this.state.members.concat(username)
+    });
+  }
+
   modal() {
     return(
       <div>
@@ -174,10 +173,12 @@ class CampaignForm extends React.Component {
 
           </input>
           <div id="user-search">
-            {this.props.userIndex.map(function(user,idx) {
+            {this.props.userIndex.map((user,idx) => {
               return (
                 <ul>
-                  <li className="user-item" key={user.id}>
+                  <li className="user-item"
+                    key={idx}
+                    onClick={this.addMember(user.username)}>
                     {user.username}
                   </li>
                 </ul>
