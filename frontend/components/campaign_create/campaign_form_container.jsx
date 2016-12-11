@@ -7,7 +7,8 @@ const mapStateToProps = state => {
   return({
     currentUser: state.session.currentUser,
     errors: state.campaignIndex.errors,
-    campaignIndex: state.campaignIndex.campaigns
+    campaignIndex: state.campaignIndex.campaigns,
+    userIndex: state.userIndex.users
   });
 };
 

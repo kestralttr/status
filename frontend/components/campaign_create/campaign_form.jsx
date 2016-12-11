@@ -12,7 +12,8 @@ class CampaignForm extends React.Component {
       approvers: [props.currentUser.username],
       newMemberValue: "",
       modalClass: "active",
-      str: ""
+      str: "",
+      userSearch: null
     };
     this.modalClass = "hidden";
     this.newMemberValue = "";
@@ -24,10 +25,14 @@ class CampaignForm extends React.Component {
     this.handleUsernameInput = this.handleUsernameInput.bind(this);
     this.updateTitle = this.updateTitle.bind(this);
     this.updateApprover = this.updateApprover.bind(this);
+    this.renderUserSearch = this.renderUserSearch.bind(this);
   }
 
   componentDidMount() {
-    this.props.requestUsers("");
+  }
+
+  componentWillReceiveProps(nextProps) {
+
   }
 
   componentWillUnmount() {
@@ -75,9 +80,33 @@ class CampaignForm extends React.Component {
   }
 
   updateApprover(e) {
-      this.props.requestUsers(e.currentTarget.value);
+      if (e.currentTarget.value !== "") {
+        this.props.requestUsers(e.currentTarget.value);
+      } else if (e.currentTarget.value === "") {
+        this.props.clearUsers();
+      }
       this.setState({["str"]: e.currentTarget.value});
+      console.log(this.state.userSearch);
+      if (e.currentTarget.value !== "") {
+        this.setState({["userSearch"]: this.renderUserSearch()});
+      }
   }
+
+  renderUserSearch() {
+    if (this.props.userIndex && !this.props.userIndex.length > 0) {
+      console.log("renderUserSearch activated");
+      return(
+        <ul>
+          {this.props.userIndex.map(user => (
+            <li>
+              {user.username}
+            </li>
+          ))}
+        </ul>
+      );
+    }
+  }
+
 
   handleModalOpen(e) {
     e.preventDefault();
@@ -94,14 +123,13 @@ class CampaignForm extends React.Component {
   }
 
   handleUsernameInput(e) {
-      e.preventDefault();
-      console.log("working");
-      let str = this.state.str;
-      return(
-        this.setState({str: this.state.str + e.currentTarget.value}),
-        console.log(this.state.str)
-      );
-      this.update("str",e);
+    e.preventDefault();
+    console.log("working");
+    let str = this.state.str;
+    return(
+      this.setState({str: this.state.str + e.currentTarget.value}),
+      console.log(this.state.str)
+    );
   }
 
   displayUsernameIndex() {
@@ -135,14 +163,27 @@ class CampaignForm extends React.Component {
             })}
           </ul> <br></br>
         <span>Add New Approver:</span><br></br>
-        <form>
+        <form autoComplete="off">
+          <input autoComplete="false" name="hidden" type="hidden"></input>
           <input className="campaign-form-input"
             id="member-input"
             type="text"
             value={this.state.str}
             maxLength="15"
             onChange={this.updateApprover}>
+
           </input>
+          <div id="user-search">
+            {this.props.userIndex.map(function(user,idx) {
+              return (
+                <ul>
+                  <li className="user-item" key={user.id}>
+                    {user.username}
+                  </li>
+                </ul>
+              );
+            })}
+          </div>
           <input type="submit"
             className="campaign-form-button"
             onClick={this.addMember}
