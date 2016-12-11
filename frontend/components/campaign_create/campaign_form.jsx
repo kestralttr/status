@@ -8,7 +8,7 @@ class CampaignForm extends React.Component {
     this.state = {
       title: "",
       manager_id: props.currentUser.id,
-      members: [],
+      members: [this.props.currentUser.username],
       approvers: [props.currentUser.username],
       newMemberValue: "",
       modalClass: "active",
@@ -26,6 +26,7 @@ class CampaignForm extends React.Component {
     this.updateTitle = this.updateTitle.bind(this);
     this.updateApprover = this.updateApprover.bind(this);
     this.renderUserSearch = this.renderUserSearch.bind(this);
+    this.renderMember = this.renderMember.bind(this);
   }
 
   componentDidMount() {
@@ -130,9 +131,26 @@ class CampaignForm extends React.Component {
   }
 
   addMember(username) {
-    return e => this.setState({
-      members: this.state.members.concat(username)
-    });
+    let that = this;
+    return (e) => {
+      if (!that.state.members.includes(username)) {
+        return (
+          that.setState({
+            members: that.state.members.concat(username),
+            str: ""
+          },
+          this.props.clearUsers
+        )
+      );
+    }
+  };}
+
+  renderMember(member,idx) {
+    if (member !== this.props.currentUser.username) {
+      return (
+        <li className="member-item" key={idx}>{member.slice(0,1).toUpperCase() + member.slice(1)}</li>
+      );
+    }
   }
 
   modal() {
@@ -155,9 +173,9 @@ class CampaignForm extends React.Component {
           </input> <br></br>
         <span>Approvers:</span>
           <ul>
-            {this.state.members.map(function(member,idx){
+            {this.state.members.map((member,idx) => {
               return (
-                <li className="member-item" key={idx}>{member.slice(0,1).toUpperCase() + member.slice(1)}</li>
+                this.renderMember(member,idx)
               );
             })}
           </ul> <br></br>
