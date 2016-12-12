@@ -163,6 +163,9 @@ class CampaignForm extends React.Component {
             <Link to="/campaignindex"
               className="campaign-form-close-button">Close</Link>
           </div>
+          <div>
+            <input type="file"></input>
+          </div>
           {this.renderErrors()}
           <span>Title:</span><br></br>
           <input className="campaign-form-input"
@@ -188,7 +191,6 @@ class CampaignForm extends React.Component {
             value={this.state.str}
             maxLength="15"
             onChange={this.updateApprover}>
-
           </input>
           <div id="user-search">
             {this.props.userIndex.map((user,idx) => {
@@ -205,7 +207,7 @@ class CampaignForm extends React.Component {
           </div>
           <input type="submit"
             className="campaign-form-button"
-            onClick={this.addMember}
+            onClick={this.addMember(this.state.str)}
             value="Add Member" /> <br></br>
         </form>
           <button className="campaign-form-button"
