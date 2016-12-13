@@ -7,6 +7,7 @@ class CampaignForm extends React.Component {
     super(props);
     this.state = {
       title: "",
+      image_url: "",
       manager_id: props.currentUser.id,
       members: [this.props.currentUser.username],
       approvers: [props.currentUser.username],
