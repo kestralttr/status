@@ -53,20 +53,15 @@ class CampaignIndexItem extends React.Component {
   render() {
 
     return(
-      <li className="campaign-index-item">
+      <li className="campaign-index-item"
+        onClick={this.handleClick(`/campaigns/${this.props.campaign.id}`)}>
+        <span className="campaign-index-item-text">
+          {this.props.campaign.title}
+        </span>
+        <div className="campaign-img-container">
+          <img className="campaign-index-item-img" src={this.props.campaign.image_url}></img>
+        </div>
 
-        <ul>
-          <li className="campaign-index-item-show"
-            onClick={this.handleClick(`/campaigns/${this.props.campaign.id}`)}>
-            {this.props.campaign.title}
-          </li>
-
-          <button className="campaign-index-item-delete"
-            onClick={this.handleDelete(this.props.campaign)}
-            disabled={this.validateManager(this.props.campaign)}>
-            Delete
-          </button>
-        </ul>
 
       </li>
     );

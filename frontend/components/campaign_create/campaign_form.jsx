@@ -188,7 +188,7 @@ class CampaignForm extends React.Component {
           <input className="campaign-form-input"
             type="text"
             value={this.state.title}
-            maxLength="50"
+            maxLength="30"
             onChange={this.updateTitle}>
           </input> <br></br>
         <span>Approvers:</span>
