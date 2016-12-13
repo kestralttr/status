@@ -28,6 +28,7 @@ class CampaignForm extends React.Component {
     this.updateApprover = this.updateApprover.bind(this);
     this.renderUserSearch = this.renderUserSearch.bind(this);
     this.renderMember = this.renderMember.bind(this);
+    this.uploadImage = this.uploadImage.bind(this);
   }
 
   componentDidMount() {
@@ -47,7 +48,8 @@ class CampaignForm extends React.Component {
       title: this.state.title,
       manager_id: this.state.manager_id,
       members: this.state.members,
-      approvers: this.state.approvers
+      approvers: this.state.approvers,
+      image_url: this.state.image_url
     };
     this.props.createCampaign({campaign});
     this.props.router.push("/campaignindex");
@@ -102,7 +104,6 @@ class CampaignForm extends React.Component {
     }
   }
 
-
   handleModalOpen(e) {
     e.preventDefault();
     return(
@@ -154,6 +155,21 @@ class CampaignForm extends React.Component {
     }
   }
 
+  uploadImage(e) {
+    e.preventDefault();
+    let that = this;
+    cloudinary.openUploadWidget(
+      window.cloudinary_options,
+      function(error, images) {
+        if (error === null) {
+          that.setState({
+            image_url: images[0].url
+          });
+        }
+      }
+    );
+  }
+
   modal() {
     return(
       <div>
@@ -165,7 +181,7 @@ class CampaignForm extends React.Component {
               className="campaign-form-close-button">Close</Link>
           </div>
           <div>
-            <input type="file"></input>
+            <button onClick={this.uploadImage}>Upload Image</button>
           </div>
           {this.renderErrors()}
           <span>Title:</span><br></br>

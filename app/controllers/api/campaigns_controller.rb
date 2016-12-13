@@ -3,7 +3,8 @@ class Api::CampaignsController < ApplicationController
   def create
     @campaign = Campaign.new(
       title: campaign_params[:title],
-      manager_id: campaign_params[:manager_id]
+      manager_id: campaign_params[:manager_id],
+      image_url: campaign_params[:image_url]
     )
     if @campaign.save
       @campaign_id = Campaign.find_by(title: @campaign.title).id
@@ -38,7 +39,7 @@ class Api::CampaignsController < ApplicationController
   end
 
   def campaign_params
-    params.require(:campaign).permit(:title, :manager_id, members: [], approvers: [])
+    params.require(:campaign).permit(:title, :manager_id, :image_url, members: [], approvers: [])
   end
 
 end
