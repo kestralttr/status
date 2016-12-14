@@ -68,20 +68,78 @@
 .campaign-form-button {
   padding: 5px;
   font-weight: 500;
-  border: 1px solid #1AAFD0;
-  color: #1AAFD0;
+  /*border: 1px solid #1AAFD0;*/
+  background-color: #1AAFD0;
+  color: black;
   border-radius: 5px;
   margin: 5px 1px 5px 5px;
   font-size: 16px;
-}
-
-#campaign-form-submit-button {
-  display: block;
-  margin: 0 auto 0 auto;
+  transition-property: background-color;
+  transition-duration: 0.5s;
 }
 
 .campaign-form-button:hover {
   cursor: pointer;
-  border: 2px solid #1AAFD0;
-  margin: 4px 0 4px 4px;
+  background-color: #5edeff;
+}
+
+.approver-form {
+  position: relative;
+}
+
+#user-search {
+  position: absolute;
+  top: 37px;
+  background-color: grey;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+#user-search > ul > li {
+  border-top: 1px solid black;
+}
+
+#user-search > ul > li:hover {
+  color: #1AAFD0;
+  cursor: pointer;
+}
+
+#upload-campaign-image-button {
+  padding: 5px;
+  font-weight: 500;
+  /*margin: 0 auto;*/
+  border-radius: 5px;
+  text-align: center;
+  background-color: #1AAFD0;
+  color: black;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+#upload-campaign-image-button:hover {
+  background-color: #5edeff;
+  cursor: pointer;
+}
+
+#campaign-form-submit-button {
+  position: absolute;
+  bottom: -2px;
+  left: -2px;
+  right: -2px;
+  width: 100%;
+  padding: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin: 0 auto;
+  border-radius: 0;
+  text-align: center;
+  background-color: #1AAFD0;
+  color: black;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+#campaign-form-submit-button:hover {
+  background-color: #5edeff;
 }

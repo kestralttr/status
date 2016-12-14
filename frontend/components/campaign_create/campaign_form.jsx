@@ -83,7 +83,6 @@ class CampaignForm extends React.Component {
         this.props.clearUsers();
       }
       this.setState({["str"]: e.currentTarget.value});
-      console.log(this.state.userSearch);
       if (e.currentTarget.value !== "") {
         this.setState({["userSearch"]: this.renderUserSearch()});
       }
@@ -181,7 +180,7 @@ class CampaignForm extends React.Component {
               className="campaign-form-close-button">Close</Link>
           </div>
           <div>
-            <button onClick={this.uploadImage}>Upload Image</button>
+            <button id="upload-campaign-image-button" onClick={this.uploadImage}>Upload Image</button>
           </div>
           {this.renderErrors()}
           <span>Title:</span><br></br>
@@ -200,7 +199,7 @@ class CampaignForm extends React.Component {
             })}
           </ul> <br></br>
         <span>Add New Approver:</span><br></br>
-        <form autoComplete="off">
+        <form className="approver-form" autoComplete="off">
           <input autoComplete="false" name="hidden" type="hidden"></input>
           <input className="campaign-form-input"
             id="member-input"
