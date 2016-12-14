@@ -112,7 +112,7 @@
   box-shadow: 2px 2px 9px 0px rgba(0,0,0,0.75);
   background-color: white;
   overflow: hidden;
-  transition-property: -webkit-box-shadow, -moz-box-shadow, box-shadow, border, margin;
+  transition-property: -webkit-box-shadow, -moz-box-shadow, box-shadow, border, margin, color;
   transition-duration: 0.5s;
   background-size: 100% 100%;
   background-position: 0 0px;
@@ -124,6 +124,43 @@
   -webkit-box-shadow: 0 4px 9px 0px rgba(26,175,208,0.75);
   -moz-box-shadow: 0 4px 9px 0px rgba(26,175,208,0.75);
   box-shadow: 0 4px 9px 0px rgba(26,175,208,0.75);
+  color: #1AAFD0;
+  transition-property: -webkit-box-shadow, -moz-box-shadow, box-shadow, border;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+
+.new-campaign-index-item {
+  font-family: roboto;
+  float: left;
+  position: relative;
+  height: 200px;
+  width: 400px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: 2px solid #a8a8a8;
+  border-radius: 5px;
+  margin: 5px 5px 5px 5px;
+  -webkit-box-shadow: 2px 2px 9px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 2px 9px 0px rgba(0,0,0,0.75);
+  box-shadow: 2px 2px 9px 0px rgba(0,0,0,0.75);
+  background-color: white;
+  overflow: hidden;
+  transition-property: -webkit-box-shadow, -moz-box-shadow, box-shadow, border, margin, color;
+  transition-duration: 0.5s;
+  background-size: 100% 100%;
+  background-position: 0 0px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.new-campaign-index-item:hover {
+  /*background-color: #1AAFD0;*/
+  border: 2px solid #1AAFD0;
+  -webkit-box-shadow: 0 4px 9px 0px rgba(26,175,208,0.75);
+  -moz-box-shadow: 0 4px 9px 0px rgba(26,175,208,0.75);
+  box-shadow: 0 4px 9px 0px rgba(26,175,208,0.75);
+  color: #1AAFD0;
   transition-property: -webkit-box-shadow, -moz-box-shadow, box-shadow, border;
   transition-duration: 0.5s;
   cursor: pointer;
@@ -147,8 +184,7 @@
   left:0;
   right:0;
   z-index: 1;
-  border-bottom: 1px solid black;
-  border-top: 1px solid black;
+  /*border-top: 1px solid black;*/
   box-shadow: 0 4px 9px 0px rgba(0,0,0,0.75);
   /*text-shadow: 0px 0px 2px rgba(0, 0, 0, 1);*/
   background-color: rgba(255,255,255,0.75);

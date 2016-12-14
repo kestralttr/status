@@ -55,9 +55,12 @@ class CampaignIndex extends React.Component {
           <div>{this.renderErrors}</div>
         </div>
         <div className="campaign-index-tableau-container">
-          <button className="new-campaign-button" onClick={this.generateForm}>New Campaign</button>
+
           <div className="campaign-index-tableau">
             <ul className="campaign-index-list">
+              <li className="new-campaign-index-item" onClick={this.generateForm}>Create New Campaign
+
+              </li>
               {this.props.campaignIndex.map(campaign => (
                 <CampaignIndexItem key={campaign.id}
                   campaign={campaign}

@@ -24,7 +24,7 @@ User.create(username: "andy", password: "password")
 
 #CAMPAIGN 1
 Campaign.create(
-  title: "Stinky Candle Company - Garlic Candle",
+  title: "SCC - Garlic Candle",
   manager_id: 1
 )
   #EXECUTION 1
@@ -73,7 +73,7 @@ Campaign.create(
   )
 #CAMPAIGN 2
 Campaign.create(
-  title: "Stinky Candle Company - Fire Safety",
+  title: "SCC - Fire Safety",
   manager_id: 1
 )
   #EXECUTION 3
@@ -115,7 +115,7 @@ Campaign.create(
   )
 #CAMPAIGN 3
 Campaign.create(
-  title: "Stinky Candle Company - Candle Spotlights",
+  title: "SCC - Candle Spotlights",
   manager_id: 1
 )
   #EXECUTION 5
@@ -295,7 +295,7 @@ Campaign.create(
     )
 #CAMPAIGN 4
 Campaign.create(
-  title: "Stinky Candle Company - Holiday",
+  title: "SCC - Holiday",
   manager_id: 1
 )
   #EXECUTION 12
@@ -494,7 +494,7 @@ Campaign.create(
       )
 #CAMPAIGN 5
 Campaign.create(
-  title: "BennVogel Guitars - Launch",
+  title: "BG - Launch",
   manager_id: 1
 )
   #EXECUTION 17
@@ -572,7 +572,7 @@ Campaign.create(
     )
 #CAMPAIGN 6
 Campaign.create(
-  title: "BennVogel Guitars - PostLaunch",
+  title: "BG - PostLaunch",
   manager_id: 1
 )
   #EXECUTION 20
