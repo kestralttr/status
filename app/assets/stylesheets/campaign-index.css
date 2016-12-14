@@ -151,6 +151,7 @@
   background-size: 100% 100%;
   background-position: 0 0px;
   text-align: center;
+  vertical-align: middle;
   font-size: 30px;
 }
 
@@ -160,7 +161,7 @@
   -webkit-box-shadow: 0 4px 9px 0px rgba(26,175,208,0.75);
   -moz-box-shadow: 0 4px 9px 0px rgba(26,175,208,0.75);
   box-shadow: 0 4px 9px 0px rgba(26,175,208,0.75);
-  color: #1AAFD0;
+  color: #007fce;
   transition-property: -webkit-box-shadow, -moz-box-shadow, box-shadow, border;
   transition-duration: 0.5s;
   cursor: pointer;

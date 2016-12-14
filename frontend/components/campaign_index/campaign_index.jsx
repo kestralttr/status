@@ -10,6 +10,7 @@ class CampaignIndex extends React.Component {
     };
     this.generateForm = this.generateForm.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.backgroundImage = this.backgroundImage.bind(this);
   }
 
   componentDidMount() {
@@ -46,6 +47,10 @@ class CampaignIndex extends React.Component {
     );
   }
 
+  backgroundImage() {
+    return({backgroundImage: "url(/assets/addcampaign.png)"});
+  }
+
   render() {
     return (
       <section className="campaign-index">
@@ -58,8 +63,10 @@ class CampaignIndex extends React.Component {
 
           <div className="campaign-index-tableau">
             <ul className="campaign-index-list">
-              <li className="new-campaign-index-item" onClick={this.generateForm}>Create New Campaign
-
+              <li className="new-campaign-index-item"
+                onClick={this.generateForm}
+                style={this.backgroundImage()}
+                >Create New Campaign
               </li>
               {this.props.campaignIndex.map(campaign => (
                 <CampaignIndexItem key={campaign.id}
