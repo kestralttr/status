@@ -94,6 +94,8 @@
   position: relative;
   height: 200px;
   width: 400px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   border: 2px solid #e1e2e4;
   border-radius: 5px;
   margin: 5px 5px 5px 5px;
@@ -104,6 +106,7 @@
   overflow: hidden;
   transition-property: -webkit-box-shadow, -moz-box-shadow, box-shadow, border, margin;
   transition-duration: 0.5s;
+  background-size: 100% 100%;
 }
 
 .campaign-index-item:hover {
@@ -141,7 +144,7 @@
 .campaign-img-container {
   position: absolute;
   width: 400px;
-  height: 200px;
+  height: 240px;
 }
 
 .campaign-index-item-img {

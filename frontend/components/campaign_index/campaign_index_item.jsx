@@ -51,16 +51,15 @@ class CampaignIndexItem extends React.Component {
   }
 
   render() {
-
+    let backgroundImage = {backgroundImage: `url(${this.props.campaign.image_url})`};
     return(
       <li className="campaign-index-item"
+        style={backgroundImage}
         onClick={this.handleClick(`/campaigns/${this.props.campaign.id}`)}>
         <span className="campaign-index-item-text">
           {this.props.campaign.title}
         </span>
-        <div className="campaign-img-container">
-          <img className="campaign-index-item-img" src={this.props.campaign.image_url}></img>
-        </div>
+
 
 
       </li>
