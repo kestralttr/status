@@ -14,7 +14,8 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(246,246,246,1);
+  background-color: #cecece;
+  background-size: 100% 100%;
   z-index: -5;
 }
 
@@ -49,26 +50,37 @@
   background-color: white;
   /*height:60px;*/
   overflow: auto;
-  border: 1px solid #e1e2e4;
+  border: 1px solid #dddddd;
   margin: 80px 0 0 0;
   /*height: 100%;*/
   -webkit-box-shadow: 0px 3px 8px -1px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 3px 8px -1px rgba(0,0,0,0.75);
   box-shadow: 0px 3px 8px -1px rgba(0,0,0,0.75);
+  background: #f7f7f7;
+  /*background: #ffffff;
+  background: -moz-linear-gradient(top, #ffffff 0%, #e5e5e5 100%);
+  background: -webkit-linear-gradient(top, #ffffff 0%,#e5e5e5 100%);
+  background: linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 );*/
+}
+
+.campaign-index-list {
+
 }
 
 .new-campaign-button {
   padding: 5px;
   font-weight: 500;
-  border: 1px solid #1AAFD0;
-  color: #1AAFD0;
+  border: 1px solid #FF0044;
+  color: #FF0044;
   border-radius: 5px;
   margin: 10px 0 5px 20px;
 }
 
 .new-campaign-button:hover {
   cursor: pointer;
-  border: 2px solid #1AAFD0;
+  border: 2px solid #FF7096;
+  color: #FF7096;
   margin: 9px 0 4px 19px;
 }
 
@@ -82,11 +94,7 @@
   height: 100%;
   /*overflow: auto;*/
 
-  background: #ffffff;
-  background: -moz-linear-gradient(top, #ffffff 0%, #e5e5e5 100%);
-  background: -webkit-linear-gradient(top, #ffffff 0%,#e5e5e5 100%);
-  background: linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 );
+
 }
 
 .campaign-index-item {
@@ -96,7 +104,7 @@
   width: 400px;
   padding-top: 20px;
   padding-bottom: 20px;
-  border: 2px solid #e1e2e4;
+  border: 2px solid #a8a8a8;
   border-radius: 5px;
   margin: 5px 5px 5px 5px;
   -webkit-box-shadow: 2px 2px 9px 0px rgba(0,0,0,0.75);
@@ -107,15 +115,15 @@
   transition-property: -webkit-box-shadow, -moz-box-shadow, box-shadow, border, margin;
   transition-duration: 0.5s;
   background-size: 100% 100%;
-  background-position: 0 36px;
+  background-position: 0 0px;
 }
 
 .campaign-index-item:hover {
   /*background-color: #1AAFD0;*/
   border: 2px solid #1AAFD0;
-  -webkit-box-shadow: 0 0 9px 0px rgba(26,175,208,0.75);
-  -moz-box-shadow: 0 0 9px 0px rgba(26,175,208,0.75);*/
-  box-shadow: 0 0 9px 0px rgba(26,175,208,0.75);
+  -webkit-box-shadow: 0 4px 9px 0px rgba(26,175,208,0.75);
+  -moz-box-shadow: 0 4px 9px 0px rgba(26,175,208,0.75);
+  box-shadow: 0 4px 9px 0px rgba(26,175,208,0.75);
   transition-property: -webkit-box-shadow, -moz-box-shadow, box-shadow, border;
   transition-duration: 0.5s;
   cursor: pointer;
@@ -135,13 +143,15 @@
   font-size: 30px;
   text-align: center;
   position:absolute;
-  top:0;
+  bottom:0px;
   left:0;
   right:0;
   z-index: 1;
   border-bottom: 1px solid black;
-  /*text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);*/
-  background-color: white;
+  border-top: 1px solid black;
+  box-shadow: 0 4px 9px 0px rgba(0,0,0,0.75);
+  /*text-shadow: 0px 0px 2px rgba(0, 0, 0, 1);*/
+  background-color: rgba(255,255,255,0.75);
 }
 
 .campaign-img-container {

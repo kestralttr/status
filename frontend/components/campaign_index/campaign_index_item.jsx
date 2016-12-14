@@ -11,6 +11,7 @@ class CampaignIndexItem extends React.Component {
     this.handleClick = this.handleClick.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.validateManager = this.validateManager.bind(this);
+    this.backgroundImage = this.backgroundImage.bind(this);
   }
 
   handleClick(url) {
@@ -50,11 +51,18 @@ class CampaignIndexItem extends React.Component {
     // }
   }
 
+  backgroundImage() {
+    if (this.props.campaign.image_url && this.props.campaign.image_url !== "") {
+      return({backgroundImage: `url(${this.props.campaign.image_url})`});
+    } else {
+      return({backgroundImage: "url(/assets/indexitemimg.jpg)"});
+    }
+  }
+
   render() {
-    let backgroundImage = {backgroundImage: `url(${this.props.campaign.image_url})`};
     return(
       <li className="campaign-index-item"
-        style={backgroundImage}
+        style={this.backgroundImage()}
         onClick={this.handleClick(`/campaigns/${this.props.campaign.id}`)}>
         <span className="campaign-index-item-text">
           {this.props.campaign.title}
