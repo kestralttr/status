@@ -24,7 +24,7 @@ class Api::PostingsController < ApplicationController
   end
 
   def posting_params
-    params.require(:posting).permit(:title, :comments, :link_url, :execution_id)
+    params.require(:posting).permit(:title, :image_url, :execution_id)
   end
 
 

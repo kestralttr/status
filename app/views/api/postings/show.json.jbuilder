@@ -1,5 +1,4 @@
 json.title @posting.title
 json.id @posting.id
-json.comments @posting.comments
+json.image_url @posting.image_url
 json.execution_id @posting.execution.id
-json.link_url @posting.link_url
