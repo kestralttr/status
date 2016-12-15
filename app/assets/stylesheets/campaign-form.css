@@ -24,8 +24,8 @@
 .campaign-form-header {
   position: fixed;
   top: 20%;
-  left: 30%;
-  right: 30%;
+  left: 20%;
+  right: 20%;
   bottom: 70%;
   background-color: white;
   border-top-left-radius: 3px;
@@ -53,9 +53,9 @@
   margin: 0;
   padding: 0;
   top: 30%;
-  left: 30%;
-  right: 30%;
-  bottom: 25%;
+  left: 20%;
+  right: 20%;
+  bottom: 20%;
   z-index: 11;
   opacity: 1;
   background-color: white;
@@ -90,14 +90,33 @@
 #user-search {
   position: absolute;
   top: 37px;
-  background-color: grey;
+  background-color: #dddddd;
   border-left: 1px solid black;
   border-right: 1px solid black;
+  border-top: 1px solid black;
   border-bottom: 1px solid black;
+  max-height: 78px;
+  overflow: auto;
+  /*width: auto;*/
+  max-width: 62%;
+  /*width: 100px;*/
+}
+
+#user-search > ul {
+  max-height: 50px;
+  /*width: auto;*/
+  /*max-width: 10%;*/
 }
 
 #user-search > ul > li {
-  border-top: 1px solid black;
+  /*border-top: 1px solid black;*/
+  /*border-bottom: 1px solid black;*/
+  /*border-right: 1px solid black;*/
+  /*margin: 1px auto;*/
+  padding: 5px;
+  float: left;
+  width: 70px;
+  height: 20px;
 }
 
 #user-search > ul > li:hover {
@@ -124,7 +143,7 @@
 
 #campaign-form-submit-button {
   position: absolute;
-  bottom: -2px;
+  bottom: 0px;
   left: -2px;
   right: -2px;
   width: 100%;

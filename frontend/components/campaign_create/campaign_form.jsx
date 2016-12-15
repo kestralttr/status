@@ -209,17 +209,17 @@ class CampaignForm extends React.Component {
             onChange={this.updateApprover}>
           </input>
           <div id="user-search">
+            <ul>
             {this.props.userIndex.map((user,idx) => {
               return (
-                <ul>
                   <li className="user-item"
                     key={idx}
                     onClick={this.addMember(user.username)}>
                     {user.username}
                   </li>
-                </ul>
               );
             })}
+          </ul>
           </div>
           <input type="submit"
             className="campaign-form-button"
