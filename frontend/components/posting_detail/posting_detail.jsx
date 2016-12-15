@@ -19,13 +19,9 @@ class PostingDetail extends React.Component {
   renderPostingDetail() {
     if (this.props.postingDetail) {
       return(
-          <ul className="campaign-detail-posting-detail">
-            <li className="campaign-detail-posting-detail-item">
-              <span className="campaign-detail-posting-detail-data-title">{this.props.postingDetail.title}</span><br></br>
-              <a className="campaign-detail-posting-detail-data-link" href={this.props.postingDetail.link_url}>LINK</a><br></br>{`\n`}
-              <span>{this.props.postingDetail.comments}</span><br></br>
-            </li>
-          </ul>
+        <img src={this.props.postingDetail.image_url}>
+
+        </img>
       );
     } else {
       return null;
