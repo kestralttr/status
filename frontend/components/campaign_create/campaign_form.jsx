@@ -179,7 +179,6 @@ class CampaignForm extends React.Component {
               className="campaign-form-close-button">Close</Link>
           </div>
           <div>
-            <button id="upload-campaign-image-button" onClick={this.uploadImage}>Upload Image</button>
           </div>
           {this.renderErrors()}
           <span>Title:</span><br></br>
@@ -189,7 +188,8 @@ class CampaignForm extends React.Component {
             maxLength="30"
             onChange={this.updateTitle}>
           </input> <br></br>
-        <span>Approvers:</span>
+        <button id="upload-campaign-image-button" onClick={this.uploadImage}>Upload Image</button><br></br>
+        <br></br><span>Approvers:</span>
           <ul>
             {this.state.members.map((member,idx) => {
               return (
@@ -220,10 +220,7 @@ class CampaignForm extends React.Component {
             })}
           </ul>
           </div>
-          <input type="submit"
-            className="campaign-form-button"
-            onClick={this.addMember(this.state.str)}
-            value="Add Member" /> <br></br>
+
         </form>
         </div>
         <div id="campaign-form-submit-button">

@@ -7,20 +7,19 @@ class PostingForm extends React.Component {
     super(props);
     this.state = {
       title: "",
-      comments: "",
-      link_url: "",
+      image_url: "",
       execution_id: props.executionDetail.id
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.modal = this.modal.bind(this);
+    this.uploadImage = this.uploadImage.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const posting = {
       title: this.state.title,
-      comments: this.state.comments,
-      link_url: this.state.link_url,
+      image_url: this.state.image_url,
       execution_id: this.state.execution_id
     };
     this.props.createPosting({posting});
@@ -48,6 +47,21 @@ class PostingForm extends React.Component {
     });
   }
 
+  uploadImage(e) {
+    e.preventDefault();
+    let that = this;
+    cloudinary.openUploadWidget(
+      window.cloudinary_options,
+      function(error, images) {
+        if (error === null) {
+          that.setState({
+            image_url: images[0].url
+          });
+        }
+      }
+    );
+  }
+
   modal() {
     return(
       <div>
@@ -67,19 +81,8 @@ class PostingForm extends React.Component {
             value={this.state.title}
             onChange={this.update("title")}>
           </input> <br></br>
-          <span>Link Url:</span><br></br>
-          <input className="posting-form-input"
-            type="text"
-            value={this.state.link_url}
-            onChange={this.update("link_url")}>
-          </input> <br></br>
-          <span>Comments:</span><br></br>
-          <textarea className="posting-form-input"
-            rows="3"
-            cols="1"
-            value={this.state.comments}
-            onChange={this.update("comments")}>
-          </textarea> <br></br>
+          <button id="upload-posting-image-button" onClick={this.uploadImage}>Upload Image</button><br></br>
+
         <input className="posting-form-submit-button"
           type="submit"
           onClick={this.handleSubmit}></input>
