@@ -226,8 +226,9 @@ class CampaignForm extends React.Component {
             onClick={this.addMember(this.state.str)}
             value="Add Member" /> <br></br>
         </form>
+        </div>
+        <div id="campaign-form-submit-button">
           <button className="campaign-form-button"
-            id="campaign-form-submit-button"
             disabled={!this.state.title}
             onClick={this.handleSubmit}>Create!</button>
         </div>
