@@ -90,7 +90,6 @@ class CampaignForm extends React.Component {
 
   renderUserSearch() {
     if (this.props.userIndex && !this.props.userIndex.length > 0) {
-      console.log("renderUserSearch activated");
       return(
         <ul>
           {this.props.userIndex.map(user => (
