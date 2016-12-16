@@ -7,7 +7,8 @@ class PostingDetail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
-    this.renderPostingDetail.bind(this);
+    this.renderPostingDetail = this.renderPostingDetail.bind(this);
+    this.backgroundImage = this.backgroundImage.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -16,12 +17,19 @@ class PostingDetail extends React.Component {
     }
   }
 
+  backgroundImage() {
+    if (this.props.postingDetail.image_url && this.props.postingDetail.image_url !== "") {
+      return({backgroundImage: `url(${this.props.postingDetail.image_url})`});
+    }
+  }
+
   renderPostingDetail() {
     if (this.props.postingDetail) {
       return(
-        <img src={this.props.postingDetail.image_url}>
-
-        </img>
+        <div className="posting-image"
+          src={this.props.postingDetail.image_url}
+          style={this.backgroundImage()}>
+        </div>
       );
     } else {
       return null;
@@ -30,8 +38,8 @@ class PostingDetail extends React.Component {
 
   render() {
     return(
-      <div>
-        <h2 className="campaign-detail-posting-detail-title">Posting Details</h2>
+      <div className="posting-image-container">
+
         {this.renderPostingDetail()}
       </div>
     );
