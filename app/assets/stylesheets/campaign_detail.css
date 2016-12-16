@@ -92,20 +92,23 @@
 }
 
 .new-execution-button {
-  float: right;
+  position: absolute;
+  top: 40px;
+  right: 5%;
   padding: 5px;
   font-weight: 500;
-  border: 1px solid #1AAFD0;
-  color: #1AAFD0;
+  background-color: #1AAFD0;
+  color: black;
+  transition-property: background-color;
+  transition-duration: 0.5s;
   border-radius: 5px;
-  margin: 5px 1px 5px 20px;
   font-size: 16px;
 }
 
 .new-execution-button:hover {
   cursor: pointer;
-  border: 2px solid #1AAFD0;
-  margin: 4px 0 4px 19px;
+  background-color: #5edeff;
+  cursor: pointer;
 }
 
 .executions-list {
