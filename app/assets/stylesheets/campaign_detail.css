@@ -57,7 +57,7 @@
 .campaign-detail-executions-container {
   position: fixed;
   top: 30px;
-  right: 70%;
+  right: 80%;
   left: 1%;
   bottom: 0;
   z-index: 1;
@@ -66,7 +66,7 @@
   /*overflow: auto;*/
   border: 1px solid #e1e2e4;
   margin: 80px 0 0 0;
-  min-width: 215px;
+  min-width: 170px;
   /*height: 100%;*/
   -webkit-box-shadow: 0px 3px 8px -1px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 3px 8px -1px rgba(0,0,0,0.75);
@@ -118,10 +118,10 @@
   z-index: 0;
   /*height: 90%;*/
   background: #ffffff;
-background: -moz-linear-gradient(top, #ffffff 0%, #e5e5e5 100%);
-background: -webkit-linear-gradient(top, #ffffff 0%,#e5e5e5 100%);
-background: linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 );
+  background: -moz-linear-gradient(top, #ffffff 0%, #e5e5e5 100%);
+  background: -webkit-linear-gradient(top, #ffffff 0%,#e5e5e5 100%);
+  background: linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 );
 }
 
 .empty-execution-list {
@@ -169,7 +169,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   position: fixed;
   top: 30px;
   right: 1%;
-  left: 31%;
+  left: 21%;
   bottom: 0;
   z-index: 1;
   background-color: white;
@@ -177,7 +177,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   overflow: auto;
   border: 1px solid #e1e2e4;
   margin: 80px 0 0 0;
-  min-width: 400px;
+  /*min-width: 400px;*/
   /*height: 100%;*/
   -webkit-box-shadow: 0px 3px 8px -1px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 3px 8px -1px rgba(0,0,0,0.75);

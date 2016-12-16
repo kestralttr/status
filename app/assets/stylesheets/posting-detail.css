@@ -4,9 +4,9 @@
   overflow: auto;
   bottom: 0;
   background-color: white;
-  left: 30%;
+  left: 25%;
   right: 0;
-  bottom: 45%;
+  bottom: 25%;
   border-bottom: 3px solid #e1e2e4;
   background: rgb(255,255,255);
   background: -moz-linear-gradient(top, rgba(255,255,255,1) 49%, rgba(229,229,229,1) 100%);
@@ -83,5 +83,6 @@
   bottom: 0;
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: center;
+  background-position: 50% 50%;
+  cursor: pointer;
 }

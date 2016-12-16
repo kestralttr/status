@@ -9,6 +9,7 @@ class PostingDetail extends React.Component {
     this.state = {};
     this.renderPostingDetail = this.renderPostingDetail.bind(this);
     this.backgroundImage = this.backgroundImage.bind(this);
+    this.downloadImage = this.downloadImage.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -23,12 +24,20 @@ class PostingDetail extends React.Component {
     }
   }
 
+  downloadImage(e) {
+    if (this.props.postingDetail && this.props.postingDetail.image_url) {
+      window.open(this.props.postingDetail.image_url);
+    }
+  }
+
   renderPostingDetail() {
     if (this.props.postingDetail) {
       return(
         <div className="posting-image"
           src={this.props.postingDetail.image_url}
-          style={this.backgroundImage()}>
+          style={this.backgroundImage()}
+          onClick={this.downloadImage}
+          download>
         </div>
       );
     } else {
