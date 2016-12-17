@@ -53,29 +53,14 @@
 }
 
 .posting-image-container {
-  /*overflow:visible;*/
-  /*width:100%;*/
   position: absolute;
   top:0;
   left:0;
   right:0;
   bottom:0;
-  /*width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: 100%;*/
 }
 
 .posting-image {
-  /*display:block;*/
-  /*width: auto;
-  height: auto;*/
-  /*max-width: 100%;
-  max-height: 100%;*/
-  /*max-height: 100%;*/
-  /*display: block;
-  width: 100%;
-  height: auto;*/
   position: absolute;
   top: 0;
   left: 0;
@@ -85,4 +70,22 @@
   background-size: contain;
   background-position: 50% 50%;
   cursor: pointer;
+}
+
+.posting-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 50%;
+  cursor: pointer;
+}
+
+.posting-video > video {
+  width: 100%    !important;
+  height: auto   !important;
+  max-height: 100%;
 }

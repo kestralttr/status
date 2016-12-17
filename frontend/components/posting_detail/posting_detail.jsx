@@ -31,13 +31,23 @@ class PostingDetail extends React.Component {
   }
 
   renderPostingDetail() {
-    if (this.props.postingDetail) {
+    if (this.props.postingDetail && this.props.postingDetail.image_url.slice(this.props.postingDetail.image_url.length - 3) !== "mp4") {
       return(
         <div className="posting-image"
           src={this.props.postingDetail.image_url}
           style={this.backgroundImage()}
           onClick={this.downloadImage}
           download>
+        </div>
+      );
+    } else
+    if (this.props.postingDetail && this.props.postingDetail.image_url.slice(this.props.postingDetail.image_url.length - 3) === "mp4") {
+      return(
+        <div className="posting-video">
+          <video controls>
+            <source src={this.props.postingDetail.image_url}
+              type="video/mp4" />
+            </video>
         </div>
       );
     } else {
