@@ -84,10 +84,8 @@ class CampaignDetail extends React.Component {
           </h1> <br></br>
           <ul className="campaign-detail-media-types">
             <li value="TV" onClick={this.changeMediaType("TV")}>TV</li>
-            <li value="Radio" onClick={this.changeMediaType("Radio")}>Radio</li>
             <li value="Print" onClick={this.changeMediaType("Print")}>Print</li>
             <li value="Digital" onClick={this.changeMediaType("Digital")}>Digital</li>
-            <li value="Other" onClick={this.changeMediaType("Other")}>Other</li>
           </ul>
         </div>
 

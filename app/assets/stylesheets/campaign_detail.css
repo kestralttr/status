@@ -66,7 +66,7 @@
   /*overflow: auto;*/
   border: 1px solid #e1e2e4;
   margin: 80px 0 0 0;
-  min-width: 170px;
+  /*min-width: 170px;*/
   /*height: 100%;*/
   -webkit-box-shadow: 0px 3px 8px -1px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 3px 8px -1px rgba(0,0,0,0.75);
@@ -76,6 +76,7 @@
 .campaign-detail-executions-header {
   background-color: white;
   position: absolute;
+  overflow: hidden;
   top: 0;
   left: 0;
   right: 0;
