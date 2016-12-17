@@ -20,9 +20,9 @@ class ExecutionDetail extends React.Component {
     if (this.props.executionDetail) {
       return(
         <div className="campaign-detail-execution-detail">
-          <span>{this.props.executionDetail.title}</span><br></br>
-          <span>{this.props.executionDetail.format}</span><br></br>
-          <span>{this.props.executionDetail.info}</span><br></br>
+          <span id="execution-title">{this.props.executionDetail.title}</span><br></br>
+          <span id="execution-format">{this.props.executionDetail.format}</span><br></br>
+          <span id="execution-info">{this.props.executionDetail.info}</span><br></br>
         </div>
       );
     } else {

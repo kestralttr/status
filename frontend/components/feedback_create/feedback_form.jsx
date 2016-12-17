@@ -62,7 +62,7 @@ class FeedbackForm extends React.Component {
           </div>
           {this.renderErrors()}
           <form>
-            <span>Comments:</span><br></br>
+            <span>Feedback:</span><br></br>
             <textarea className="feedback-form-input"
               id="feedback-form-comments"
               rows="10"

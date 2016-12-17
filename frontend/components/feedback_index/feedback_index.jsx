@@ -1,4 +1,5 @@
 import React from 'react';
+import {withRouter} from 'react-router';
 
 class FeedbackIndex extends React.Component {
 
@@ -8,12 +9,18 @@ class FeedbackIndex extends React.Component {
       parentPostingId: null
     };
     this.renderFeedback = this.renderFeedback.bind(this);
+    this.generateFeedbackForm = this.generateFeedbackForm.bind(this);
   }
 
   componentWillUnmount() {
     return(
       this.setState({parentPostingId: null})
     );
+  }
+
+  generateFeedbackForm(e) {
+    e.preventDefault();
+    this.props.router.push("/feedbackform");
   }
 
   componentWillReceiveProps(nextProps) {
@@ -57,6 +64,7 @@ class FeedbackIndex extends React.Component {
     return(
       <div>
         <h2 className="feedback-list-title">Feedback</h2>
+        <button className="new-feedback-button" disabled={!this.props.postingDetail} onClick={this.generateFeedbackForm}>New</button>
           {this.renderFeedback(this.props.feedbackIndex)}
       </div>
     );
@@ -64,4 +72,4 @@ class FeedbackIndex extends React.Component {
 
 }
 
-export default FeedbackIndex;
+export default withRouter(FeedbackIndex);

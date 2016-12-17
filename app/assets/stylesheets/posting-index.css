@@ -8,7 +8,7 @@
 .postings-list {
   position: absolute;
   top: 80px;
-  overflow: auto;
+  /*overflow: auto;*/
   bottom: 0;
   /*background-color: white;*/
   left: 0;
@@ -31,8 +31,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .postings-list > ul {
   position: absolute;
   top: 30px;
+  bottom:0px;
   width: 100%;
   border-top: 2px solid #e1e2e4;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .posting-list-item {

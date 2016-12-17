@@ -1,7 +1,7 @@
 .campaign-detail-feedback-container {
   position: absolute;
   top: 75%;
-  overflow: auto;
+  /*overflow: auto;*/
   bottom: 0;
   background-color: white;
   left: 25%;
@@ -19,13 +19,38 @@
   max-height: 20px;
   border-bottom: 2px solid #e1e2e4;
   padding-left: 5px;
+  padding-top: 3px;
   background-color: white;
+}
+
+.new-feedback-button {
+  position: absolute;
+  right: 1%;
+  top: 2px;
+  padding: 5px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  font-weight: 500;
+  background-color: #3bdb4d;
+  color: black;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.new-feedback-button:hover {
+  background-color: #42f453;
+  cursor: pointer;
 }
 
 .feedback-list {
   position: absolute;
   top: 25px;
+  bottom: 0px;
   width: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
   /*background-color: white;*/
 }
 

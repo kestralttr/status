@@ -122,9 +122,6 @@ class CampaignDetail extends React.Component {
                 requestExecution={this.props.requestExecution}
               />
 
-            <button className="new-feedback-button" disabled={!this.props.postingDetail} onClick={this.generateFeedbackForm}>Add Feedback</button>
-            <button className="TEST-button">New</button>
-            
           </div>
 
           <PostingIndex

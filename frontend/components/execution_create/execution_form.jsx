@@ -88,7 +88,7 @@ class ExecutionForm extends React.Component {
             rows="2"
             cols="1"
             value={this.state.info}
-            maxLength="200"
+            maxLength="60"
             onChange={this.update("info")}>
           </textarea> <br></br>
         <input className="execution-form-submit-button"
