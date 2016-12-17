@@ -1,5 +1,6 @@
 import React from 'react';
 import PostingIndexItem from './posting_index_item';
+import {withRouter} from 'react-router';
 
 class PostingIndex extends React.Component {
 
@@ -11,6 +12,7 @@ class PostingIndex extends React.Component {
     this.renderPostings = this.renderPostings.bind(this);
     this.triggerParentExecution = this.triggerParentExecution.bind(this);
     this.renderFirstPostingDetail = this.renderFirstPostingDetail.bind(this);
+    this.generatePostingForm = this.generatePostingForm.bind(this);
   }
 
   triggerParentExecution(executionDetail) {
@@ -80,11 +82,17 @@ class PostingIndex extends React.Component {
     );
   }
 
+  generatePostingForm(e) {
+    e.preventDefault();
+    this.props.router.push("/postingform");
+  }
+
 
   render() {
     return(
       <div className="postings-list">
         <h2>Postings</h2>
+        <button className="new-posting-button" disabled={!this.props.executionDetail} onClick={this.generatePostingForm}>New</button>
         <ul>
           {this.renderPostings(this.props.postingIndex)}
         </ul>
@@ -94,4 +102,4 @@ class PostingIndex extends React.Component {
 
 }
 
-export default PostingIndex;
+export default withRouter(PostingIndex);

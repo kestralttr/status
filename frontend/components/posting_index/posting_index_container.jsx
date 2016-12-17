@@ -5,7 +5,8 @@ import {requestPostings, requestPosting} from '../../actions/posting_actions';
 const mapStateToProps = state => {
   return({
     postingIndex: state.postingIndex.postings,
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    executionDetail: state.executionDetail.execution
   });
 };
 

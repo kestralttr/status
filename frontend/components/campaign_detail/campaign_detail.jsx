@@ -94,7 +94,7 @@ class CampaignDetail extends React.Component {
         <div className="campaign-detail-executions-container">
           <div className="campaign-detail-executions-header">
             <h2>Executions</h2>
-            <button className="new-execution-button" onClick={this.generateExecutionForm}>New Execution</button>
+            <button className="new-execution-button" onClick={this.generateExecutionForm}>New</button>
             <p>{this.state.activeMediaType}</p>
           </div>
           <ExecutionIndex
@@ -123,7 +123,8 @@ class CampaignDetail extends React.Component {
               />
 
             <button className="new-feedback-button" disabled={!this.props.postingDetail} onClick={this.generateFeedbackForm}>Add Feedback</button>
-            <button className="new-posting-button" disabled={!this.props.executionDetail} onClick={this.generatePostingForm}>New Posting</button>
+            <button className="TEST-button">New</button>
+            
           </div>
 
           <PostingIndex

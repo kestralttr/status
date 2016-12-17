@@ -45,8 +45,8 @@ class FeedbackIndex extends React.Component {
       <ul className="feedback-list">
         {feedback.map(feedback_item => (
           <li key={feedback_item.id}>
-            <span>{feedback_item.creator_name[0].toUpperCase().concat(feedback_item.creator_name.slice(1))}{apos} Feedback:</span><br></br>
-            <span>{feedback_item.comments}</span>
+            <span className="feedback-author">{feedback_item.creator_name[0].toUpperCase().concat(feedback_item.creator_name.slice(1))}{apos} Feedback:</span><br></br>
+            <span className="feedback-text">{feedback_item.comments}</span>
           </li>
         ))}
       </ul>
