@@ -44,6 +44,9 @@ class CampaignForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    if (!this.state.title) {
+      return;
+    }
     const campaign = {
       title: this.state.title,
       manager_id: this.state.manager_id,
@@ -189,6 +192,8 @@ class CampaignForm extends React.Component {
             onChange={this.updateTitle}>
           </input> <br></br>
         <button id="upload-campaign-image-button" onClick={this.uploadImage}>Upload Image</button><br></br>
+        <br></br><p>Please note that campaign images are in a 5:3 ratio.</p>
+        <p>Any image uploaded in a different size may appear distorted.</p>
         <br></br><span>Approvers:</span>
           <ul>
             {this.state.members.map((member,idx) => {
@@ -225,7 +230,6 @@ class CampaignForm extends React.Component {
         </div>
 
           <div id="campaign-form-submit-button"
-            disabled={!this.state.title}
             onClick={this.handleSubmit}>
             Create!
           </div>

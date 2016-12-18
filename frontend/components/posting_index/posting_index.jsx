@@ -91,7 +91,7 @@ class PostingIndex extends React.Component {
   render() {
     return(
       <div className="postings-list">
-        <h2>Postings</h2>
+        <h2>Versions</h2>
         <button className="new-posting-button" disabled={!this.props.executionDetail} onClick={this.generatePostingForm}>New</button>
         <ul>
           {this.renderPostings(this.props.postingIndex)}

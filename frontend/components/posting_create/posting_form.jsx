@@ -71,7 +71,7 @@ class PostingForm extends React.Component {
         <div className='posting-form-modal-background'></div>
         <div className="posting-form-modal">
           <div className="posting-form-header">
-            <h1>New Posting</h1>
+            <h1>New Version</h1>
             <Link to={`/campaigns/${this.props.campaignDetail.id}`}
               className="posting-form-close-button">Close</Link>
           </div>

@@ -87,11 +87,7 @@ class CampaignDetail extends React.Component {
       <div className="campaign-detail">
         <div className="campaign-detail-background"></div>
         <div className="campaign-detail-header">
-          <button
-            id="delete-campaign-button"
-            onClick={this.deleteCampaign}>
-            Delete Campaign
-          </button>
+
           <h1 className="campaign-detail-header-title">
             {this.renderCampaignDetails(this.props.campaignDetail)}
           </h1> <br></br>
@@ -99,12 +95,13 @@ class CampaignDetail extends React.Component {
             <li value="TV" onClick={this.changeMediaType("TV")}>TV</li>
             <li value="Print" onClick={this.changeMediaType("Print")}>Print</li>
             <li value="Digital" onClick={this.changeMediaType("Digital")}>Digital</li>
+            <li id="delete-campaign-button" onClick={this.deleteCampaign}>Delete Campaign</li>
           </ul>
         </div>
 
         <div className="campaign-detail-executions-container">
           <div className="campaign-detail-executions-header">
-            <h2>Executions</h2>
+            <h2>Advertisements</h2>
             <button className="new-execution-button" onClick={this.generateExecutionForm}>New</button>
             <p>{this.state.activeMediaType}</p>
           </div>

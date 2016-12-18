@@ -65,7 +65,9 @@
   padding: 10px;
 }
 
-
+.campaign-form-modal > p {
+  font-size: 14px;
+}
 
 .campaign-form-button:hover {
   cursor: pointer;

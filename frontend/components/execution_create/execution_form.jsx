@@ -65,7 +65,7 @@ class ExecutionForm extends React.Component {
         <div className='execution-form-modal-background'></div>
         <div className="execution-form-modal">
           <div className="execution-form-header">
-            <h1>New Execution</h1>
+            <h1>New Advertisement</h1>
             <Link to={`/campaigns/${this.props.campaignDetail.id}`}
               className="execution-form-close-button">Close</Link>
           </div>

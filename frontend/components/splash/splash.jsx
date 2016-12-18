@@ -32,7 +32,8 @@ class Splash extends React.Component {
             <h1>Manage Campaigns Effortlessly</h1>
             <h2>Status tracks every last detail, so you can focus on results.</h2>
             <br></br>
-            <Link className="splash-signup-link" to="/signup">Get Started</Link>
+            <Link className="splash-signup-link" to="/signup">Get Started</Link><br></br>
+            <br></br><br></br><br></br><p>Instructions below:</p>
           </div>
         </div>
       </div>
