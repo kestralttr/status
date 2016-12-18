@@ -18,6 +18,9 @@ class FeedbackForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    if (!this.state.comments) {
+      return;
+    }
     const feedback = {
       comments: this.state.comments,
       link_url: this.state.link_url,
