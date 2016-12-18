@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import CampaignDetail from './campaign_detail';
-import {requestCampaign} from '../../actions/campaign_actions';
+import {requestCampaign, deleteCampaign} from '../../actions/campaign_actions';
 import {updateMediaType} from '../../actions/campaign_actions';
 import {requestExecution, clearExecution, requestExecutions} from '../../actions/execution_actions';
 import {requestPostings, clearPostings, requestPosting, clearPosting} from '../../actions/posting_actions';
@@ -30,7 +30,8 @@ const mapDispatchToProps = dispatch => ({
   requestPosting: (id) => dispatch(requestPosting(id)),
   clearPosting: () => dispatch(clearPosting()),
   requestFeedback: () => dispatch(requestFeedback()),
-  clearFeedback: () => dispatch(clearFeedback())
+  clearFeedback: () => dispatch(clearFeedback()),
+  deleteCampaign: (id) => dispatch(deleteCampaign(id))
 });
 
 

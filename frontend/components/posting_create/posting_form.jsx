@@ -17,6 +17,9 @@ class PostingForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    if (!this.state.title || !this.state.image_url) {
+      return;
+    }
     const posting = {
       title: this.state.title,
       image_url: this.state.image_url,
@@ -81,11 +84,15 @@ class PostingForm extends React.Component {
             value={this.state.title}
             onChange={this.update("title")}>
           </input> <br></br>
-          <button id="upload-posting-image-button" onClick={this.uploadImage}>Upload Image</button><br></br>
+        <button id="upload-posting-image-button" onClick={this.uploadImage}>Upload File</button><br></br><br></br>
+        <p className="posting-info">File upload required.</p>
+        <p className="posting-info">Please note that video uploads must be in MP4 format.</p>
 
-        <input className="posting-form-submit-button"
+        <div className="posting-form-submit-button"
           type="submit"
-          onClick={this.handleSubmit}></input>
+          onClick={this.handleSubmit}>
+          Create!
+        </div>
           </form>
         </div>
       </div>

@@ -19,6 +19,7 @@ class CampaignDetail extends React.Component {
     this.generateFeedbackForm = this.generateFeedbackForm.bind(this);
     this.changeMediaType = this.changeMediaType.bind(this);
     this.sendMediaType = this.sendMediaType.bind(this);
+    this.deleteCampaign = this.deleteCampaign.bind(this);
   }
 
   componentDidMount() {
@@ -73,12 +74,24 @@ class CampaignDetail extends React.Component {
     }
   }
 
+  deleteCampaign(e) {
+    e.preventDefault();
+    console.log("hits first");
+    this.props.deleteCampaign(this.props.campaignDetail.id);
+    this.props.router.push("/");
+    console.log("hits beginning");
+  }
+
   render() {
     return (
       <div className="campaign-detail">
-
         <div className="campaign-detail-background"></div>
         <div className="campaign-detail-header">
+          <button
+            id="delete-campaign-button"
+            onClick={this.deleteCampaign}>
+            Delete Campaign
+          </button>
           <h1 className="campaign-detail-header-title">
             {this.renderCampaignDetails(this.props.campaignDetail)}
           </h1> <br></br>

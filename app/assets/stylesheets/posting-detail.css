@@ -85,7 +85,7 @@
 }
 
 .posting-video > video {
-  width: 100%    !important;
-  height: auto   !important;
+  width: 100%;
+  height: auto;
   max-height: 100%;
 }

@@ -22,6 +22,9 @@ class ExecutionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    if (!this.state.title) {
+      return;
+    }
     const execution = {
       title: this.state.title,
       media_type: this.state.media_type,
@@ -91,9 +94,11 @@ class ExecutionForm extends React.Component {
             maxLength="60"
             onChange={this.update("info")}>
           </textarea> <br></br>
-        <input className="execution-form-submit-button"
+        <div className="execution-form-submit-button"
           type="submit"
-          onClick={this.handleSubmit}></input>
+          onClick={this.handleSubmit}>
+          Create!
+        </div>
 
           </form>
         </div>

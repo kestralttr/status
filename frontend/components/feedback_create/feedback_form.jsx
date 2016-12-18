@@ -70,9 +70,11 @@ class FeedbackForm extends React.Component {
               value={this.state.comments}
               onChange={this.update("comments")}>
             </textarea> <br></br>
-            <input className="feedback-form-submit-button"
+          <div className="feedback-form-submit-button"
               type="submit"
-              onClick={this.handleSubmit}></input>
+              onClick={this.handleSubmit}>
+              Create!
+            </div>
           </form>
         </div>
       </div>

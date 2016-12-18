@@ -223,11 +223,13 @@ class CampaignForm extends React.Component {
 
         </form>
         </div>
-        <div id="campaign-form-submit-button">
-          <button className="campaign-form-button"
+
+          <div id="campaign-form-submit-button"
             disabled={!this.state.title}
-            onClick={this.handleSubmit}>Create!</button>
-        </div>
+            onClick={this.handleSubmit}>
+            Create!
+          </div>
+
       </div>
     );
   }
