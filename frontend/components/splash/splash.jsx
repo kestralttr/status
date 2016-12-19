@@ -33,6 +33,7 @@ class Splash extends React.Component {
             <h2>Status tracks every last detail, so you can focus on results.</h2>
             <br></br>
             <Link className="splash-signup-link" to="/signup">Get Started</Link><br></br>
+            <br></br><p className="adblock-warning">Since Status is built to review advertisements, please disable all ad-blocking software before use.</p>
             <br></br><br></br><br></br><p>Instructions below:</p>
           </div>
         </div>

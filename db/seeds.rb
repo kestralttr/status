@@ -61,8 +61,8 @@ image_url: "http://res.cloudinary.com/dzo2s4ovl/image/upload/v1481736913/rrqv8fc
   media_type: "Digital",
   creator_id: 1,
   campaign_id: 1,
-  format: "Standard web banners",
-  info: "Brand-focused banners in two sizes (300x250 & 728x90)"
+  format: "Standard web banner",
+  info: "Brand-focused banner in one of two sizes (300x250 & 728x90)"
   )
     #POSTING 2
     Posting.create(
@@ -100,6 +100,76 @@ image_url: "http://res.cloudinary.com/dzo2s4ovl/image/upload/v1481736913/rrqv8fc
       Feedback.create(
       posting_id: 4,
       comments: "Excellent.  Approved!",
+      creator_name: "don",
+      creator_id: 2
+      )
+  #Execution 3
+  Execution.create(
+  title: "728x90 Banner",
+  media_type: "Digital",
+  creator_id: 1,
+  campaign_id: 1,
+  format: "Standard web banner",
+  info: "Brand-focused banner in one of two sizes (300x250 & 728x90)"
+  )
+    #Posting 5
+    Posting.create(
+    title: "Version 1",
+    execution_id: 3,
+    image_url: "http://res.cloudinary.com/dzo2s4ovl/image/upload/v1482176392/CC_728x90_1b_ghu0jt.jpg"
+    )
+      #Feedback 6
+      Feedback.create(
+      posting_id: 5,
+      comments: "We like the motif, but there are too many distracting colors against that background.  Can we simplify?",
+      creator_name: "pete",
+      creator_id: 3
+      )
+    #Posting 6
+    Posting.create(
+    title: "Version 2",
+    execution_id: 3,
+    image_url: "http://res.cloudinary.com/dzo2s4ovl/image/upload/v1482176392/CC_728x90_1a_qijy1m.jpg"
+    )
+      #Feedback 7
+      Feedback.create(
+      posting_id: 6,
+      comments: "Wow, love the improvement.  Let's move forward with this.",
+      creator_name: "pete",
+      creator_id: 3
+      )
+  #Execution 4
+  Execution.create(
+  title: "728x90 Banner",
+  media_type: "Print",
+  creator_id: 1,
+  campaign_id: 1,
+  format: "Two page spread",
+  info: "Standard print ad -- running in GQ and Esquire"
+  )
+    #Posting 7
+    Posting.create(
+    title: "Version 1",
+    execution_id: 4,
+    image_url: "http://res.cloudinary.com/dzo2s4ovl/image/upload/v1482176399/CC_print_1a_gawnlf.jpg"
+    )
+      #Feedback 8
+      Feedback.create(
+      posting_id: 7,
+      comments: "We love the branding here.  However, we'd like to include a female focus, so can we update the stock image accordingly?",
+      creator_name: "don",
+      creator_id: 2
+      )
+    #Posting 8
+    Posting.create(
+    title: "Version 2",
+    execution_id: 4,
+    image_url: "http://res.cloudinary.com/dzo2s4ovl/image/upload/v1482176399/CC_print-1b_gjsqzd.jpg"
+    )
+      #Feedback 9
+      Feedback.create(
+      posting_id: 8,
+      comments: "Excellent.  New stock image is great.  Approved.",
       creator_name: "don",
       creator_id: 2
       )
