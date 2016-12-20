@@ -34,7 +34,7 @@ class Splash extends React.Component {
             <br></br>
             <Link className="splash-signup-link" to="/signup">Get Started</Link><br></br>
             <br></br><p className="adblock-warning">Since Status is built to review advertisements, please disable all ad-blocking software before use.</p>
-            <br></br><br></br><br></br><p>Instructions below:</p>
+
           </div>
         </div>
       </div>
