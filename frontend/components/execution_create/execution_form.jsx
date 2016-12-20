@@ -75,7 +75,7 @@ class ExecutionForm extends React.Component {
           <input className="execution-form-input"
             type="text"
             value={this.state.title}
-            maxLength="15"
+            maxLength="30"
             onChange={this.update("title")}>
           </input> <br></br>
 
@@ -83,7 +83,7 @@ class ExecutionForm extends React.Component {
           <input className="execution-form-input"
             type="text"
             value={this.state.format}
-            maxLength="30"
+            maxLength="40"
             onChange={this.update("format")}>
           </input> <br></br>
         <span>Info:</span><br></br>

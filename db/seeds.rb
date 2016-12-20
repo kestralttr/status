@@ -28,7 +28,7 @@ image_url: "http://res.cloudinary.com/dzo2s4ovl/image/upload/v1481736913/rrqv8fc
 )
   #EXECUTION 1
   Execution.create(
-  title: "Coke Zero :15",
+  title: "Refreshing :15",
   media_type: "TV",
   creator_id: 1,
   campaign_id: 1,
@@ -140,11 +140,11 @@ image_url: "http://res.cloudinary.com/dzo2s4ovl/image/upload/v1481736913/rrqv8fc
       )
   #Execution 4
   Execution.create(
-  title: "728x90 Banner",
+  title: "Two-Page Spread",
   media_type: "Print",
   creator_id: 1,
   campaign_id: 1,
-  format: "Two page spread",
+  format: "Magazine",
   info: "Standard print ad -- running in GQ and Esquire"
   )
     #Posting 7
@@ -179,12 +179,349 @@ Campaign.create(
   manager_id: 1,
   image_url: "http://res.cloudinary.com/dzo2s4ovl/image/upload/v1481737143/nfsxld8dggmkuct0cuql.jpg"
 )
-#CAMPAIGN3
+  #Execution 5
+  Execution.create(
+  title: "Mother in Law :30",
+  media_type: "TV",
+  creator_id: 1,
+  campaign_id: 2,
+  format: "1920x1080i 30fps",
+  info: "3 Series - Connected Email"
+  )
+    #Posting 9
+    Posting.create(
+    title: "Version 1",
+    execution_id: 5,
+    image_url: "http://res.cloudinary.com/dzo2s4ovl/video/upload/v1482178150/BMW_TV1a_xmedlc.mp4"
+    )
+      #Feedback 10
+      Feedback.create(
+      posting_id: 9,
+      comments: "Hilarious.  Love the timing.",
+      creator_name: "roger",
+      creator_id: 4
+      )
+  #Execution 6
+  Execution.create(
+  title: "300x250 Banner",
+  media_type: "Digital",
+  creator_id: 1,
+  campaign_id: 2,
+  format: "Standard web banner",
+  info: "Brand-focused banner in one of two sizes (300x250 & 728x90)"
+  )
+    #Posting 10
+    Posting.create(
+    title: "Version 1",
+    execution_id: 6,
+    image_url: "http://res.cloudinary.com/dzo2s4ovl/image/upload/v1482176408/BMW_300x250_1a_jf1djk.jpg"
+    )
+      #Feedback 11
+      Feedback.create(
+      posting_id: 10,
+      comments: "We like the shot of the interior.  Can we insert the BMW logo?",
+      creator_name: "burt",
+      creator_id: 5
+      )
+    #Posting 11
+    Posting.create(
+    title: "Version 2",
+    execution_id: 6,
+    image_url: "http://res.cloudinary.com/dzo2s4ovl/image/upload/v1482176408/BMW_300x250_1b_sedwzf.jpg"
+    )
+      #Feedback 12
+      Feedback.create(
+      posting_id: 11,
+      comments: "Very nice, except we'd like to see a version with the logo on the top left.",
+      creator_name: "burt",
+      creator_id: 5
+      )
+    #Posting 12
+    Posting.create(
+    title: "Version 3",
+    execution_id: 6,
+    image_url: "http://res.cloudinary.com/dzo2s4ovl/image/upload/v1482176408/BMW_300x250_1c_fxk12e.jpg"
+    )
+      #Feedback 13
+      Feedback.create(
+      posting_id: 12,
+      comments: "You know what?  We actually like the logo where it was before.  And can we emboss the text a little bit to make it more pronounced?",
+      creator_name: "burt",
+      creator_id: 5
+      )
+    #Posting 13
+    Posting.create(
+    title: "Version 4",
+    execution_id: 6,
+    image_url: "http://res.cloudinary.com/dzo2s4ovl/image/upload/v1482176408/BMW_300x250_1d_ocwf7o.jpg"
+    )
+      #Feedback 14
+      Feedback.create(
+      posting_id: 13,
+      comments: "Perfect.  Thanks for your patience.  This is approved.",
+      creator_name: "burt",
+      creator_id: 5
+      )
+  #Execution 7
+  Execution.create(
+  title: "728x90 Banner",
+  media_type: "Digital",
+  creator_id: 1,
+  campaign_id: 2,
+  format: "Standard web banner",
+  info: "Brand-focused banner in one of two sizes (300x250 & 728x90)"
+  )
+    #Posting 14
+    Posting.create(
+    title: "Version 1",
+    execution_id: 7,
+    image_url: "http://res.cloudinary.com/dzo2s4ovl/image/upload/v1482176408/BMW_728x90_1a_meymmk.jpg"
+    )
+      #Feedback 15
+      Feedback.create(
+      posting_id: 14,
+      comments: "Let's make the copy all caps to improve the visibility.",
+      creator_name: "roger",
+      creator_id: 4
+      )
+    #Posting 15
+    Posting.create(
+    title: "Version 2",
+    execution_id: 7,
+    image_url: "http://res.cloudinary.com/dzo2s4ovl/image/upload/v1482176408/BMW_728x90_1b_r2r1ef.jpg"
+    )
+      #Feedback 16
+      Feedback.create(
+      posting_id: 15,
+      comments: "Looking good.  However, we need to add a call out to the 3 Series in 'Onyx Black'.",
+      creator_name: "roger",
+      creator_id: 4
+      )
+  #Execution 8
+  Execution.create(
+  title: "Single Page",
+  media_type: "Print",
+  creator_id: 1,
+  campaign_id: 2,
+  format: "Magazine",
+  info: "Standard print ad -- running in Popular Mechanics"
+  )
+    #Posting 16
+    Posting.create(
+    title: "Version 1",
+    execution_id: 8,
+    image_url: "http://res.cloudinary.com/dzo2s4ovl/image/upload/v1482176415/BMW_print_single_1a_vjuk5m.jpg"
+    )
+      #Feedback 17
+      Feedback.create(
+      posting_id: 16,
+      comments: "Can we add the BMW logo to this?",
+      creator_name: "burt",
+      creator_id: 5
+      )
+    #Posting 17
+    Posting.create(
+    title: "Version 2",
+    execution_id: 8,
+    image_url: "http://res.cloudinary.com/dzo2s4ovl/image/upload/v1482176415/BMW_print_single_1b_wst5qq.jpg"
+    )
+      #Feedback 18
+      Feedback.create(
+      posting_id: 17,
+      comments: "Okay, thanks for adding the logo.  However, it seems like the spacing is now off because the rest of the elements are center aligned.  Can we try to incorporate the logo into the current alignment?",
+      creator_name: "burt",
+      creator_id: 5
+      )
+    #Posting 18
+    Posting.create(
+    title: "Version 3",
+    execution_id: 8,
+    image_url: "http://res.cloudinary.com/dzo2s4ovl/image/upload/v1482176415/BMW_print_single_1c_qr6nsh.jpg"
+    )
+      #Feedback 19
+      Feedback.create(
+      posting_id: 18,
+      comments: "Yes, this is exactly what we want.  Approved!",
+      creator_name: "burt",
+      creator_id: 5
+      )
+#CAMPAIGN 3
 Campaign.create(
   title: "Mass Effect Andromeda",
   manager_id: 1,
   image_url: "http://res.cloudinary.com/dzo2s4ovl/image/upload/v1481773214/golfeaggnaxhjjgagghn.jpg"
 )
+  #Execution 9
+  Execution.create(
+  title: "Andromeda Initiative :60",
+  media_type: "TV",
+  creator_id: 1,
+  campaign_id: 3,
+  format: "1920x1080i 30fps",
+  info: "Andromeda Initiative intro -- 'Join Today' messaging"
+  )
+    #Posting 19
+    Posting.create(
+    title: "Version 1",
+    execution_id: 9,
+    image_url: "http://res.cloudinary.com/dzo2s4ovl/video/upload/v1482178158/ME_TV1a_crz8xy.mp4"
+    )
+      #Feedback 20
+      Feedback.create(
+      posting_id: 19,
+      comments: "Looking very very good.  We love it.",
+      creator_name: "joan",
+      creator_id: 6
+      )
+  #Execution 10
+  Execution.create(
+  title: "300x250",
+  media_type: "Digital",
+  creator_id: 1,
+  campaign_id: 3,
+  format: "Standard web banner",
+  info: "Brand-focused banner in one of two sizes (300x250 & 728x90)"
+  )
+    #Posting 20
+    Posting.create(
+    title: "Version 1",
+    execution_id: 10,
+    image_url: "http://res.cloudinary.com/dzo2s4ovl/image/upload/v1482176424/ME_300x250_ark1a_qcosqb.png"
+    )
+      #Feedback 21
+      Feedback.create(
+      posting_id: 20,
+      comments: "We're still getting back comments from the whole department, but while we're waiting, can we move up the text towards the top?",
+      creator_name: "joan",
+      creator_id: 6
+      )
+    #Posting 21
+    Posting.create(
+    title: "Version 2",
+    execution_id: 10,
+    image_url: "http://res.cloudinary.com/dzo2s4ovl/image/upload/v1482176425/ME_300x250_ark_1b_c898ts.png"
+    )
+      #Feedback 22
+      Feedback.create(
+      posting_id: 21,
+      comments: "Thank you.  Also, we're going to need to include the 'Join Today' messaging.",
+      creator_name: "joan",
+      creator_id: 6
+      )
+    #Posting 22
+    Posting.create(
+    title: "Version 3",
+    execution_id: 10,
+    image_url: "http://res.cloudinary.com/dzo2s4ovl/image/upload/v1482176425/ME_300x250_ark_1c_n90jb6.png"
+    )
+      #Feedback 23
+      Feedback.create(
+      posting_id: 22,
+      comments: "Messaging placement is great.  Can we just add the Andromeda Initiative logo in the bottom right?",
+      creator_name: "joan",
+      creator_id: 6
+      )
+    #Posting 23
+    Posting.create(
+    title: "Version 4",
+    execution_id: 10,
+    image_url: "http://res.cloudinary.com/dzo2s4ovl/image/upload/v1482176425/ME_300x250_ark_1d_goszuk.png"
+    )
+      #Feedback 24
+      Feedback.create(
+      posting_id: 23,
+      comments: "Looks good.  Approved.",
+      creator_name: "joan",
+      creator_id: 6
+      )
+  #Execution 11
+  Execution.create(
+  title: "728x90",
+  media_type: "Digital",
+  creator_id: 1,
+  campaign_id: 3,
+  format: "Standard web banner",
+  info: "Brand-focused banner in one of two sizes (300x250 & 728x90)"
+  )
+    #Posting 24
+    Posting.create(
+    title: "Version 1",
+    execution_id: 11,
+    image_url: "http://res.cloudinary.com/dzo2s4ovl/image/upload/v1482176425/ME_728x90_silhouette_1a_kxdy06.png"
+    )
+      #Feedback 25
+      Feedback.create(
+      posting_id: 24,
+      comments: "Love the art.  However, can we make the text stand out a bit more and increase the saturation the image?  It looks a bit dull as is.",
+      creator_name: "joan",
+      creator_id: 6
+      )
+    #Posting 25
+    Posting.create(
+    title: "Version 2",
+    execution_id: 11,
+    image_url: "http://res.cloudinary.com/dzo2s4ovl/image/upload/v1482176425/ME_728x90_silhouette_1c_kt4ecb.png"
+    )
+      #Feedback 26
+      Feedback.create(
+      posting_id: 25,
+      comments: "Very well done.  We're aligned on this: let's ship it.",
+      creator_name: "joan",
+      creator_id: 6
+      )
+  #Execution 12
+  Execution.create(
+  title: "Two-Page Spread",
+  media_type: "Print",
+  creator_id: 1,
+  campaign_id: 3,
+  format: "Magazine",
+  info: "Standard print ad -- running in Game Informer"
+  )
+    #Posting 26
+    Posting.create(
+    title: "Version 1",
+    execution_id: 12,
+    image_url: "http://res.cloudinary.com/dzo2s4ovl/image/upload/v1482176431/ME_spread_1a_uph1qf.jpg"
+    )
+      #Feedback 27
+      Feedback.create(
+      posting_id: 26,
+      comments: "Great job, couple of things:  the quote on the right is actually from Kotaku, not Gamespot.  Also, let's add the AI logo on the bottom right.",
+      creator_name: "joan",
+      creator_id: 6
+      )
+    #Posting 27
+    Posting.create(
+    title: "Version 2",
+    execution_id: 12,
+    image_url: "http://res.cloudinary.com/dzo2s4ovl/image/upload/v1482176431/ME_spread_1b_mlgxaz.jpg"
+    )
+      #Feedback 28
+      Feedback.create(
+      posting_id: 27,
+      comments: "Perfect!",
+      creator_name: "joan",
+      creator_id: 6
+      )
+
+    #OUT OF ORDER!!!
+    #Posting 28
+    Posting.create(
+    title: "Version 3",
+    execution_id: 7,
+    image_url: "http://res.cloudinary.com/dzo2s4ovl/image/upload/v1482176408/BMW_728x90_1c_pdfxe8.jpg"
+    )
+      #Feedback 29
+      Feedback.create(
+      posting_id: 28,
+      comments: "Perfect!",
+      creator_name: "roger",
+      creator_id: 4
+      )
+
+
+
 
 #MEMBERSHIP 1
 Membership.create(campaign_id: 1, member_id: 1)
@@ -196,3 +533,9 @@ Membership.create(campaign_id: 3, member_id: 1)
 Membership.create(campaign_id: 1, member_id: 2)
 #MEMBERSHIP 5
 Membership.create(campaign_id: 1, member_id: 3)
+#MEMBERSHIP 6
+Membership.create(campaign_id: 2, member_id: 4)
+#MEMBERSHIP 7
+Membership.create(campaign_id: 2, member_id: 5)
+#MEMBERSHIP 8
+Membership.create(campaign_id: 3, member_id: 6)
