@@ -37,6 +37,15 @@ class Splash extends React.Component {
 
           </div>
         </div>
+
+        <div className="splash-instruction-background">
+
+          <img id="diagram-1" src="http://res.cloudinary.com/dzo2s4ovl/image/upload/v1482295335/Diagram_1_rp75bq.png"></img>
+          <p id="diagram-1-text">Create and customize campaign appearance</p>
+
+          <img></img>
+        </div>
+
       </div>
     );
   }

@@ -48,7 +48,7 @@ class CampaignIndex extends React.Component {
   }
 
   backgroundImage() {
-    return({backgroundImage: "url(/assets/addcampaign.png)"});
+    return({backgroundImage: "url(http://res.cloudinary.com/dzo2s4ovl/image/upload/v1482291215/addcampaign_kqzqal.png)"});
   }
 
   render() {
