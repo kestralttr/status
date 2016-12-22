@@ -111,14 +111,23 @@
   left: 0;
   top: 650px;
   width: 100%;
-  height: 550px;
+  height: 1650px;
   z-index: -1;
   opacity: 0.9;
-  background-color: #c4c4c4;
+  background-color: #ededed;
+}
+
+#info-icon {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  margin-left: -50px;
+  width: auto;
 }
 
 #diagram-1 {
   position: absolute;
+  top: 150px;
   left: 50%;
   margin-left: -300px;
   width: auto;
@@ -128,7 +137,61 @@
   position: absolute;
   margin-left: auto;
   margin-right: auto;
-  top: 300px;
+  top: 430px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+#diagram-2 {
+  position: absolute;
+  top: 530px;
+  left: 50%;
+  margin-left: -300px;
+  width: 600px;
+}
+
+#diagram-2-text {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  top: 740px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+#diagram-3 {
+  position: absolute;
+  top: 850px;
+  left: 50%;
+  margin-left: -300px;
+  width: 600px;
+}
+
+#diagram-3-text {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  top: 1070px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+#diagram-4 {
+  position: absolute;
+  top: 1170px;
+  left: 50%;
+  margin-left: -300px;
+  width: 600px;
+}
+
+#diagram-4-text {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  top: 1530px;
   left: 0;
   right: 0;
   text-align: center;
