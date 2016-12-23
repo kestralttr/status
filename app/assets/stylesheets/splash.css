@@ -83,6 +83,17 @@
   min-width: 325px;
 }
 
+#main-splash-text {
+  position: absolute;
+  top: 150px;
+  left: 0;
+  right: 0;
+  width: auto;
+  text-align: center;
+  font-size: 56px;
+  color: white;
+}
+
 .splash-signup-link {
   border: 1px solid #107dcc;
   background-color: #107dcc;
@@ -90,10 +101,14 @@
   transition-property: background-color, border, color, box-shadow;
   transition-duration: 0.3s;
   color: white;
-  margin: 0px auto 0px auto;
+  /*margin: 0px auto 0px auto;*/
   padding: 12px;
   border-radius: 5px;
   font-size: 20px;
+  position: absolute;
+  top: 450px;
+  left: 50%;
+  margin-left: -63.5px;
 }
 
 .splash-signup-link:hover {
@@ -106,11 +121,18 @@
 
 .adblock-warning {
   font-size: 14px;
+  position: absolute;
+  top: 520px;
+  left: 0%;
+  right: 0;
+  width: auto;
+  color: white;
+  text-align: center;
 }
 
 #info-arrow {
   position: absolute;
-  top: 510px;
+  top: 560px;
   left: 50%;
   margin-left: -50px;
   height: auto;

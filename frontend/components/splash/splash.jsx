@@ -35,19 +35,22 @@ class Splash extends React.Component {
           <h1>• status •</h1>
           <Link className="splash-login-link" to="/login">  Log In  </Link>
         </div>
+
+        <h1 id="main-splash-text">Manage Advertising Campaigns Effortlessly</h1>
+        <Link className="splash-signup-link" to="/signup">Get Started</Link><br></br>
+        <br></br><p className="adblock-warning">Since Status is built to review advertisements, please disable all ad-blocking software before use.</p>
+          <img
+            id="info-arrow"
+            onClick={this.scrollToInfo}
+            src="http://res.cloudinary.com/dzo2s4ovl/image/upload/v1482455761/arrow2_wxpbuq.png">
+          </img>
         <div className="splash-main-container">
           <div className="splash-main">
-            <h1>Manage Advertising Campaigns Effortlessly</h1>
 
-            <br></br><br></br><br></br>
-            <Link className="splash-signup-link" to="/signup">Get Started</Link><br></br>
-            <br></br><p className="adblock-warning">Since Status is built to review advertisements, please disable all ad-blocking software before use.</p>
 
-              <img
-                id="info-arrow"
-                onClick={this.scrollToInfo}
-                src="http://res.cloudinary.com/dzo2s4ovl/image/upload/v1482455761/arrow2_wxpbuq.png">
-              </img>
+
+
+
 
           </div>
         </div>
