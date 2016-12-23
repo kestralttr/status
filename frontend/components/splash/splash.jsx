@@ -7,6 +7,7 @@ class Splash extends React.Component {
     super(props);
     this.state = {};
     this.sessionLinks = this.sessionLinks.bind(this);
+    this.scrollToInfo = this.scrollToInfo.bind(this);
   }
 
   sessionLinks() {
@@ -17,6 +18,13 @@ class Splash extends React.Component {
         <Link to="/signup">Sign Up</Link>
       </div>
     );
+  }
+
+  scrollToInfo(e) {
+    e.preventDefault();
+    $('html, body').animate({
+        scrollTop: parseInt($("#info").offset().top)
+    }, 1000);
   }
 
   render() {
@@ -35,12 +43,18 @@ class Splash extends React.Component {
             <Link className="splash-signup-link" to="/signup">Get Started</Link><br></br>
             <br></br><p className="adblock-warning">Since Status is built to review advertisements, please disable all ad-blocking software before use.</p>
 
+              <img
+                id="info-arrow"
+                onClick={this.scrollToInfo}
+                src="http://res.cloudinary.com/dzo2s4ovl/image/upload/v1482455761/arrow2_wxpbuq.png">
+              </img>
+
           </div>
         </div>
 
         <div className="splash-instruction-background">
-
-          <img id="info-icon" src="http://res.cloudinary.com/dzo2s4ovl/image/upload/v1482448274/Info_1_lvjmcb.png"></img>
+          <div id="info"></div>
+          <h2 id="info-text">Status tracks every last detail, so you can focus on results.</h2>
 
           <img id="diagram-1" src="http://res.cloudinary.com/dzo2s4ovl/image/upload/v1482295335/Diagram_1_rp75bq.png"></img>
           <p id="diagram-1-text">Create and customize campaign appearance</p>
@@ -52,7 +66,7 @@ class Splash extends React.Component {
           <p id="diagram-3-text">Review and create advertisements</p>
 
           <img id="diagram-4" src="http://res.cloudinary.com/dzo2s4ovl/image/upload/v1482444750/Diagram_4_lllsyf.png"></img>
-          <p id="diagram-4-text">Update versions and add feedback</p>
+          <p id="diagram-4-text">Add updated versions and feedback</p>
 
 
         </div>
