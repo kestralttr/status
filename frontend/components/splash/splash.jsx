@@ -33,7 +33,7 @@ class Splash extends React.Component {
         <div className="floating-box">
 
         </div>
-        <img className='splash-initial-background' src="https://s14.postimg.org/kqcnjv469/colorful.jpg"/>
+        <img className='splash-initial-background' src="https://res.cloudinary.com/dzo2s4ovl/image/upload/v1539318649/color_background.png_fllxi6.png"/>
         <div className="splash-bar">
           <h1>• status •</h1>
           <Link className="splash-login-link" to="/login">  Log In  </Link>
